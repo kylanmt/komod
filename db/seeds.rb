@@ -65,6 +65,7 @@ end
 robe_test = Clothe.new({  name: "Robe Lacoste noire",
                           description: "ROBE POLO LACOSTE AVEC CEINTURE FEMME EN PETIT PIQUÉ SOUPLE BLEU MARINE Coupe ajustée en haut, évasée en bas Boutonnière intégrale en nacre Ceinture à nouer Crocodile vert brodé cousu sur la poitrine Coton (100%)",
                           size: sizes.sample,
+                          brand: "Lacoste",
                           category: "robe",
                           value: "165",
                           available: true,
