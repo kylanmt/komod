@@ -39,6 +39,8 @@ Rails.application.routes.draw do
 
   resources :transactions, only: %i[edit update]
 
+  resources :events, only: %i[index]
+
   # Routes pour les owners: ajout et modification de vetements, voir ses transactions, "Manage" pour s'occuper des
   # des status des de sa transaction
 
