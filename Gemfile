@@ -26,6 +26,10 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+#cloudinary gem https://kitt.lewagon.com/camps/1533/lectures/05-Rails%2F05-Rails-MC-with-images#source
+gem "cloudinary"
+
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
