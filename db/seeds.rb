@@ -11,7 +11,6 @@
 sizes = %w[XS S M L XL XXL XXXL]
 condition = ["bon état", "très bon état", "comme neuf"]
 
-
 User.destroy_all
 Clothe.destroy_all
 Transaction.destroy_all
@@ -74,4 +73,6 @@ robe_test = Clothe.new({  name: "Robe Lacoste noire",
 robe_test.owner = ismael
 file = File.open(Rails.root.join("app/assets/images/robe-test.jpg"))
 robe_test.photos.attach(io: file, filename: "robe-test", content_type: "image/jpg")
+file = File.open(Rails.root.join("app/assets/images/robe-test2.jpg"))
+robe_test.photos.attach(io: file, filename: "robe-test2", content_type: "image/jpg")
 robe_test.save!
