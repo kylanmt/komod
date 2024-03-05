@@ -10,9 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_04_165830) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_05_143523) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chatrooms", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+  end
 
   create_table "clothes", force: :cascade do |t|
     t.string "name"
@@ -24,6 +30,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_04_165830) do
     t.string "condition"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "owner_id"
+    t.index ["owner_id"], name: "index_clothes_on_owner_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -46,6 +54,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_04_165830) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "chatroom_id"
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "newsletters", force: :cascade do |t|
@@ -62,6 +74,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_04_165830) do
     t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "clothe_id"
+    t.bigint "client_id"
+    t.bigint "event_id"
+    t.index ["client_id"], name: "index_transactions_on_client_id"
+    t.index ["clothe_id"], name: "index_transactions_on_clothe_id"
+    t.index ["event_id"], name: "index_transactions_on_event_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -82,6 +100,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_04_165830) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "clothes", "users", column: "owner_id"
   add_foreign_key "likes", "clothes"
   add_foreign_key "likes", "users"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
+  add_foreign_key "transactions", "clothes"
+  add_foreign_key "transactions", "events"
+  add_foreign_key "transactions", "users", column: "client_id"
 end
