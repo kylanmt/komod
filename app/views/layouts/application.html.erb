@@ -13,7 +13,15 @@
   <body><%= render "shared/bars/navbar" %>
 <%= render "shared/flashes" %>
 
+<%# C'est juste un test à enlever %>
+
+<%= cl_image_tag(Clothe.first.photos.first.key,
+      width: 400, height: 300, crop: :fill) %>
+
+<%# au dessus, les images marchent, vous pouvez supprimer %>
+
+
     <%= yield %>
-    
+
   </body>
 </html>
