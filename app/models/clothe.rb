@@ -1,7 +1,7 @@
 class Clothe < ApplicationRecord
   belongs_to :owner, class_name: "User"
   has_many :transactions
-  has_many :likes, dependant: :destroy
+  has_many :likes, dependent: :destroy
   # has_many :likers, through: :likes, source: :user
 
   validates :name, presence: true, length: { minimum: 3, maximum: 50 }
