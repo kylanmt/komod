@@ -71,6 +71,8 @@ condition = ["bon état", "très bon état", "comme neuf"]
 #                         value: "",
 #                         available: true,
 #                         condition: condition.sample })
+# template.owner = User.all.sample
+# template.save!
 
 # POUR UNE IMAGE
 
@@ -96,9 +98,6 @@ def attach_images_to_clothe(clothe)
 end
 
 # attach_images_to_clothe(clothe)
-
-# template.owner = User_name (ex: emma)
-# template.save!
 
 # pour antoine -> find . -name "*Zone.Identifier" -type f -delete
 
