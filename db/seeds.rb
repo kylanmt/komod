@@ -213,7 +213,132 @@ rossignol2 = Clothe.new({ name: "Manteau Ski Rossignol Bleu ",
 rossignol2.owner = User.all.sample
 rossignol2.save!
 
-# AUTRES CATEGORIES
+# CATEGORIE SWEET
+
+sweetralphlauren1 = Clothe.new({  name: "Sweet à capuche Ralph Lauren beige",
+                                  description: "Porter quelques fois, reste en très bon état, aucune tache ni trou.",
+                                  size: "L",
+                                  brand: "raplhlauren",
+                                  category: "sweet",
+                                  value: "60",
+                                  available: true,
+                                  condition: "comme neuf" })
+sweetralphlauren1.owner = User.all.sample
+sweetralphlauren1.save!
+
+sweetralphlauren2 = Clothe.new({  name: "Pull Ralph lauren bleu XL",
+                                  description: "porté quelques fois mais en très bon état 0 défaut, 100% authentique,  taille XL, logo brodé",
+                                  size: "XL",
+                                  brand: "ralphlauren",
+                                  category: "sweet",
+                                  value: "45",
+                                  available: true,
+                                  condition: "comme neuf"})
+sweetralphlauren2.owner = User.all.sample
+sweetralphlauren2.save!
+
+sweetabercrombie1 = Clothe.new({  name: "Sweet XXL Abercrombie et fitch",
+                                  description: "Sweet XXL Abercombie et fitch blanc beige, très bon état",
+                                  size: "XXL",
+                                  brand: "abercombie",
+                                  category: "sweet",
+                                  value: "20",
+                                  available: true,
+                                  condition: "comme neuf" })
+sweetabercrombie1.owner = User.all.sample
+sweetabercrombie1.save!
+
+sweetabercrombie2 = Clothe.new({  name: "Sweet à capuche Abercrombie et fitch",
+                                  description: "taille bien , en bon état",
+                                  size: "XS",
+                                  brand: "abercombie",
+                                  category: "sweet",
+                                  value: "7",
+                                  available: true,
+                                  condition: "usé" })
+sweetabercrombie2.owner = User.all.sample
+sweetabercrombie2.save!
+
+sweetlacoste1 = Clothe.new({  name: "Veste lacoste rouge S",
+                              description: "Sweet zippé Lacoste Rouge En bon état Taille S Pour plus d'information ou de photo n'hésité pas.",
+                              size: "S",
+                              brand: "lacoste",
+                              category: "sweet",
+                              value: "45",
+                              available: true,
+                              condition: "usé" })
+sweetlacoste1.owner = User.all.sample
+sweetlacoste1.save!
+
+sweetlacoste2 = Clothe.new({  name: "Veste lacoste verte",
+                              description: "Sweet à capuche Lacoste vert. En très bon état, porter quelques fois. Facture à l'appui",
+                              size: "S",
+                              brand: "lacoste",
+                              category: "sweet",
+                              value: "75",
+                              available: true,
+                              condition: "comme neuf" })
+sweetlacoste2.owner = User.all.sample
+sweetlacoste2.save!
+
+sweetgucci1 = Clothe.new({  name: "Veste Gucci bleue M",
+                            description: "Sweet gucci homme, Taille M. Très peu porté en très bon état aucun défaut",
+                            size: "M",
+                            brand: "gucci",
+                            category: "sweet",
+                            value: "280",
+                            available: true,
+                            condition: "comme neuf" })
+sweetgucci1.owner = User.all.sample
+sweetgucci1.save!
+
+sweetgucci2 = Clothe.new({  name: "Sweet Gucci noir Tigre",
+                            description: "Sweet Gucci Made in Italy , très bon état",
+                            size: "L",
+                            brand: "gucci",
+                            category: "sweet",
+                            value: "225",
+                            available: true,
+                            condition: "comme neuf" })
+sweetgucci2.owner = User.all.sample
+sweetgucci2.save!
+
+sweetsaintjames1 = Clothe.new({ name: "Pull rayé Saint James T3XL",
+                                description: "Très bel état, tout petit défaut à un poignet. Largeur épaules 56 cm. Largeur aisselles 68 cm. Longueur 70 cm",
+                                size: "XXXL",
+                                brand: "saintjames",
+                                category: "sweet",
+                                value: "42",
+                                available: true,
+                                condition: "comme neuf" })
+sweetsaintjames1.owner = User.all.sample
+sweetsaintjames1.save!
+
+sweetsaintjames2 = Clothe.new({ name: "Pull vintage saint james",
+                                description: "Pull vintage saintiamesvintage à rayures
+
+                                Description
+
+                                - taille M
+
+                                - état satisfaisant
+
+                                -Saint James made in France
+
+                                - Couleurs: beige et bleu marine
+
+                                - Boutons col pull
+
+                                - Matière épaisse",
+                                size: "M",
+                                brand: "saintjames",
+                                category: "sweet",
+                                value: "15",
+                                available: true,
+                                condition: "usé" })
+sweetsaintjames2.owner = User.all.sample
+sweetsaintjames2.save!
+
 # .
 # .
 # .
