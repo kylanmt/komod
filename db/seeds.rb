@@ -8,9 +8,6 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-sizes = %w[XS S M L XL XXL XXXL]
-condition = ["bon état", "très bon état", "comme neuf"]
-
 User.destroy_all
 Clothe.destroy_all
 Transaction.destroy_all
@@ -61,19 +58,128 @@ users.each do |user|
   users_ids << user.id
 end
 
-robe_test = Clothe.new({  name: "Robe Lacoste noire",
-                          description: "ROBE POLO LACOSTE AVEC CEINTURE FEMME EN PETIT PIQUÉ SOUPLE BLEU MARINE Coupe ajustée en haut, évasée en bas Boutonnière intégrale en nacre Ceinture à nouer Crocodile vert brodé cousu sur la poitrine Coton (100%)",
+# CREATION DES VETEMENTS (SANS OWNER, CONDITION ET TAILLE ALEATOIRES )
+
+sizes = %w[XS S M L XL XXL XXXL]
+condition = ["bon état", "très bon état", "comme neuf"]
+
+# template = Clothe.new({ name: "",
+#                         description: "",
+#                         size: sizes.sample,
+#                         brand: "",
+#                         category: "",
+#                         value: "",
+#                         available: true,
+#                         condition: condition.sample })
+# template.owner = User.all.sample
+# template.save!
+
+# POUR UNE IMAGE
+
+# file = File.open(Rails.root.join("relative_path(click droit sur l'image)"))
+# template.photos.attach(io: file, filename: "nom de l'image sans l'extension", content_type: "image/(extension)")
+
+# POUR UN DOSSIER D'IMAGE
+
+def attach_images_to_clothe(clothe)
+  # LE NOM DU PREMIER SOUS-DOSSIER EST CELUI DE SA CATEGORIE
+  clothe_category = clothe.category
+
+  # LE NOM DU DEUXIEME SOUS-DOSSIER EST CELUI DU NOM DU VETEMENT EN MINUSCULE AVEC DES "_" A LA PLACE DES ESPACES
+  clothe_name = clothe.name.parameterize(separator: '_')
+
+  # JE FAIT LA ROUTE JUSQU'A L'IMAGE DANS LE DOSSIER SEED_IMAGE
+  directory = "db/seed_images/#{clothe_category}/#{clothe_name}"
+
+  # ITEREATION DANS LE DOSSIER ET ATTACHEMENT DES PHOTOS
+  Dir.glob("#{directory}/*.{jpg,jpeg,png,gif}", base: Dir.pwd).each do |path|
+    clothe.photos.attach(io: File.open(path), filename: File.basename(path))
+  end
+end
+
+# attach_images_to_clothe(clothe)
+
+# pour antoine -> find . -name "*Zone.Identifier" -type f -delete
+
+# CATEGORIE SKI
+
+fusalp1 = Clothe.new({  name: "Veste Ski Fusalp Vintage Rouge",
+                        description: "Idéale à porter avec un jean en mi saison. quelques défauts",
+                        size: sizes.sample,
+                        brand: "fusalp",
+                        category: "ski",
+                        value: "80",
+                        available: true,
+                        condition: condition.sample })
+fusalp1.owner = User.all.sample
+fusalp1.save!
+
+fusalp2 = Clothe.new({  name: "Manteau Ski Fusalp Homme Noir",
+                        description: "A servi qu’une semaine de ski, tiens très chaud en haute montagne et poche pour le forfait intégré.",
+                        size: sizes.sample,
+                        brand: "fulsalp",
+                        category: "ski",
+                        value: "200",
+                        available: true,
+                        condition: condition.sample })
+fusalp2.owner = User.all.sample
+fusalp2.save!
+
+northface1 = Clothe.new({ name: "Manteau Ski The North Face Vert",
+                          description: "Porté que 2 saisons dans les Alpes Françaises. Taille un peu grand et tiens très chaud en altitude !",
                           size: sizes.sample,
-                          brand: "Lacoste",
-                          category: "robe",
-                          value: "165",
+                          brand: "the north face",
+                          category: "ski",
+                          value: "140",
                           available: true,
                           condition: condition.sample })
+northface1.owner = User.all.sample
+northface1.save!
 
-robe_test.owner = ismael
+northface2 = Clothe.new({ name: "Pantalon Ski The North Face orange",
+                          description: "serrage ceinture, ouvertures aération sur les cuisses. traces d'usures sur les chevilles.",
+                          size: sizes.sample,
+                          brand: "the north face",
+                          category: "ski",
+                          value: "50",
+                          available: true,
+                          condition: condition.sample })
+northface2.owner = User.all.sample
+northface2.save!
 
-file = File.open(Rails.root.join("app/assets/images/robe-test.jpg"))
-robe_test.photos.attach(io: file, filename: "robe-test", content_type: "image/jpg")
-file = File.open(Rails.root.join("app/assets/images/robe-test2.jpg"))
-robe_test.photos.attach(io: file, filename: "robe-test2", content_type: "image/jpg")
-robe_test.save!
+salomon1 = Clothe.new({ name: "Casque Ski Salomon Noir",
+                        description: "couleur noir mat, a des rayures mais il n’y a jamais eu de chutes avec ! Accroche masque (cf photo).",
+                        size: "XL",
+                        brand: "salomon",
+                        category: "ski",
+                        value: "25",
+                        available: true,
+                        condition: condition.sample })
+salomon1.owner = User.all.sample
+salomon1.save!
+
+salomon2 = Clothe.new({ name: "Pantalon Ski Salomon jaune ",
+                        description: "Pantalon neuf couleur camel/moutarde foncée. Tiens chaud et attention taille grand même pour un XL !",
+                        size: "XL",
+                        brand: "salomon",
+                        category: "ski",
+                        value: "110",
+                        available: true,
+                        condition: condition.sample })
+salomon2.owner = User.all.sample
+salomon2.save!
+
+# AUTRES CATEGORIES
+# .
+# .
+# .
+# .
+# .
+# ATTACHEMENT DES PHOTOS AUX SEEDS
+
+clothes = Clothe.all
+
+clothes.each do |clothe|
+  attach_images_to_clothe(clothe)
+  clothe.save!
+end
