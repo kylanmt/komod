@@ -61,7 +61,7 @@ end
 # CREATION DES VETEMENTS (SANS OWNER, CONDITION ET TAILLE ALEATOIRES )
 
 sizes = %w[XS S M L XL XXL XXXL]
-condition = ["bon état", "très bon état", "comme neuf"]
+condition = ["usé", "bon état", "très bon état", "comme neuf"]
 
 # template = Clothe.new({ name: "",
 #                         description: "",
@@ -104,46 +104,46 @@ end
 # CATEGORIE SKI
 
 fusalp1 = Clothe.new({  name: "Veste Ski Fusalp Vintage Rouge",
-                        description: "Idéale à porter avec un jean en mi saison. quelques défauts",
-                        size: sizes.sample,
+                        description: "Idéale à porter avec un jean en mi saison. quelques défauts, Attention taille un peu petit (36-38)!",
+                        size: "M",
                         brand: "fusalp",
                         category: "ski",
                         value: "80",
                         available: true,
-                        condition: condition.sample })
+                        condition: "usé" })
 fusalp1.owner = User.all.sample
 fusalp1.save!
 
 fusalp2 = Clothe.new({  name: "Manteau Ski Fusalp Homme Noir",
                         description: "A servi qu’une semaine de ski, tiens très chaud en haute montagne et poche pour le forfait intégré.",
-                        size: sizes.sample,
+                        size: "M",
                         brand: "fulsalp",
                         category: "ski",
                         value: "200",
                         available: true,
-                        condition: condition.sample })
+                        condition: "comme neuf" })
 fusalp2.owner = User.all.sample
 fusalp2.save!
 
 northface1 = Clothe.new({ name: "Manteau Ski The North Face Vert",
                           description: "Porté que 2 saisons dans les Alpes Françaises. Taille un peu grand et tiens très chaud en altitude !",
-                          size: sizes.sample,
+                          size: "M",
                           brand: "the north face",
                           category: "ski",
                           value: "140",
                           available: true,
-                          condition: condition.sample })
+                          condition: "comme neuf" })
 northface1.owner = User.all.sample
 northface1.save!
 
 northface2 = Clothe.new({ name: "Pantalon Ski The North Face orange",
-                          description: "serrage ceinture, ouvertures aération sur les cuisses. traces d'usures sur les chevilles.",
-                          size: sizes.sample,
+                          description: "serrage ceinture, ouvertures aération sur les cuisses. traces d'usures sur les chevilles. Taille grand",
+                          size: "S",
                           brand: "the north face",
                           category: "ski",
                           value: "50",
                           available: true,
-                          condition: condition.sample })
+                          condition: "usé" })
 northface2.owner = User.all.sample
 northface2.save!
 
@@ -154,7 +154,7 @@ salomon1 = Clothe.new({ name: "Casque Ski Salomon Noir",
                         category: "ski",
                         value: "25",
                         available: true,
-                        condition: condition.sample })
+                        condition: "usé" })
 salomon1.owner = User.all.sample
 salomon1.save!
 
@@ -165,7 +165,7 @@ salomon2 = Clothe.new({ name: "Pantalon Ski Salomon jaune ",
                         category: "ski",
                         value: "110",
                         available: true,
-                        condition: condition.sample })
+                        condition: "comme neuf"})
 salomon2.owner = User.all.sample
 salomon2.save!
 
