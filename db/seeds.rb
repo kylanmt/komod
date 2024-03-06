@@ -71,6 +71,7 @@ robe_test = Clothe.new({  name: "Robe Lacoste noire",
                           condition: condition.sample })
 
 robe_test.owner = ismael
+
 file = File.open(Rails.root.join("app/assets/images/robe-test.jpg"))
 robe_test.photos.attach(io: file, filename: "robe-test", content_type: "image/jpg")
 file = File.open(Rails.root.join("app/assets/images/robe-test2.jpg"))
