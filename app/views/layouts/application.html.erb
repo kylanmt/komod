@@ -10,9 +10,10 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body><%= render "shared/bars/navbar" %>
-<%= render "shared/flashes" %>
-
+  <body>
+    <%= render "shared/bars/navbar" %>
+    <%= render "shared/flashes" %>
+    
 <%# C'est juste un test à enlever %>
 <% Clothe.all.each do |clothe| %>
   <% clothe.photos.each do |photo| %>
@@ -21,8 +22,10 @@
 <% end %>
 <%# au dessus, les images marchent, vous pouvez supprimer %>
 
+    <div class="main-content">
+      <%= yield %>
+    </div>
 
-    <%= yield %>
-
+    <%= render "shared/bars/tapbar" %>
   </body>
 </html>
