@@ -170,8 +170,6 @@ salomon2 = Clothe.new({ name: "Pantalon Ski Salomon jaune ",
 salomon2.owner = User.all.sample
 salomon2.save!
 
-
-# AUTRES CATEGORIES
 # CATEGORIE DEGUISEMENT
 
 puts "début des seeds déguisement"
@@ -390,14 +388,14 @@ manteau9 = Clothe.new({ name: "Trench coat Coach",
 manteau9.owner = User.all.sample
 manteau9.save!
 
-manteau10 = Clothe.new({ name: "Trench Coach en cuir",
-                         description: "Porté quelques fois mais intact",
-                         size: sizes.sample,
-                         brand: "Coach",
-                         category: "manteau",
-                         value: "50",
-                         available: true,
-                         condition: condition.sample })
+manteau10 = Clothe.new({  name: "Trench Coach en cuir",
+                          description: "Porté quelques fois mais intact",
+                          size: sizes.sample,
+                          brand: "Coach",
+                          category: "manteau",
+                          value: "50",
+                          available: true,
+                          condition: condition.sample })
 manteau10.owner = User.all.sample
 manteau10.save!
 
@@ -416,14 +414,14 @@ accessoire1 = Clothe.new({ name: "sac à main  Michael Kors",
 accessoire1.owner = User.all.sample
 accessoire1.save!
 
-accessoire2 = Clothe.new({ name: "Lunettes rondes",
-                           description: "Tres belle lunettes ronde marron mikael korss. Ce n’est pas l’etui d’origine. Je l’ai cassé. Merci à vinted de ne pas supprimer mon annonce. Ce sont des originales. Numero de suivi sur la derniere photo.",
-                           size: sizes.sample,
-                           brand: "Michael Kors",
-                           category: "accessoires_femme",
-                           value: "25",
-                           available: true,
-                           condition: condition.sample })
+accessoire2 = Clothe.new({  name: "Lunettes rondes",
+                            description: "Tres belle lunettes ronde marron mikael korss. Ce n’est pas l’etui d’origine. Je l’ai cassé. Merci à vinted de ne pas supprimer mon annonce. Ce sont des originales. Numero de suivi sur la derniere photo.",
+                            size: sizes.sample,
+                            brand: "Michael Kors",
+                            category: "accessoires_femme",
+                            value: "25",
+                            available: true,
+                            condition: condition.sample })
 accessoire2.owner = User.all.sample
 accessoire2.save!
 
@@ -438,25 +436,25 @@ accessoire3 = Clothe.new({ name: "Sac Tory Burch",
 accessoire3.owner = User.all.sample
 accessoire3.save!
 
-accessoire4 = Clothe.new({ name: "Bottine Tory Burch",
-                           description: "Superbe paire de bottines Tory Burch en cuir marron, taille 39. Ces bottines sont à la fois élégantes et polyvalentes, parfaites pour compléter n'importe quelle tenue.",
-                           size: sizes.sample,
-                           brand: "Tory Burch",
-                           category: "accessoires_femme",
-                           value: "26",
-                           available: true,
-                           condition: condition.sample })
+accessoire4 = Clothe.new({  name: "Bottine Tory Burch",
+                            description: "Superbe paire de bottines Tory Burch en cuir marron, taille 39. Ces bottines sont à la fois élégantes et polyvalentes, parfaites pour compléter n'importe quelle tenue.",
+                            size: sizes.sample,
+                            brand: "Tory Burch",
+                            category: "accessoires_femme",
+                            value: "26",
+                            available: true,
+                            condition: condition.sample })
 accessoire4.owner = User.all.sample
 accessoire4.save!
 
-accessoire5 = Clothe.new({ name: "Sac à mains noir Longchamp",
-                           description: "Sac à mains Longchamp très bon état avec, Housse protection, Toujours rangé dans sa, boîte d’origine, Larg: 35 cm, Haut sans les anses : 25 cm, Anses : 11 cm",
-                           size: sizes.sample,
-                           brand: "Longchamp",
-                           category: "accessoires_femme",
-                           value: "30",
-                           available: true,
-                           condition: condition.sample })
+accessoire5 = Clothe.new({  name: "Sac à mains noir Longchamp",
+                            description: "Sac à mains Longchamp très bon état avec, Housse protection, Toujours rangé dans sa, boîte d’origine, Larg: 35 cm, Haut sans les anses : 25 cm, Anses : 11 cm",
+                            size: sizes.sample,
+                            brand: "Longchamp",
+                            category: "accessoires_femme",
+                            value: "30",
+                            available: true,
+                            condition: condition.sample })
 accessoire5.owner = User.all.sample
 accessoire5.save!
 
@@ -482,25 +480,25 @@ accesoire7 = Clothe.new({ name: "Bague avec pierre naturelle Agate",
 accesoire7.owner = User.all.sample
 accesoire7.save!
 
-accessoire8 = Clothe.new({ name: "Portefeuille swarovski en cuir rose",
-                           description: "Sublime portefeuille Swarovski en cuir rose, dans un état neuf. Ce portefeuille incarne l'élégance et le luxe, avec son cuir de haute qualité et ses détails scintillants en cristal Swarovski.",
-                           size: sizes.sample,
-                           brand: "Swarovski",
-                           category: "accessoires_femme",
-                           value: "15",
-                           available: true,
-                           condition: condition.sample })
+accessoire8 = Clothe.new({  name: "Portefeuille swarovski en cuir rose",
+                            description: "Sublime portefeuille Swarovski en cuir rose, dans un état neuf. Ce portefeuille incarne l'élégance et le luxe, avec son cuir de haute qualité et ses détails scintillants en cristal Swarovski.",
+                            size: sizes.sample,
+                            brand: "Swarovski",
+                            category: "accessoires_femme",
+                            value: "15",
+                            available: true,
+                            condition: condition.sample })
 accessoire8.owner = User.all.sample
 accessoire8.save!
 
-accessoire9 = Clothe.new({ name: "Charm caméléon qui change de couleur neuf",
-                           description: "Charm's caméléon qui change de couleur adaptable bracelet Pandora",
-                           size: sizes.sample,
-                           brand: "Pandora",
-                           category: "accessoires_femme",
-                           value: "7",
-                           available: true,
-                           condition: condition.sample })
+accessoire9 = Clothe.new({  name: "Charm caméléon qui change de couleur neuf",
+                            description: "Charm's caméléon qui change de couleur adaptable bracelet Pandora",
+                            size: sizes.sample,
+                            brand: "Pandora",
+                            category: "accessoires_femme",
+                            value: "7",
+                            available: true,
+                            condition: condition.sample })
 accessoire9.owner = User.all.sample
 accessoire9.save!
 
@@ -1148,14 +1146,14 @@ robemariee8 = Clothe.new({  name: "Robe Pépita – Eglantine",
 robemariee8.owner = User.all.sample
 robemariee8.save!
 
-robemariee9 = Clothe.new({ name: "Robe Vietnam – Eglantine Créations",
-                        description: "Vietnam est une robe fluide et délicate de couleur ivoire. Le bustier semi-transparent est couvert de fleurs.  Avec sa taille joliment marquée d’une ceinture, cette robe flattera la silhouettes.",
-                        size: "M",
-                        brand: "",
-                        category: "robemariee",
-                        value: "60",
-                        available: true,
-                        condition: "bon état" })
+robemariee9 = Clothe.new({  name: "Robe Vietnam – Eglantine Créations",
+                            description: "Vietnam est une robe fluide et délicate de couleur ivoire. Le bustier semi-transparent est couvert de fleurs.  Avec sa taille joliment marquée d’une ceinture, cette robe flattera la silhouettes.",
+                            size: "M",
+                            brand: "",
+                            category: "robemariee",
+                            value: "60",
+                            available: true,
+                            condition: "bon état" })
 robemariee9.owner = User.all.sample
 robemariee9.save!
 
@@ -1169,6 +1167,100 @@ robemariee10 = Clothe.new({ name: "Robe Vaucluse – Eglantine",
                             condition: "bon état" })
 robemariee10.owner = User.all.sample
 robemariee10.save!
+
+# CATEGORIE ACCESSOIRES HOMME
+
+puts "créations des seeds accessoires hommes"
+
+montrefossil = Clothe.new({ name: "Montre Fossil",
+                            description: "Montre fossil
+                            Fonction très bien
+                            Pile neuve très bon état",
+                            size: "M",
+                            brand: "Fossil",
+                            category: "accessoires_hommes",
+                            value: "52",
+                            available: true,
+                            condition: "bon état" })
+montrefossil.owner = User.all.sample
+montrefossil.save!
+
+chaussures1 = Clothe.new({  name: "Chaussures Cole haan taille 45",
+                            description: "Chaussures américaines tout terrain Cole Haan taille 44 prix boutique elles coutaient 350€ mais ils ont baissé les maintenant sa tourne au tour de 240 euro",
+                            size: "45",
+                            brand: "colehaan",
+                            category: "accessoires_homme",
+                            value: "100",
+                            available: true,
+                            condition: "correct" })
+chaussures1.owner = User.all.sample
+chaussures1.save!
+
+chaussures2 = Clothe.new({  name: "Chaussure Cole haan",
+                            description: "Chaussures cole haan originale en excellent état porté quelques fois taille 43",
+                            size: "43",
+                            brand: "colehaan",
+                            category: "accessoires_homme",
+                            value: "29",
+                            available: true,
+                            condition: "comme neuf" })
+chaussures2.owner = User.all.sample
+chaussures2.save!
+
+montrefossil2 = Clothe.new({  name: "Montre Fossil bracelet cuire",
+                              description: "Montre Fossil la pile est a changer sinon elle tourne normalement. Le bracelet en cuire a un peu travaillé",
+                              size: "M",
+                              brand: "fossil",
+                              category: "accessoire_homme",
+                              value: "15",
+                              available: true,
+                              condition: condition.sample })
+montrefossil2.owner = User.all.sample
+montrefossil2.save!
+
+portefeuille = Clothe.new({ name: "Portefeuille Tommy Hilfiger",
+                            description: "Superbe portefeuille Tommy Hilfiger en cuir véritable, parfait pour ajouter une touche de style à votre quotidien. Ce portefeuille présente le logo emblématique de Tommy Hilfiger et offre amplement d'espace pour vos cartes, votre argent liquide et autres petits objets essentiels.",
+                            size: "",
+                            brand: "tommyhilfiger",
+                            category: "accessoires_homme",
+                            value: "35",
+                            available: true,
+                            condition: "bon état" })
+portefeuille.owner = User.all.sample
+portefeuille.save!
+
+ceinture1 = Clothe.new({  name: "Ceinture Tommy Hilfiger",
+                          description: "Ceinture apporte une touche de style et d'élégance à toutes vos tenues. Fabriquée avec des matériaux de haute qualité, elle est à la fois durable et tendance. Le logo emblématique de Tommy Hilfiger est discrètement gravé sur la boucle",
+                          size: sizes.sample,
+                          brand: "tommyhilfiger",
+                          category: "accessoires_homme",
+                          value: "23",
+                          available: true,
+                          condition: "bon état" })
+ceinture1.owner = User.all.sample
+ceinture1.save!
+
+montrehugoboss = Clothe.new({ name: "Hugo Boss montre homme",
+                              description: "Une montre pour hommes Hugo Boss portée deux fois seulement, dans un état neuf. Elle fonctionne très bien, mais la batterie doit être changée.",
+                              size: "",
+                              brand: "hugoboss",
+                              category: "accessoires_homme",
+                              value: "80",
+                              available: true,
+                              condition: condition.sample })
+montrehugoboss.owner = User.all.sample
+montrehugoboss.save!
+
+cravate = Clothe.new({  name: "Cravate Hugo Boss",
+                        description: "Cravate bleue de belle qualité qui mettra en valeur votre costume",
+                        size: "",
+                        brand: "hugoboss",
+                        category: "accessoires_homme",
+                        value: "40",
+                        available: true,
+                        condition: condition.sample })
+cravate.owner = User.all.sample
+cravate.save!
 
 # ATTACHEMENT DES PHOTOS AUX SEEDS
 
