@@ -61,7 +61,7 @@ end
 # CREATION DES VETEMENTS (SANS OWNER, CONDITION ET TAILLE ALEATOIRES )
 
 sizes = %w[XS S M L XL XXL XXXL]
-condition = ["bon état", "très bon état", "comme neuf"]
+condition = ["usé", "bon état", "très bon état", "comme neuf"]
 
 # template = Clothe.new({ name: "",
 #                         description: "",
@@ -99,54 +99,51 @@ end
 
 # attach_images_to_clothe(clothe)
 
-# template.owner = User_name (ex: emma)
-# template.save!
-
 # pour antoine -> find . -name "*Zone.Identifier" -type f -delete
 
 # CATEGORIE SKI
 
 fusalp1 = Clothe.new({  name: "Veste Ski Fusalp Vintage Rouge",
-                        description: "Idéale à porter avec un jean en mi saison. quelques défauts",
-                        size: sizes.sample,
+                        description: "Idéale à porter avec un jean en mi saison. quelques défauts, Attention taille un peu petit (36-38)!",
+                        size: "M",
                         brand: "fusalp",
                         category: "ski",
                         value: "80",
                         available: true,
-                        condition: condition.sample })
+                        condition: "usé" })
 fusalp1.owner = User.all.sample
 fusalp1.save!
 
 fusalp2 = Clothe.new({  name: "Manteau Ski Fusalp Homme Noir",
                         description: "A servi qu’une semaine de ski, tiens très chaud en haute montagne et poche pour le forfait intégré.",
-                        size: sizes.sample,
+                        size: "M",
                         brand: "fulsalp",
                         category: "ski",
                         value: "200",
                         available: true,
-                        condition: condition.sample })
+                        condition: "comme neuf" })
 fusalp2.owner = User.all.sample
 fusalp2.save!
 
 northface1 = Clothe.new({ name: "Manteau Ski The North Face Vert",
                           description: "Porté que 2 saisons dans les Alpes Françaises. Taille un peu grand et tiens très chaud en altitude !",
-                          size: sizes.sample,
+                          size: "M",
                           brand: "the north face",
                           category: "ski",
                           value: "140",
                           available: true,
-                          condition: condition.sample })
+                          condition: "comme neuf" })
 northface1.owner = User.all.sample
 northface1.save!
 
 northface2 = Clothe.new({ name: "Pantalon Ski The North Face orange",
-                          description: "serrage ceinture, ouvertures aération sur les cuisses. traces d'usures sur les chevilles.",
-                          size: sizes.sample,
+                          description: "serrage ceinture, ouvertures aération sur les cuisses. traces d'usures sur les chevilles. Taille grand",
+                          size: "S",
                           brand: "the north face",
                           category: "ski",
                           value: "50",
                           available: true,
-                          condition: condition.sample })
+                          condition: "usé" })
 northface2.owner = User.all.sample
 northface2.save!
 
@@ -157,7 +154,7 @@ salomon1 = Clothe.new({ name: "Casque Ski Salomon Noir",
                         category: "ski",
                         value: "25",
                         available: true,
-                        condition: condition.sample })
+                        condition: "usé" })
 salomon1.owner = User.all.sample
 salomon1.save!
 
@@ -168,7 +165,7 @@ salomon2 = Clothe.new({ name: "Pantalon Ski Salomon jaune ",
                         category: "ski",
                         value: "110",
                         available: true,
-                        condition: condition.sample })
+                        condition: "comme neuf"})
 salomon2.owner = User.all.sample
 salomon2.save!
 
@@ -537,6 +534,181 @@ ralph_lauren1 = Clothe.new({  name: "Le blazer iconique en laine chamoisée",
 ralph_lauren1.owner = User.all.sample
 ralph_lauren1.save!
 
+patagonia1 = Clothe.new({ name: "Veste Polaire Patagonia Beige",
+                          description: "Achetée au Japon, Taille M pour homme (correspondrait à un L Femme) Polaire mixte très chaude.",
+                          size: "M",
+                          brand: "patagonia",
+                          category: "ski",
+                          value: "90",
+                          available: true,
+                          condition: "comme neuf" })
+patagonia1.owner = User.all.sample
+patagonia1.save!
+
+patagonia2 = Clothe.new({ name: "Veste Patagonia Bleu",
+                          description: "Veste parfait pour le trekking, traces d’usures naturelles et super coupe-vent.",
+                          size: "S",
+                          brand: "patagonia",
+                          category: "ski",
+                          value: "65",
+                          available: true,
+                          condition: "usé" })
+patagonia2.owner = User.all.sample
+patagonia2.save!
+
+rossignol1 = Clothe.new({ name: "Pantalon Ski Rossignol noir",
+                          description: "Cadeau que je n'ai jamais porté car trop serré à la taille, très chaud et taille juste bien.",
+                          size: "L",
+                          brand: "rossignol",
+                          category: "ski",
+                          value: "70",
+                          available: true,
+                          condition: "comme neuf" })
+rossignol1.owner = User.all.sample
+rossignol1.save!
+
+rossignol2 = Clothe.new({ name: "Manteau Ski Rossignol Bleu ",
+                          description: "Portée 3 fois, très bon état, couleur bleu canard. Taille bien pour un XL, très bonne épaisseur.",
+                          size: "XL",
+                          brand: "rossignol",
+                          category: "ski",
+                          value: "90",
+                          available: true,
+                          condition: "comme neuf" })
+rossignol2.owner = User.all.sample
+rossignol2.save!
+
+# CATEGORIE SWEET
+
+sweetralphlauren1 = Clothe.new({  name: "Sweet à capuche Ralph Lauren beige",
+                                  description: "Porter quelques fois, reste en très bon état, aucune tache ni trou.",
+                                  size: "L",
+                                  brand: "raplhlauren",
+                                  category: "sweet",
+                                  value: "60",
+                                  available: true,
+                                  condition: "comme neuf" })
+sweetralphlauren1.owner = User.all.sample
+sweetralphlauren1.save!
+
+sweetralphlauren2 = Clothe.new({  name: "Pull Ralph lauren bleu XL",
+                                  description: "porté quelques fois mais en très bon état 0 défaut, 100% authentique,  taille XL, logo brodé",
+                                  size: "XL",
+                                  brand: "ralphlauren",
+                                  category: "sweet",
+                                  value: "45",
+                                  available: true,
+                                  condition: "comme neuf"})
+sweetralphlauren2.owner = User.all.sample
+sweetralphlauren2.save!
+
+sweetabercrombie1 = Clothe.new({  name: "Sweet XXL Abercrombie et fitch",
+                                  description: "Sweet XXL Abercombie et fitch blanc beige, très bon état",
+                                  size: "XXL",
+                                  brand: "abercombie",
+                                  category: "sweet",
+                                  value: "20",
+                                  available: true,
+                                  condition: "comme neuf" })
+sweetabercrombie1.owner = User.all.sample
+sweetabercrombie1.save!
+
+sweetabercrombie2 = Clothe.new({  name: "Sweet à capuche Abercrombie et fitch",
+                                  description: "taille bien , en bon état",
+                                  size: "XS",
+                                  brand: "abercombie",
+                                  category: "sweet",
+                                  value: "7",
+                                  available: true,
+                                  condition: "usé" })
+sweetabercrombie2.owner = User.all.sample
+sweetabercrombie2.save!
+
+sweetlacoste1 = Clothe.new({  name: "Veste lacoste rouge S",
+                              description: "Sweet zippé Lacoste Rouge En bon état Taille S Pour plus d'information ou de photo n'hésité pas.",
+                              size: "S",
+                              brand: "lacoste",
+                              category: "sweet",
+                              value: "45",
+                              available: true,
+                              condition: "usé" })
+sweetlacoste1.owner = User.all.sample
+sweetlacoste1.save!
+
+sweetlacoste2 = Clothe.new({  name: "Veste lacoste verte",
+                              description: "Sweet à capuche Lacoste vert. En très bon état, porter quelques fois. Facture à l'appui",
+                              size: "S",
+                              brand: "lacoste",
+                              category: "sweet",
+                              value: "75",
+                              available: true,
+                              condition: "comme neuf" })
+sweetlacoste2.owner = User.all.sample
+sweetlacoste2.save!
+
+sweetgucci1 = Clothe.new({  name: "Veste Gucci bleue M",
+                            description: "Sweet gucci homme, Taille M. Très peu porté en très bon état aucun défaut",
+                            size: "M",
+                            brand: "gucci",
+                            category: "sweet",
+                            value: "280",
+                            available: true,
+                            condition: "comme neuf" })
+sweetgucci1.owner = User.all.sample
+sweetgucci1.save!
+
+sweetgucci2 = Clothe.new({  name: "Sweet Gucci noir Tigre",
+                            description: "Sweet Gucci Made in Italy , très bon état",
+                            size: "L",
+                            brand: "gucci",
+                            category: "sweet",
+                            value: "225",
+                            available: true,
+                            condition: "comme neuf" })
+sweetgucci2.owner = User.all.sample
+sweetgucci2.save!
+
+sweetsaintjames1 = Clothe.new({ name: "Pull rayé Saint James T3XL",
+                                description: "Très bel état, tout petit défaut à un poignet. Largeur épaules 56 cm. Largeur aisselles 68 cm. Longueur 70 cm",
+                                size: "XXXL",
+                                brand: "saintjames",
+                                category: "sweet",
+                                value: "42",
+                                available: true,
+                                condition: "comme neuf" })
+sweetsaintjames1.owner = User.all.sample
+sweetsaintjames1.save!
+
+sweetsaintjames2 = Clothe.new({ name: "Pull vintage saint james",
+                                description: "Pull vintage saintiamesvintage à rayures
+
+                                Description
+
+                                - taille M
+
+                                - état satisfaisant
+
+                                -Saint James made in France
+
+                                - Couleurs: beige et bleu marine
+
+                                - Boutons col pull
+
+                                - Matière épaisse",
+                                size: "M",
+                                brand: "saintjames",
+                                category: "sweet",
+                                value: "15",
+                                available: true,
+                                condition: "usé" })
+sweetsaintjames2.owner = User.all.sample
+sweetsaintjames2.save!
+
+# .
+# .
+# .
+# .
+# .
 # ATTACHEMENT DES PHOTOS AUX SEEDS
 
 clothes = Clothe.all
