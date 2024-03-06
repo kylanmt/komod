@@ -169,6 +169,50 @@ salomon2 = Clothe.new({ name: "Pantalon Ski Salomon jaune ",
 salomon2.owner = User.all.sample
 salomon2.save!
 
+patagonia1 = Clothe.new({ name: "Veste Polaire Patagonia Beige",
+                          description: "Achetée au Japon, Taille M pour homme (correspondrait à un L Femme) Polaire mixte très chaude.",
+                          size: "M",
+                          brand: "patagonia",
+                          category: "ski",
+                          value: "90",
+                          available: true,
+                          condition: "comme neuf" })
+patagonia1.owner = User.all.sample
+patagonia1.save!
+
+patagonia2 = Clothe.new({ name: "Veste Patagonia Bleu",
+                          description: "Veste parfait pour le trekking, traces d’usures naturelles et super coupe-vent.",
+                          size: "S",
+                          brand: "patagonia",
+                          category: "ski",
+                          value: "65",
+                          available: true,
+                          condition: "usé" })
+patagonia2.owner = User.all.sample
+patagonia2.save!
+
+rossignol1 = Clothe.new({ name: "Pantalon Ski Rossignol noir",
+                          description: "Cadeau que je n'ai jamais porté car trop serré à la taille, très chaud et taille juste bien.",
+                          size: "L",
+                          brand: "rossignol",
+                          category: "ski",
+                          value: "70",
+                          available: true,
+                          condition: "comme neuf" })
+rossignol1.owner = User.all.sample
+rossignol1.save!
+
+rossignol2 = Clothe.new({ name: "Manteau Ski Rossignol Bleu ",
+                          description: "Portée 3 fois, très bon état, couleur bleu canard. Taille bien pour un XL, très bonne épaisseur.",
+                          size: "XL",
+                          brand: "rossignol",
+                          category: "ski",
+                          value: "90",
+                          available: true,
+                          condition: "comme neuf" })
+rossignol2.owner = User.all.sample
+rossignol2.save!
+
 # AUTRES CATEGORIES
 # .
 # .
