@@ -71,6 +71,8 @@ condition = ["bon état", "très bon état", "comme neuf"]
 #                         value: "",
 #                         available: true,
 #                         condition: condition.sample })
+# template.owner = User.all.sample
+# template.save!
 
 # POUR UNE IMAGE
 
@@ -170,12 +172,371 @@ salomon2 = Clothe.new({ name: "Pantalon Ski Salomon jaune ",
 salomon2.owner = User.all.sample
 salomon2.save!
 
-# AUTRES CATEGORIES
-# .
-# .
-# .
-# .
-# .
+# CATEGORIE ROBE
+maje1 = Clothe.new({  name: "Robe asymétrique Maje",
+                      description: "Robe Maje bleue. Le col est asymétrique et a effet drapé. ",
+                      size: "S",
+                      brand: "maje",
+                      category: "robe",
+                      value: "40",
+                      available: true,
+                      condition: condition.sample })
+maje1.owner = User.all.sample
+maje1.save!
+
+maje2 = Clothe.new({  name: "Robe noire",
+                      description: "Robe neuve avec étiquette en taille S. Cette robe provient d’une boutique MAJE et est noire avec des pois en matière style velours et petits strass brillant argentées avec des bretelles reliées par le logo dorée. Il y a une doublure et des ouvertures sur les côtés.  ",
+                      size: sizes.sample,
+                      brand: "maje",
+                      category: "robe",
+                      value: "80",
+                      available: true,
+                      condition: condition.sample })
+maje2.owner = User.all.sample
+maje2.save!
+
+bash1 = Clothe.new({  name: "Robe Bash noire et dorée",
+                      description: "Robe courte noire et dorée de chez Bash En parfait état  Parfaite pour une soirée ou un réveillon",
+                      size: sizes.sample,
+                      brand: "bash",
+                      category: "robe",
+                      value: "60",
+                      available: true,
+                      condition: condition.sample })
+bash1.owner = User.all.sample
+bash1.save!
+
+bash2 = Clothe.new({  name: "Magnifique robe bash",
+                      description: "Bonjour, Je fais un énorme tri dans dans nos dressings !n’hésitez pas à vous abonner ! :) Magnifique robe long Ba&sh. Longue style portefeuille, très agréable à porter et beau rendu à la marche puisque fluide. Je fais 1m70. Robe de soirée ou de tous les jours avec un perfecto et des Docs ;)  État neuf portée une fois.",
+                      size: sizes.sample,
+                      brand: "bash",
+                      category: "robe",
+                      value: "50",
+                      available: true,
+                      condition: condition.sample })
+bash2.owner = User.all.sample
+bash2.save!
+
+valentino1 = Clothe.new({ name: "Robe de soirée rare Valentino",
+                          description: "La robe est une taille 38 IT/ 36 FR et c'est comme neuf. Plus de photos en mp si demandé sans souci. Cette robe est parfaite pour une celebration de nouvel an ou un gala. 100% authentique",
+                          size: sizes.sample,
+                          brand: "valentino",
+                          category: "robe",
+                          value: "1000",
+                          available: true,
+                          condition: condition.sample })
+valentino1.owner = User.all.sample
+valentino1.save!
+
+valentino2 = Clothe.new({ name: "Robe de soirée Valentino",
+                          description: "Robe vintage Valentino en mélange de viscose, acétate et élasthanne. La longueur est de 150 cm, poitrine 42, taille 30, hanches 42. Je précise que la doublure intérieure a été préalablement raccourcie et je signale également quelques fils tirés près de l'étiquette et quelques marques en bas de la robe. A rafraîchir. En très bon état général.",
+                          size: sizes.sample,
+                          brand: "valentino",
+                          category: "robe",
+                          value: "850",
+                          available: true,
+                          condition: condition.sample })
+valentino2.owner = User.all.sample
+valentino2.save!
+
+louis_vuitton1 = Clothe.new({ name: "Robe drapée Louis Vuitton",
+                              description: "Couleur Champagne, en viscose souple, avec un joli détail en cordage sur le devant.",
+                              size: sizes.sample,
+                              brand: "louis vuitton",
+                              category: "robe",
+                              value: "450",
+                              available: true,
+                              condition: condition.sample })
+louis_vuitton1.owner = User.all.sample
+louis_vuitton1.save!
+
+louis_vuitton2 = Clothe.new({ name: "Robe Louis Vuitton coupe ample",
+                              description: "Robe élégante portée une fois",
+                              size: sizes.sample,
+                              brand: "louis vuitton",
+                              category: "robe",
+                              value: "700",
+                              available: true,
+                              condition: condition.sample })
+louis_vuitton2.owner = User.all.sample
+louis_vuitton2.save!
+
+prada1 = Clothe.new({ name: "Robe élégante",
+                      description: "Robe éléguante en soie avec plissé, taille petit , sans fermeture éclaire",
+                      size: sizes.sample,
+                      brand: "prada",
+                      category: "robe",
+                      value: "250",
+                      available: true,
+                      condition: condition.sample })
+prada1.owner = User.all.sample
+prada1.save!
+
+prada2 = Clothe.new({ name: "Robe Prada",
+                      description: "Robe texturé noire, avec des strass. ",
+                      size: sizes.sample,
+                      brand: "prada",
+                      category: "robe",
+                      value: "550",
+                      available: true,
+                      condition: condition.sample })
+prada2.owner = User.all.sample
+prada2.save!
+
+# CATEGORIE PANTALON
+
+wrangler1 = Clothe.new({  name: "Jean Wrangler bleu",
+                          description: "pantalon work pants denim jean large charpentier carpenter baggy coupe droite hiver trousser france campagne street sport skate vieux old travail young vintage jolie soins rare grand american us usa etasunis Amérique fripe ville européen long unis motifs basique classe ",
+                          size: sizes.sample,
+                          brand: "wrangler",
+                          category: "pantalon",
+                          value: "10",
+                          available: true,
+                          condition: condition.sample })
+wrangler1.owner = User.all.sample
+wrangler1.save!
+
+wrangler2 = Clothe.new({  name: "Jean Wrangler bleu clair",
+                          description: "pantalon work pants denim jean large charpentier carpenter baggy coupe droite hiver trousser france campagne street sport skate vieux old travail young vintage jolie soins rare grand american us usa etasunis Amérique fripe ville européen long unis ",
+                          size: sizes.sample,
+                          brand: "wrangler",
+                          category: "pantalon",
+                          value: "8",
+                          available: true,
+                          condition: condition.sample })
+wrangler2.owner = User.all.sample
+wrangler2.save!
+
+carhartt1 = Clothe.new({  name: "Pantalon Carhartt",
+                          description: "Pantalon carhartt - usure normale taille 26 x 30",
+                          size: sizes.sample,
+                          brand: "carhartt",
+                          category: "pantalon",
+                          value: "15",
+                          available: true,
+                          condition: condition.sample })
+carhartt1.owner = User.all.sample
+carhartt1.save!
+
+carhartt2 = Clothe.new({  name: "pantalon beige",
+                          description: "taille bien",
+                          size: sizes.sample,
+                          brand: "carhartt",
+                          category: "pantalon",
+                          value: "20",
+                          available: true,
+                          condition: condition.sample })
+carhartt2.owner = User.all.sample
+carhartt2.save!
+
+levis1 = Clothe.new({   name: "Jean Levis femme 524 too superlow",
+                        description: "Explorez l'ultime révolution de la mode avec notre Jean Levis femme 524 Too Superlow, la pièce incontournable qui fusionne l'extravagance et le confort. Conçu pour les âmes audacieuses, ce jean incarne la définition même du style avant-gardiste.",
+                        size: sizes.sample,
+                        brand: "levis",
+                        category: "pantalon",
+                        value: "27",
+                        available: true,
+                        condition: condition.sample })
+levis1.owner = User.all.sample
+levis1.save!
+
+levis2 = Clothe.new({   name: "Jean Levis",
+                        description: "Jean légèrement usé vers le bas. Taille 34. Jean taille basse légèrement évasé.",
+                        size: sizes.sample,
+                        brand: "levis",
+                        category: "pantalon",
+                        value: "10",
+                        available: true,
+                        condition: condition.sample })
+levis2.owner = User.all.sample
+levis2.save!
+
+sandro1 = Clothe.new({  name: "Pantalon Sandro Paris",
+                        description: "Acheter sur Vinted taille 40 mais taille petite",
+                        size: sizes.sample,
+                        brand: "sandro",
+                        category: "pantalon",
+                        value: "15",
+                        available: true,
+                        condition: condition.sample })
+sandro1.owner = User.all.sample
+sandro1.save!
+
+sandro2 = Clothe.new({  name: "Pantalon Sandro",
+                        description: "Pantalon large Sandro, Fermeture zip côté, 2 poches à l avant et à l’arrière,6 boutons à l avant qui s’ouvrent, Quelques défaut d’usure sur le devant mais peu visible malgré tout",
+                        size: sizes.sample,
+                        brand: "sandro",
+                        category: "pantalon",
+                        value: "8",
+                        available: true,
+                        condition: condition.sample })
+sandro2.owner = User.all.sample
+sandro2.save!
+
+axel_arigato1 = Clothe.new({  name: "Pantalon Axel Arigato",
+                              description: "Pantalon femme, de la marque Axel Arigato (édition Keith Haring), de couleur noire, avec gomme sur le bas.",
+                              size: sizes.sample,
+                              brand: "Axel Arigato",
+                              category: "pantalon",
+                              value: "45",
+                              available: true,
+                              condition: condition.sample })
+axel_arigato1.owner = User.all.sample
+axel_arigato1.save!
+
+axel_arigato2 = Clothe.new({  name: "Pantalon cargo Axel Arigato",
+                              description: "Pantalon cargo beige #homme",
+                              size: sizes.sample,
+                              brand: "Axel Arigato",
+                              category: "pantalon",
+                              value: "100",
+                              available: true,
+                              condition: condition.sample })
+axel_arigato2.owner = User.all.sample
+axel_arigato2.save!
+
+# CATEGORIE COSTUME
+
+de_fursac1 = Clothe.new({ name: "Veste Croisée 6 sur 1",
+                          description: "📣 Découvrez le summum du style français avec cette veste croisée, une pièce emblématique pour tout amateur d'art sartorial ! 📣",
+                          size: sizes.sample,
+                          brand: "de fursac",
+                          category: "costume",
+                          value: "75",
+                          available: true,
+                          condition: condition.sample })
+de_fursac1.owner = User.all.sample
+de_fursac1.save!
+
+de_fursac2 = Clothe.new({ name: "Blazer noir Canali",
+                          description: "très belle veste sport noire (Taille 52) 👔",
+                          size: sizes.sample,
+                          brand: "de fursac",
+                          category: "costume",
+                          value: "70",
+                          available: true,
+                          condition: condition.sample })
+de_fursac2.owner = User.all.sample
+de_fursac2.save!
+
+boss1 = Clothe.new({  name: "costume rayé hugo boss",
+                      description: "- Couleur anthracite rayé, voir photos (la couleur sur les photos se rapproche le plus possible de la réalité mais il se peut qu'il y ai de minimes différences de teintes).
+                      - 100% pure laine vierge.
+                      - Tissu souple.
+                      - Doublure satinée.
+                      - Fermeture par 2 boutons.
+                      - Manches longues avec poignets boutonnés.
+                      - 4 poches extérieures.
+                      - 3 poches intérieures.
+                      - Fines épaulettes pour un maintien impeccable.
+                      - Coupe cintrée.
+                      - 2 fentes derrière.
+                      - Splendide conception.",
+                      size: sizes.sample,
+                      brand: "boss",
+                      category: "costume",
+                      value: "190",
+                      available: true,
+                      condition: condition.sample })
+boss1.owner = User.all.sample
+boss1.save!
+
+boss2 = Clothe.new({  name: "Veste Hugo boss",
+                      description: "Très bon état",
+                      size: sizes.sample,
+                      brand: "boss",
+                      category: "costume",
+                      value: "10",
+                      available: true,
+                      condition: condition.sample })
+boss2.owner = User.all.sample
+boss2.save!
+
+calvin_klein1 = Clothe.new({  name: "Veste de costume Noire Calvin",
+                              description: "Costume Calvin Klein 50 rayé
+                              Costume en parfait état
+                              Taille grand, plutôt 52 en veste et 42 en pantalon",
+                              size: sizes.sample,
+                              brand: "Calvin Klein",
+                              category: "costume",
+                              value: "30",
+                              available: true,
+                              condition: condition.sample })
+calvin_klein1.owner = User.all.sample
+calvin_klein1.save!
+
+calvin_klein2 = Clothe.new({  name: "Veste de costume Calvin Klein",
+                              description: "Taille 50
+                              Noir
+                              Laine super 100
+                              Le pantalon ayant un petit accro dans le bas de jambe, il sera donné avec la veste",
+                              size: sizes.sample,
+                              brand: "Calvin klein",
+                              category: "costume",
+                              value: "20",
+                              available: true,
+                              condition: condition.sample })
+calvin_klein2.owner = User.all.sample
+calvin_klein2.save!
+
+burberry1 = Clothe.new({  name: "Veste de costume classique Burberry",
+                          description: "Veste de costume classique à deux boutons. Taille 54 (S).
+                          Neuf sans étiquette.",
+                          size: sizes.sample,
+                          brand: "burberry",
+                          category: "costume",
+                          value: "25",
+                          available: true,
+                          condition: condition.sample })
+burberry1.owner = User.all.sample
+burberry1.save!
+
+burberry2 = Clothe.new({  name: "Veste de costume classique à deux boutons.",
+                          description: "🔥État: 9.5/10
+                          🔥Taille: L/52
+
+                          Composition : 100% Laine
+
+                          Fabriqué aux USA
+
+                          Largeur épaule à épaule: 47cm
+                          Largeur aisselle à aisselle: 55cm
+                          Longueur Dos: 85cm
+                          Largeur au niveau du bouton: 54cm
+                          Longueur de la manche: 64cm
+
+                          Vrl14",
+                          size: sizes.sample,
+                          brand: "burberry",
+                          category: "costume",
+                          value: "150",
+                          available: true,
+                          condition: condition.sample })
+burberry2.owner = User.all.sample
+burberry2.save!
+
+ralph_lauren1 = Clothe.new({  name: "Blazer",
+                              description: "Beau blazer jamais porté, taille L/52",
+                              size: sizes.sample,
+                              brand: "ralph lauren",
+                              category: "costume",
+                              value: "22",
+                              available: true,
+                              condition: condition.sample })
+ralph_lauren1.owner = User.all.sample
+ralph_lauren1.save!
+
+ralph_lauren1 = Clothe.new({  name: "Le blazer iconique en laine chamoisée",
+                              description: "En tant que pièce maîtresse indispensable du look Ralph Lauren, notre blazer Polo emblématique est le résultat de l'application de traditions ancestrales pour des décennies de design impeccable. ",
+                              size: sizes.sample,
+                              brand: "ralph lauren",
+                              category: "costume",
+                              value: "300",
+                              available: true,
+                              condition: condition.sample })
+ralph_lauren1.owner = User.all.sample
+ralph_lauren1.save!
+
 # ATTACHEMENT DES PHOTOS AUX SEEDS
 
 clothes = Clothe.all
