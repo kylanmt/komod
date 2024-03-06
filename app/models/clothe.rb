@@ -6,8 +6,8 @@ class Clothe < ApplicationRecord
   # has_many :likers, through: :likes, source: :user
 
   validates :name, presence: true, length: { minimum: 3, maximum: 50 }
-  validates :description, presence: true, length: { maximum: 500 }
-  validates :size, presence: true # (future toggle list)
+  validates :description, presence: true, length: { maximum: 1000 }
+  # validates :size, presence: true (future toggle list)
   validates :category, presence: true # (future toggle list)
   validates :condition, presence: true # (future toggle list)
 end
