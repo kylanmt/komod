@@ -14,9 +14,11 @@
 <%= render "shared/flashes" %>
 
 <%# C'est juste un test à enlever %>
-  <% Clothe.first.photos.each do |photo| %>
+<% Clothe.all.each do |clothe| %>
+  <% clothe.photos.each do |photo| %>
     <%= cl_image_tag(photo.key, width: 400, height: 300, crop: :fill) %>
   <% end %>
+<% end %>
 <%# au dessus, les images marchent, vous pouvez supprimer %>
 
 
