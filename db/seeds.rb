@@ -102,6 +102,7 @@ end
 # pour antoine -> find . -name "*Zone.Identifier" -type f -delete
 
 # CATEGORIE SKI
+puts "création des seeds ski"
 
 fusalp1 = Clothe.new({  name: "Veste Ski Fusalp Vintage Rouge",
                         description: "Idéale à porter avec un jean en mi saison. quelques défauts, Attention taille un peu petit (36-38)!",
@@ -924,6 +925,7 @@ rossignol2.owner = User.all.sample
 rossignol2.save!
 
 # CATEGORIE SWEET
+puts "création des seeds sweet"
 
 sweetralphlauren1 = Clothe.new({  name: "Sweet à capuche Ralph Lauren beige",
                                   description: "Porter quelques fois, reste en très bon état, aucune tache ni trou.",
@@ -1049,16 +1051,131 @@ sweetsaintjames2 = Clothe.new({ name: "Pull vintage saint james",
 sweetsaintjames2.owner = User.all.sample
 sweetsaintjames2.save!
 
-# .
-# .
-# .
-# .
-# .
+# CATEGORIE ROBE MARIEE
+puts "création des seeds robe de mariee"
+
+robemariee1 = Clothe.new({  name: "Robe de mariée portée 1 fois",
+                            description: "Robe de mariée
+                            Ivoire
+                            Mousseline
+                            Débardeur
+                            Dentelle au dos
+                            Portée 1/2 heure pour photos",
+                            size: "M",
+                            brand: "",
+                            category: "robemariee",
+                            value: "50",
+                            available: true,
+                            condition: "comme neuf" })
+robemariee1.owner = User.all.sample
+robemariee1.save!
+
+robemariee2 = Clothe.new({  name: "Belle robe de mariée",
+                            description: "Cette robe est un rêve devenu réalité, avec sa silhouette élégante et sa dentelle délicate. La robe présente un corsage ajusté qui met en valeur la silhouette, tandis que la jupe fluide ajoute une touche de grâce et de romantisme.",
+                            size: "M",
+                            brand: "",
+                            category: "robemariee",
+                            value: "40",
+                            available: true,
+                            condition: "bon état" })
+robemariee2.owner = User.all.sample
+robemariee2.save!
+
+robemariee3 = Clothe.new({  name: "Robe longue mariée bohème dentelle",
+                            description: "Robe en parfait état.
+                            Porter une fois pour une séance photo",
+                            size: "M",
+                            brand: "",
+                            category: "robemariee",
+                            value: "25",
+                            available: true,
+                            condition: "comme neuf" })
+robemariee3.owner = User.all.sample
+robemariee3.save!
+
+robemariee4 = Clothe.new({  name: "Robe Eva e lola",
+                            description: "Neuve avec étiquette. Elle est doublée. La couleur est blanc crème",
+                            size: "L",
+                            brand: "",
+                            category: "robemariee",
+                            value: "20",
+                            available: true,
+                            condition: "comme neuf" })
+robemariee4.owner = User.all.sample
+robemariee4.save!
+
+robemariee5 = Clothe.new({  name: "Magnifique Robe de Mariée Blanche",
+                            description: "Robe de mariée jamais portée état neuf",
+                            size: "M",
+                            brand: "",
+                            category: "robemariee",
+                            value: "65",
+                            available: true,
+                            condition: "comme neuf"})
+robemariee5.owner = User.all.sample
+robemariee5.save!
+
+robemariee6 = Clothe.new({  name: "Robe Sibylle – Sincerity",
+                            description: "Sibylle est une robe de forme A-line, de couleur ivoire. Elle se compose d’un corsage en dentelle de Chantilly recouvert de perles et d’une jupe en tulle. La traîne chapelle donne du charme à la robe. Sibylle est une robe résolument romantique !",
+                            size: "M",
+                            brand: "",
+                            category: "robemariee",
+                            value: "90",
+                            available: true,
+                            condition: "bon état" })
+robemariee6.owner = User.all.sample
+robemariee6.save!
+
+robemariee7 = Clothe.new({  name: "Elégante robe de mariée",
+                            description: "Jade est une robe de style princesse. Le haut est en dentelle et le bas en tulle. La ceinture est amovible. Son laçage permet de l’ajuster facilement. Une robe de mariée à l’allure romantique !",
+                            size: "M",
+                            brand: "",
+                            category: "robemariee",
+                            value: "80",
+                            available: true,
+                            condition: "bon état" })
+robemariee7.owner = User.all.sample
+robemariee7.save!
+
+robemariee8 = Clothe.new({  name: "Robe Pépita – Eglantine",
+                            description: "Eléganza est une robe courte, de couleur ivoire. Elle est recouverte de dentelle et agrémentée d’une fine ceinture.",
+                            size: "M",
+                            brand: "",
+                            category: "robemariee",
+                            value: "70",
+                            available: true,
+                            condition: "comme neuf" })
+robemariee8.owner = User.all.sample
+robemariee8.save!
+
+robemariee9 = Clothe.new({ name: "Robe Vietnam – Eglantine Créations",
+                        description: "Vietnam est une robe fluide et délicate de couleur ivoire. Le bustier semi-transparent est couvert de fleurs.  Avec sa taille joliment marquée d’une ceinture, cette robe flattera la silhouettes.",
+                        size: "M",
+                        brand: "",
+                        category: "robemariee",
+                        value: "60",
+                        available: true,
+                        condition: "bon état" })
+robemariee9.owner = User.all.sample
+robemariee9.save!
+
+robemariee10 = Clothe.new({ name: "Robe Vaucluse – Eglantine",
+                            description: "Vaucluse est une robe fluide en mousseline de couleur ivoire. Son corsage à bretelles en guipure florale met en valeur son joli décolleté en V. Sa jupe légèrement évasée se termine par une courte traîne. Son atout charme c’est son dos en transparence !",
+                            size: "S",
+                            brand: "",
+                            category: "robemariee",
+                            value: "75",
+                            available: true,
+                            condition: "bon état" })
+robemariee10.owner = User.all.sample
+robemariee10.save!
+
 # ATTACHEMENT DES PHOTOS AUX SEEDS
 
 clothes = Clothe.all
 
 clothes.each do |clothe|
+  puts "charging image for #{clothe.name}"
   attach_images_to_clothe(clothe)
   clothe.save!
 end
