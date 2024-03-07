@@ -1,0 +1,20 @@
+.clothe-cards{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.clothe-card{
+  border-radius: 1rem;
+  .clothe-details{
+    position: relative;
+    top: -87px;
+    height: 0;
+  }
+
+}
+.clothe-card-illustration{
+  width: 100%;
+  img {
+    border-radius: 1rem;
+  }
+}

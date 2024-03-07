@@ -1,8 +1,22 @@
-<div class="container w-50">
-  <%= link_to " #{clothe.name}", clothe_path(clothe) %>
-  <% clothe.photos.each do |photo| %>
-    <%= cl_image_tag(photo.key, width: 400, height: 300, crop: :fill) %>
-  <% end %>
-  <%= button_to "like", clothe_likes_path(clothe) %>
-  <%= link_to "profil de#{clothe.owner.user_name}", profils_path(clothe.owner) %>
+<div class="clothe-card">
+  <div class="clothe-card-illustration" style>
+     <%# <% clothe.photos.each do |photo| %>
+      <%= cl_image_tag(clothe.photos.first.key, width: 400) %>
+    <%# <% end %>
+  </div>
+  <div class="clothe-details">
+
+    <h4><%= link_to " #{clothe.name}", clothe_path(clothe) %></h4>
+
+    <%= link_to "", clothe_likes_path(clothe), class:"fa-solid fa-heart coeur"%>
+
+  </div>
 </div>
+
+
+
+
+<%# <div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(cl_image_tag(photo.key, width: 400, height: 300, crop: :fill))">
+    Breakfast
+  </div> %>
