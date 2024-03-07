@@ -5,6 +5,16 @@
 $body-font: "Venice Blvd";
 $headers-font: "Venice Blvd";
 
+.title {
+  text-align: center;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 137.5%; /* 44px */
+  letter-spacing: 0.96px;
+}
+
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
