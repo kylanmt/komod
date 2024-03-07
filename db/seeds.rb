@@ -420,15 +420,7 @@ boss1 = Clothe.new({  name: "costume rayé hugo boss",
                       description: "- Couleur anthracite rayé, voir photos (la couleur sur les photos se rapproche le plus possible de la réalité mais il se peut qu'il y ai de minimes différences de teintes).
                       - 100% pure laine vierge.
                       - Tissu souple.
-                      - Doublure satinée.
-                      - Fermeture par 2 boutons.
-                      - Manches longues avec poignets boutonnés.
-                      - 4 poches extérieures.
-                      - 3 poches intérieures.
-                      - Fines épaulettes pour un maintien impeccable.
-                      - Coupe cintrée.
-                      - 2 fentes derrière.
-                      - Splendide conception.",
+                      - Doublure satinée.",
                       size: sizes.sample,
                       brand: "boss",
                       category: "costume",
@@ -492,17 +484,7 @@ burberry2 = Clothe.new({  name: "Veste de costume classique à deux boutons.",
                           description: "🔥État: 9.5/10
                           🔥Taille: L/52
 
-                          Composition : 100% Laine
-
-                          Fabriqué aux USA
-
-                          Largeur épaule à épaule: 47cm
-                          Largeur aisselle à aisselle: 55cm
-                          Longueur Dos: 85cm
-                          Largeur au niveau du bouton: 54cm
-                          Longueur de la manche: 64cm
-
-                          Vrl14",
+                          Composition : 100% Laine",
                           size: sizes.sample,
                           brand: "burberry",
                           category: "costume",
@@ -680,21 +662,7 @@ sweetsaintjames1.owner = User.all.sample
 sweetsaintjames1.save!
 
 sweetsaintjames2 = Clothe.new({ name: "Pull vintage saint james",
-                                description: "Pull vintage saintiamesvintage à rayures
-
-                                Description
-
-                                - taille M
-
-                                - état satisfaisant
-
-                                -Saint James made in France
-
-                                - Couleurs: beige et bleu marine
-
-                                - Boutons col pull
-
-                                - Matière épaisse",
+                                description: "Pull vintage saintiamesvintage à rayures",
                                 size: "M",
                                 brand: "saintjames",
                                 category: "sweet",
