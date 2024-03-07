@@ -1,0 +1,18 @@
+<h1>❤️ Mes likes</h1>
+
+<% if @likes.empty? %>
+  <p>Tu n'as pas encore liké de vêtement !</p>
+<% else %>
+  <% @likes.each do |like| %>
+    <% cloth = like.clothe %>
+    <div class="liked-cloth">
+      <% if cloth.photos.any? %>
+        <%= cl_image_tag(cloth.photos.first.key, width: 200, height: 200, crop: :fill) %>
+      <% end %>
+      <%= cloth.name %>
+      <%= cloth.owner.user_name %>
+    </div>
+    <%= link_to 'Supprimer le like', profils_like_path(like), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+    <br>
+  <% end %>
+<% end %>

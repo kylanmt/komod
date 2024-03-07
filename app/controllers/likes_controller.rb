@@ -1,5 +1,6 @@
 class LikesController < ApplicationController
   def index
+    @likes = current_user.likes
   end
 
   def create
@@ -9,10 +10,12 @@ class LikesController < ApplicationController
     like.clothe = clothe
     like.user = user
     like.save!
-    end
   end
 
   def destroy
+    @like = Like.find(params[:id])
+    @like.destroy
+    redirect_to profils_likes_path, status: :see_other, notice: 'Le like a été retiré avec succès.'
   end
 
   private

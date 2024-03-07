@@ -20,14 +20,12 @@ Rails.application.routes.draw do
 
   resource :profils, only: %i[show edit update] do
     resources :chatrooms, only: %i[index]
-    resources :likes, only: %i[index]
+    resources :likes, only: %i[index destroy]
   end
-
-
 
   # Routes pour les likes: annuler un like
 
-  resources :likes, only: %i[destroy]
+  # resources :likes, only: %i[destroy]
 
   # Routes pour les News: affiche les news
 
