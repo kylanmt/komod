@@ -1,6 +1,10 @@
 <div class="container w-50">
   <%= link_to " #{clothe.name}", clothe_path(clothe) %>
- <%= cl_image_tag(clothe.photos.first.key, width: 200, height: 200, crop: :fill) %>
+  <% if clothe.photos.first.key %>
+    <%= cl_image_tag(clothe.photos.first.key, width: 200, height: 200, crop: :fill) %>
+  <% else %>
+    <p>Désolé, l'image n'est pas disponible.</p>
+  <% end %>
   <%= button_to "like", clothe_likes_path(clothe) %>
   <%= link_to "profil de#{clothe.owner.user_name}", profils_path(clothe.owner) %>
 </div>
