@@ -6,6 +6,22 @@
 
 <h2>Tableau de bord</h2>
 
-<p> Mes emprunts </p>
-<p> Mes prêts </p>
+<p> Mes emprunts actuel </p>
+<% unless @transctions.nil? %>
+  <% @transactions.each do |transaction| %>
+    <%= transaction.clothe.name %>
+    <p>render card emprunts ici</p>
+  <% end %>
+<% end %>
+<p> Mes prêts actuel </p>
+<% @clothes.each do |clothe| %>
+  <%= clothe.name %>
+  <% unless clothe.transactions.empty? %>
+    <p><%=clothe.name%> est loué </p>
+  <% end %>
+  <p>render card pret</p>
+<% end %>
+
+<%= link_to "mes transactions", owner_transactions_path %>
+
 <p> Les évènements où je suis présent </p>
