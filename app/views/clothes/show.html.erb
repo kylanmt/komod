@@ -8,4 +8,13 @@
 <h5><%= @clothe.value %></h5>
 <h5><%= @clothe.size %></h5>
 <h5><%= @clothe.available %></h5>
-<%= button_to "louer", clothe_transactions_path(@clothe) %>
+
+
+<%# <div data-controller="datepicker"></div> %>
+
+<div data-controller="toggle" class="mt-5">
+  <button data-action="click->toggle#fire" class="btn btn-outline-primary">Add a new location</button>
+  <div data-toggle-target="togglableElement" class="d-none">
+    <%= render "/shared/formulaires/location", clothe: @clothe, transaction: @transaction %>
+  </div>
+</div>

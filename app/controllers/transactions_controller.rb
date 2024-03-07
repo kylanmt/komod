@@ -2,7 +2,7 @@ class TransactionsController < ApplicationController
 
   def create
     clothe = Clothe.find(params[:clothe_id])
-    transaction = Transaction.new
+    transaction = Transaction.new(transaction_params)
     transaction.clothe = clothe
     transaction.client = current_user
     transaction.price = clothe.value
@@ -18,5 +18,11 @@ class TransactionsController < ApplicationController
   end
 
   def update
+  end
+
+  private
+
+  def transaction_params
+    params.require(:transaction).permit(:start_date, :end_date)
   end
 end

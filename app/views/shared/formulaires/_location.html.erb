@@ -1,0 +1,5 @@
+<%= simple_form_for [clothe, transaction] do |f| %>
+  <%= f.input :start_date, input_html: { data: {controller: "datepicker"} }, as: :string %>
+  <%= f.input :end_date, input_html: { data: {controller: "datepicker"} }, as: :string %>
+  <%= f.submit %>
+<% end %>
