@@ -10,7 +10,7 @@ class ProfilsController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:profil][:user_id])
+    @user = current_user
     @user.update(profil_params)
     redirect_to profils_path(@user)
   end
@@ -18,6 +18,6 @@ class ProfilsController < ApplicationController
   private
 
   def profil_params
-    params.require(:user).permit(:email, :user_name, :first_name, :last_name, :phone_number, :address)
+    params.require(:profil).permit(:email, :user_name, :first_name, :last_name, :phone_number, :address)
   end
 end
