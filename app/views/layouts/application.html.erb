@@ -13,15 +13,9 @@
   <body>
     <%= render "shared/bars/navbar" %>
     <%= render "shared/flashes" %>
-    
-<%# C'est juste un test à enlever %>
-<% Clothe.all.each do |clothe| %>
-  <% clothe.photos.each do |photo| %>
-    <%= cl_image_tag(photo.key, width: 400, height: 300, crop: :fill) %>
-  <% end %>
-<% end %>
-<%# au dessus, les images marchent, vous pouvez supprimer %>
 
+<%# C'est juste un test à enlever %>
+<%# au dessus, les images marchent, vous pouvez supprimer %>
     <div class="main-content">
       <%= yield %>
     </div>
