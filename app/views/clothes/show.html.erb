@@ -1,3 +1,4 @@
+
 <h1>Mon super vêtement</h1>
 <% @clothe.photos.each do |photo| %>
   <%= cl_image_tag(photo.key, width: 400, height: 300, crop: :fill) %>
@@ -8,3 +9,4 @@
 <h5><%= @clothe.value %></h5>
 <h5><%= @clothe.size %></h5>
 <h5><%= @clothe.available %></h5>
+

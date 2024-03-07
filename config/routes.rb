@@ -23,6 +23,8 @@ Rails.application.routes.draw do
     resources :likes, only: %i[index]
   end
 
+
+
   # Routes pour les likes: annuler un like
 
   resources :likes, only: %i[destroy]
