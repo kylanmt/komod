@@ -1,0 +1,14 @@
+.button {
+  background-color: $button-green;
+  border: none;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px 20px;
+  margin: 4px 2px;
+  border-radius: 30px;
+  width: 170px;
+  a{
+    color: white;
+    text-decoration: none;
+  }
+}
