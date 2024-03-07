@@ -1,0 +1,12 @@
+<h1>Mon dressing en ligne</h1>
+
+<ul>
+    <% @clothes.each do |clothe| %>
+        <% clothe.photos.each do |photo| %>
+          <%= cl_image_tag(photo.key, width: 400, height: 300, crop: :fill) %>
+        <% end %>
+       <li><%= link_to clothe.name, clothe_path(clothe) %></li>
+       <li><%= clothe.available %></li>
+       <li><%= clothe.category %></li>
+    <% end %>
+</ul>
