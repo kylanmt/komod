@@ -1,0 +1,14 @@
+<%= link_to "Retour au profil", profils_path %>
+<%= simple_form_for 'profil', url: profils_path, method: 'patch'  do |f| %>
+  <%= f.input :email, input_html: { value: @user.email } %>
+  <%= f.input :user_name, input_html: { value: @user.user_name } %>
+  <%= f.input :first_name, input_html: { value: @user.first_name } %>
+  <%= f.input :last_name, input_html: { value: @user.last_name } %>
+  <%= f.input :phone_number, input_html: { value: @user.phone_number } %>
+  <%= f.input :address, input_html: { value: @user.address } %>
+  <div class="d-none">
+    <%= f.input :user_id, input_html: { value: @user.id } %>
+  </div>
+
+  <%= f.button :submit, "Confirmer les modifications" %>
+<% end %>

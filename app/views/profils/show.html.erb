@@ -1,1 +1,11 @@
-profil
+<h1>Mon profil</h1>
+<p>Photo de profil</p>
+<h3><%= @user.user_name %></h3>
+<p><%= @user.first_name%> <%= @user.last_name %></p>
+<%= link_to "Modifier mon profil", edit_profils_path(@user) %>
+
+<h2>Tableau de bord</h2>
+
+<p> Mes emprunts </p>
+<p> Mes prêts </p>
+<p> Les évènements où je suis présent </p>
