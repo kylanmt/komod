@@ -1,0 +1,43 @@
+<p>emprunt en cours</p>
+
+<% @emprunts.each do |emprunt| %>
+  <br>
+  <%= link_to "emprunt #{emprunt.id} de #{ emprunt.clothe.name } état: #{emprunt.status}", owner_transaction_path(emprunt) unless emprunt.status == "done" %>
+<% end %>
+
+<p>location en cours</p>
+
+<% @clothes.each do |clothe| %>
+  <% unless clothe.transactions.empty? %>
+  <%= clothe.name %>
+    <% clothe.transactions.each do |location| %>
+    <br>
+      <% unless location.status == "done" %>
+        <%= link_to "transaction #{location.id} état: #{location.status}", owner_transaction_path(location)%>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<p>emprunts passé</p>
+
+<% @emprunts.each do |emprunt| %>
+  <%= link_to "vetement", owner_transaction_path(emprunt) if emprunt.status == "done" %>
+<% end %>
+
+<p>locations passé</p>
+
+<% @clothes.each do |clothe| %>
+<br>
+  <%= clothe.name %>
+
+  <% if clothe.transactions.empty? %>
+    <span>: pas de location passé</span>
+  <% else %>
+    <% clothe.transactions.each do |location| %>
+      <% if location.status == "done" %>
+        <%= link_to "transaction #{location.id}", owner_transaction_path(location)%>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

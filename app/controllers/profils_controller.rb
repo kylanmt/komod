@@ -1,6 +1,8 @@
 class ProfilsController < ApplicationController
   def show
     @user = current_user
+    @transactions = @user.transactions
+    @clothes = @user.clothes
   end
 
   def edit

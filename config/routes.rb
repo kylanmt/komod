@@ -23,8 +23,6 @@ Rails.application.routes.draw do
     resources :likes, only: %i[index]
   end
 
-
-
   # Routes pour les likes: annuler un like
 
   resources :likes, only: %i[destroy]
@@ -48,7 +46,7 @@ Rails.application.routes.draw do
 
   namespace :owner do
     resources :clothes, only: %i[new create edit update destroy]
-    resources :transactions, only: %i[index] do
+    resources :transactions, only: %i[index show] do
       patch 'manage'
     end
   end
