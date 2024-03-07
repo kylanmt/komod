@@ -46,7 +46,7 @@ Rails.application.routes.draw do
 
   namespace :owner do
     resources :clothes, only: %i[new create edit update destroy]
-    resources :transactions, only: %i[index] do
+    resources :transactions, only: %i[index show] do
       patch 'manage'
     end
   end
