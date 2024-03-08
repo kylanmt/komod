@@ -1,20 +1,27 @@
-<h1>Mon super vêtement</h1>
-<% @clothe.photos.each do |photo| %>
-  <%= cl_image_tag(photo.key, width: 400, height: 300, crop: :fill) %>
-<% end %>
-<h3><%= @clothe.name %></h3>
-<h5><%= @clothe.description %></h5>
-<h5><%= @clothe.category %></h5>
-<h5><%= @clothe.value %></h5>
-<h5><%= @clothe.size %></h5>
-<h5><%= @clothe.available %></h5>
+<div class="navbar-cloth">
+  <h1 class="title"><%= @clothe.name %></h1>
+</div>
 
+<div class="container-phone">
+  <div class="image-container">
+    <% if @clothe && @clothe.photos.any? %>
+      <%= cl_image_tag(@clothe.photos.first.key, width: 400, height: 400, crop: :fill, class: 'centered-image') %>
+    <% end %>
+  </div>
+  <h5><%= @clothe.description %></h5>
+  <div class="mt-4 d-flex gap-2">
+    <h5 class="tag-clothe"><%= @clothe.category.capitalize %></h5>
+    <h5 class="tag-clothe"><i class="fa-solid fa-coins"></i><%= @clothe.value %></h5>
+    <h5 class="tag-clothe"><i class="fa-solid fa-shirt"></i> <%= @clothe.size %></h5>
+    <h5 class="tag-clothe"><%= @clothe.available ? 'Disponible' : 'Indisponible' %></h5>
+  </div>
 
-<%# <div data-controller="datepicker"></div> %>
+  <%# <div data-controller="datepicker"></div> %>
 
-<div data-controller="toggle" class="mt-5">
-  <button data-action="click->toggle#fire" class="btn btn-outline-primary">Add a new location</button>
-  <div data-toggle-target="togglableElement" class="d-none">
-    <%= render "/shared/formulaires/location", clothe: @clothe, transaction: @transaction %>
+  <div data-controller="toggle" class="mt-4">
+    <button data-action="click->toggle#fire" class="booking-btn">Réserver !</button>
+    <div data-toggle-target="togglableElement" class="d-none">
+      <%= render "/shared/formulaires/location", clothe: @clothe, transaction: @transaction %>
+    </div>
   </div>
 </div>

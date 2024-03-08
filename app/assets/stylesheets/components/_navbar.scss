@@ -5,3 +5,21 @@
   height: 5rem;
   width: 100%;
 }
+
+.navbar-cloth {
+  background: white;
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  padding-top: 16px;
+  padding-bottom: 5px;
+
+  h1 {
+    font-size: 25px;
+    padding: 20px 16px 0;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
