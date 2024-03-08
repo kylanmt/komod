@@ -1,5 +1,5 @@
 
-<div class="container clothe-card">
+<div class="clothe-card">
   <div class="clothe-card-illustration" style>
      <%# <% clothe.photos.each do |photo| %>
       <%= link_to cl_image_tag(clothe.photos.first.key, width: 400, height: 400), clothe_path(clothe) %>
@@ -10,6 +10,6 @@
       <h4><%= link_to " #{clothe.name}", clothe_path(clothe) %></h4>
   </div>
 
-    <%= link_to "", clothe_likes_path(clothe), class:"fa-solid fa-heart fa-3x like"%>
+    <%= button_to "", clothe_likes_path(clothe), class:"fa-solid fa-heart fa-3x like"%>
   </div>
 </div>
