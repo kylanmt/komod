@@ -1,0 +1,26 @@
+<div class="location-container col border" data-controller="toggle">
+  <button data-action="click->toggle#fire" class="btn btn-outline-primary"> Ma Komod </button>
+  <div data-toggle-target="togglableElement" class="d-none">
+    <% clothes.each do |clothe| %>
+    <%= link_to clothe.name, clothe_path(clothe) %>
+      <p>commande en cours:</p>
+      <% clothe.transactions.each do |transaction| %>
+        <%= transaction.client.user_name %>
+        <p>du <%= transaction.start_date %> au <%= transaction.end_date%></p>
+        <button class="btn btn-danger">refuser</button>
+      <% end %>
+      <br>
+    <% end %>
+  </div>
+</div>
+
+<div class="emprunt-container col border" data-controller="toggle">
+  <button data-action="click->toggle#fire" class="btn btn-outline-primary"> Mes emprunts actuel </button>
+  <div data-toggle-target="togglableElement" class="d-none">
+    <% transactions.each do |transaction| %>
+      <%= link_to transaction.clothe.name, clothe_path(transaction.clothe) %>
+      <%= transaction.status %>
+      <br>
+    <% end %>
+  </div>
+</div>
