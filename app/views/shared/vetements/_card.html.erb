@@ -1,15 +1,15 @@
 
-<div class="clothe-card">
+<div class="container clothe-card">
   <div class="clothe-card-illustration" style>
      <%# <% clothe.photos.each do |photo| %>
-      <%= cl_image_tag(clothe.photos.first.key, width: 400) %>
+      <%= link_to cl_image_tag(clothe.photos.first.key, width: 400, height: 400), clothe_path(clothe) %>
     <%# <% end %>
   </div>
   <div class="clothe-details">
+  <div class="clothe-name">
+      <h4><%= link_to " #{clothe.name}", clothe_path(clothe) %></h4>
+  </div>
 
-    <h4><%= link_to " #{clothe.name}", clothe_path(clothe) %></h4>
-
-    <%= link_to "", clothe_likes_path(clothe), class:"fa-solid fa-heart coeur"%>
-
+    <%= link_to "", clothe_likes_path(clothe), class:"fa-solid fa-heart fa-3x like"%>
   </div>
 </div>
