@@ -22,13 +22,17 @@ align-items: center;
        text-decoration: none;
        color: black;
       }
-      a{
+      a {
         text-decoration: none;
         color: white;
         // background-color: $button-green;
         padding: 0rem 0.3rem;
         font-weight: bold;
         text-align: justify;
+       }
+       button {
+        background: transparent;
+        border: none !important;
        }
   }
 
@@ -39,6 +43,6 @@ align-items: center;
     border-radius: 29px;
     object-fit: cover;
     -webkit-filter : blur(0px) contrast(20%); /* Chrome, Safari, Opera */
-    filter : blur(0px) contrast(60%);
+    filter : blur(0px) contrast(80%);
   }
 }

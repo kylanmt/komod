@@ -1,5 +1,5 @@
 class TransactionsController < ApplicationController
-  
+
   def create
     clothe = Clothe.find(params[:clothe_id])
     transaction = Transaction.new(transaction_params)
