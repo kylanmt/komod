@@ -8,7 +8,7 @@
   <br>
   <div class="details pb-4">
     <p>🗓️ Du <%= @transaction.start_date.strftime("%d/%m/%Y") %> au <%= @transaction.end_date.strftime("%d/%m/%Y") %></p>
-    <p>👕 <%= @transaction.clothe.name %></p>
+    <p>👕 <%= link_to @transaction.clothe.name, clothe_path(@transaction.clothe) %>
     <p>🙋🏼‍♂️ @<%= @transaction.clothe.owner.user_name %></p>
   </div>
   <%= link_to "Retour à l'acceuil", root_path, class: "booking-btn d-flex justify-content-center" %>

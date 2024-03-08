@@ -8,9 +8,9 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+Transaction.destroy_all
 User.destroy_all
 Clothe.destroy_all
-Transaction.destroy_all
 
 antoine = User.new({ user_name: "Antoinette", first_name: "Antoine", last_name: "Dupont", email: "antoine.dupont@email.com", phone_number: "0723456789", address: "11 rue du Chateau, 44000, Nantes", password: "123456", ranking: 4 })
 antoine.address = "18 Rue des Namnètes, 44840 Les Sorinières"
@@ -403,14 +403,14 @@ manteau10.save!
 
 puts "début des seeds accessoires_femmes"
 
-accessoire1 = Clothe.new({ name: "sac à main  Michael Kors",
-                          description: "portée pas tout neuf mais peut encore servir",
-                          size: sizes.sample,
-                          brand: "Michael Kors",
-                          category: "accessoires_femme",
-                          value: "5",
-                          available: true,
-                          condition: condition.sample })
+accessoire1 = Clothe.new({  name: "sac à main  Michael Kors",
+                            description: "portée pas tout neuf mais peut encore servir",
+                            size: sizes.sample,
+                            brand: "Michael Kors",
+                            category: "accessoires_femme",
+                            value: "5",
+                            available: true,
+                            condition: condition.sample })
 accessoire1.owner = User.all.sample
 accessoire1.save!
 
@@ -425,14 +425,14 @@ accessoire2 = Clothe.new({  name: "Lunettes rondes",
 accessoire2.owner = User.all.sample
 accessoire2.save!
 
-accessoire3 = Clothe.new({ name: "Sac Tory Burch",
-                           description: "Sac Tory Burch en cuir noir, dans un état impeccable. Ce sac est l'accessoire parfait pour toutes les occasions, qu'il s'agisse d'une journée shopping entre amies ou d'une soirée chic en ville.",
-                           size: sizes.sample,
-                           brand: "Tory Burch",
-                           category: "accessoires_femme",
-                           value: "50",
-                           available: true,
-                          condition: condition.sample })
+accessoire3 = Clothe.new({  name: "Sac Tory Burch",
+                            description: "Sac Tory Burch en cuir noir, dans un état impeccable. Ce sac est l'accessoire parfait pour toutes les occasions, qu'il s'agisse d'une journée shopping entre amies ou d'une soirée chic en ville.",
+                            size: sizes.sample,
+                            brand: "Tory Burch",
+                            category: "accessoires_femme",
+                            value: "50",
+                            available: true,
+                            condition: condition.sample })
 accessoire3.owner = User.all.sample
 accessoire3.save!
 
@@ -1238,4 +1238,14 @@ clothes.each do |clothe|
   puts "charging image for #{clothe.name}"
   attach_images_to_clothe(clothe)
   clothe.save!
+end
+
+status = ["new", "pending", "finished"]
+
+40.times do
+  transaction = Transaction.new(start_date: Date.today, end_date: Date.tomorrow)
+  transaction.client = User.all.sample
+  transaction.clothe = Clothe.where.not(owner_id: transaction.client_id).sample
+  transaction.status = status.sample
+  transaction.save!
 end
