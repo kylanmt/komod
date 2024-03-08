@@ -1242,7 +1242,7 @@ end
 
 status = ["new", "pending", "finished"]
 
-15.times do
+40.times do
   transaction = Transaction.new(start_date: Date.today, end_date: Date.tomorrow)
   transaction.client = User.all.sample
   transaction.clothe = Clothe.where.not(owner_id: transaction.client_id).sample
