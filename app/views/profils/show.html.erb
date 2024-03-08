@@ -1,10 +1,14 @@
-<div class="container text-center">
-  <h1>Mon profil</h1>
-  <p>Photo de profil</p>
+<div class="navbar container-phone">
+        <h1 class="title">🕺🏼 Mon profil</h1>
+</div>
+<div class="container-phone text-center">
+  <p>"photo de profil"</p>
   <h3><%= @user.user_name %></h3>
   <p><%= @user.first_name%> <%= @user.last_name %></p>
-  <%= link_to "Modifier mon profil", edit_profils_path(@user) %>
-  <%= link_to "fermer ma session",  destroy_user_session_path, data: {turbo_method: :delete} %>
+  <div class="d-flex justify-content-center gap-3 mb-4">
+    <p class="button"><%= link_to "Modifier mon profil", edit_profils_path(@user) %></p>
+    <p class="button"><%= link_to "Fermer ma session",  destroy_user_session_path, data: {turbo_method: :delete} %></p>
+  </div>
   <h2 class="">Tableau de bord</h2>
 </div>
 <div class="transactions-container w-75 mx-auto text-center">
@@ -17,4 +21,3 @@
     <%= render "transactions", transactions: @transactions, clothes: @clothes %>
   </div>
 </div>
-<p> Les évènements où je suis présent </p>
