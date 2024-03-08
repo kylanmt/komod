@@ -1,28 +1,33 @@
-<div class="row">
-  <div class="col">
-    <h2>emprunts en cours</h2>
-    <% @locations.each do |location| %>
-      <%= location.clothe.name %>
-      <%= link_to location.id, owner_transaction_path(location) %>
-      <p>status: <%= location.status %></p>
-    <% end %>
-    <h2>partage en cours</h2>
-    <% @my_shares.each do |share| %>
-      <%= share.clothe.name %>
-      <%= link_to share.id, owner_transaction_path(share) %>
-      <p>status: <%= share.status %></p>
-    <% end %>
-  </div>
-  <div class="col">
-    <h2>emprunts passé</h2>
-    <% @location_finished.each do |location| %>
-      <%= location.clothe.name %>
-      <%= link_to location.id, owner_transaction_path(location) %>
-    <% end %>
-    <h2>partage passé</h2>
-    <% @my_share_finished.each do |share| %>
-      <%= share.clothe.name %>
-      <%= link_to share.id, owner_transaction_path(share) %>
-    <% end %>
+<div class="navbar container-phone">
+        <h1 class="title">🫂 Mes échanges</h1>
+</div>
+<div class="container-phone">
+  <div class="border row">
+    <div class=" border col">
+      <h2>Emprunts en cours</h2>
+      <% @locations.each do |location| %>
+        <%= location.clothe.name %>
+        <%= link_to location.id, owner_transaction_path(location) %>
+        <p>status: <%= location.status %></p>
+      <% end %>
+      <h2>partage en cours</h2>
+      <% @my_shares.each do |share| %>
+        <%= share.clothe.name %>
+        <%= link_to share.id, owner_transaction_path(share) %>
+        <p>status: <%= share.status %></p>
+      <% end %>
+    </div>
+    <div class="border col">
+      <h2>emprunts passé</h2>
+      <% @location_finished.each do |location| %>
+        <%= location.clothe.name %>
+        <%= link_to location.id, owner_transaction_path(location) %>
+      <% end %>
+      <h2>partage passé</h2>
+      <% @my_share_finished.each do |share| %>
+        <%= share.clothe.name %>
+        <%= link_to share.id, owner_transaction_path(share) %>
+      <% end %>
+    </div>
   </div>
 </div>
