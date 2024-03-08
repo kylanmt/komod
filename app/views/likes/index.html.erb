@@ -1,18 +1,28 @@
-<h1>❤️ Mes likes</h1>
+<div class="navbar container-phone">
+  <h1 class="title">Mes likes ❤️</h1>
+</div>
 
-<% if @likes.empty? %>
-  <p>Tu n'as pas encore liké de vêtement !</p>
-<% else %>
-  <% @likes.each do |like| %>
-    <% cloth = like.clothe %>
-    <div class="liked-cloth">
-      <% if cloth.photos.any? %>
-        <%= cl_image_tag(cloth.photos.first.key, width: 200, height: 200, crop: :fill) %>
+<div class="container-phone">
+  <div class="card-like d-flex p-3 container-phone">
+    <div class="card-like-photo">
+      <% if @likes.empty? %>
+        <p>Tu n'as pas encore liké de vêtement !</p>
+      <% else %>
+      <% @likes.each do |like| %>
+        <% cloth = like.clothe %>
+      <div class="liked-cloth">
+        <% if cloth.photos.any? %>
+          <%= cl_image_tag(cloth.photos.first.key, width: 150, height: 150, crop: :fill) %>
+        <% end %>
+      </div>
+      </div>
+      <div class="card-like-description">
+        <p>👕 <%= link_to cloth.name, clothe_path(cloth) %></p>
+        <p>🙋🏼‍♂️ @<%= cloth.owner.user_name %></p>
+        <%= link_to 'Supprimer le like', profils_like_path(like), class: "delete-btn", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+      </div>
+      <br>
       <% end %>
-      <%= cloth.name %>
-      <%= cloth.owner.user_name %>
-    </div>
-    <%= link_to 'Supprimer le like', profils_like_path(like), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-    <br>
-  <% end %>
-<% end %>
+    <% end %>
+  </div>
+</div>
