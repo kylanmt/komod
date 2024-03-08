@@ -6,6 +6,7 @@ class Owner::ClothesController < ApplicationController
   def create
     clothe = Clothe.new(clothe_params)
     clothe.owner = current_user
+    clothe.available = true
     if clothe.save!
       redirect_to clothe_path(clothe)
     else
@@ -26,6 +27,6 @@ class Owner::ClothesController < ApplicationController
   private
 
   def clothe_params
-    params.require(:clothe).permit(:name, :description, :size, :category, :value, :condition, :brand, photo: [])
+    params.require(:clothe).permit(:name, :description, :size, :category, :value, :condition, :brand, photos: [])
   end
 end
