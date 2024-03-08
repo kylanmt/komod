@@ -8,9 +8,9 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+Transaction.destroy_all
 User.destroy_all
 Clothe.destroy_all
-Transaction.destroy_all
 
 antoine = User.new({ user_name: "Antoinette", first_name: "Antoine", last_name: "Dupont", email: "antoine.dupont@email.com", phone_number: "0723456789", address: "11 rue du Chateau, 44000, Nantes", password: "123456", ranking: 4 })
 antoine.address = "18 Rue des Namnètes, 44840 Les Sorinières"

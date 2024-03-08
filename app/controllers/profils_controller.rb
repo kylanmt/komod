@@ -1,7 +1,7 @@
 class ProfilsController < ApplicationController
   def show
     @user = current_user
-    @transactions = @user.transactions
+    @transactions = Transaction.where(status: ["new", "pending"], client_id: @user.id)
     @clothes = @user.clothes
   end
 

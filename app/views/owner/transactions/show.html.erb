@@ -1,4 +1,7 @@
-<p>details de ma transaction</p>
+<h2>details de ma transaction</h2>
+<%= link_to @transaction.clothe.name, clothe_path(@transaction.clothe) %>
+<p>loueur <%= @transaction.clothe.owner.user_name %></p>
+<p>locataire <%= @transaction.client.user_name %></p>
 <p>start <%= @transaction.start_date %></p>
 <p>end <%= @transaction.end_date %></p>
-<p>vetement</p><%= @transaction.clothe.name %>
+<p>status <%= @transaction.status %></p>

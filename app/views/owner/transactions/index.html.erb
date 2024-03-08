@@ -1,43 +1,28 @@
-<p>emprunt en cours</p>
-
-<% @emprunts.each do |emprunt| %>
-  <br>
-  <%= link_to "emprunt #{emprunt.id} de #{ emprunt.clothe.name } état: #{emprunt.status}", owner_transaction_path(emprunt) unless emprunt.status == "done" %>
-<% end %>
-
-<p>location en cours</p>
-
-<% @clothes.each do |clothe| %>
-  <% unless clothe.transactions.empty? %>
-  <%= clothe.name %>
-    <% clothe.transactions.each do |location| %>
-    <br>
-      <% unless location.status == "done" %>
-        <%= link_to "transaction #{location.id} état: #{location.status}", owner_transaction_path(location)%>
-      <% end %>
+<div class="row">
+  <div class="col">
+    <h2>emprunts en cours</h2>
+    <% @locations.each do |location| %>
+      <%= location.clothe.name %>
+      <%= link_to location.id, owner_transaction_path(location) %>
+      <p>status: <%= location.status %></p>
     <% end %>
-  <% end %>
-<% end %>
-
-<p>emprunts passé</p>
-
-<% @emprunts.each do |emprunt| %>
-  <%= link_to "vetement", owner_transaction_path(emprunt) if emprunt.status == "done" %>
-<% end %>
-
-<p>locations passé</p>
-
-<% @clothes.each do |clothe| %>
-<br>
-  <%= clothe.name %>
-
-  <% if clothe.transactions.empty? %>
-    <span>: pas de location passé</span>
-  <% else %>
-    <% clothe.transactions.each do |location| %>
-      <% if location.status == "done" %>
-        <%= link_to "transaction #{location.id}", owner_transaction_path(location)%>
-      <% end %>
+    <h2>partage en cours</h2>
+    <% @shares.each do |share| %>
+      <%= share.clothe.name %>
+      <%= link_to share.id, owner_transaction_path(share) %>
+      <p>status: <%= share.status %></p>
     <% end %>
-  <% end %>
-<% end %>
+  </div>
+  <div class="col">
+    <h2>emprunts passé</h2>
+    <% @location_finished.each do |location| %>
+      <%= location.clothe.name %>
+      <%= link_to location.id, owner_transaction_path(location) %>
+    <% end %>
+    <h2>partage passé</h2>
+    <% @share_finished.each do |share| %>
+      <%= share.clothe.name %>
+      <%= link_to share.id, owner_transaction_path(share) %>
+    <% end %>
+  </div>
+</div>
