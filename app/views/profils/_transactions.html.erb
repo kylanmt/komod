@@ -8,7 +8,7 @@
       <% clothe.transactions.each do |transaction| %>
         <%= link_to  transaction.client.user_name, owner_transaction_path(transaction) %>
         <p>du <%= transaction.start_date %> au <%= transaction.end_date%></p>
-        <button class="btn btn-danger">refuser</button>
+        <%= link_to "refuser", transaction_path(transaction), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
       <% end %>
       </div>
       <br>

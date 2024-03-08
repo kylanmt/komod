@@ -37,7 +37,7 @@ Rails.application.routes.draw do
 
   # Routes pour les transactions?
 
-  resources :transactions, only: %i[edit update]
+  resources :transactions, only: %i[edit update destroy]
 
   resources :events, only: %i[index]
 

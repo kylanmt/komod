@@ -17,6 +17,12 @@ class TransactionsController < ApplicationController
   def update
   end
 
+  def destroy
+    transaction = Transaction.find(params[:id])
+    transaction.destroy
+    redirect_to profils_path(current_user)
+  end
+
   private
 
   def create_transaction(transaction, clothe)
