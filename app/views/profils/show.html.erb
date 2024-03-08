@@ -4,6 +4,7 @@
   <h3><%= @user.user_name %></h3>
   <p><%= @user.first_name%> <%= @user.last_name %></p>
   <%= link_to "Modifier mon profil", edit_profils_path(@user) %>
+  <%= link_to "fermer ma session",  destroy_user_session_path, data: {turbo_method: :delete} %>
   <h2 class="">Tableau de bord</h2>
 </div>
 <div class="transactions-container w-75 mx-auto text-center">

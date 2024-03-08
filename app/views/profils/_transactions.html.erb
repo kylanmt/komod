@@ -2,13 +2,15 @@
   <button data-action="click->toggle#fire" class="btn btn-outline-primary"> Ma Komod </button>
   <div data-toggle-target="togglableElement" class="d-none">
     <% clothes.each do |clothe| %>
-    <%= link_to clothe.name, clothe_path(clothe) %>
+      <div class="card border">
+      <%= link_to clothe.name, clothe_path(clothe) %>
       <p>commande en cours:</p>
       <% clothe.transactions.each do |transaction| %>
-        <%= transaction.client.user_name %>
+        <%= link_to  transaction.client.user_name, owner_transaction_path(transaction) %>
         <p>du <%= transaction.start_date %> au <%= transaction.end_date%></p>
         <button class="btn btn-danger">refuser</button>
       <% end %>
+      </div>
       <br>
     <% end %>
   </div>

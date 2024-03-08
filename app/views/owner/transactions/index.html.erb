@@ -7,7 +7,7 @@
       <p>status: <%= location.status %></p>
     <% end %>
     <h2>partage en cours</h2>
-    <% @shares.each do |share| %>
+    <% @my_shares.each do |share| %>
       <%= share.clothe.name %>
       <%= link_to share.id, owner_transaction_path(share) %>
       <p>status: <%= share.status %></p>
@@ -20,7 +20,7 @@
       <%= link_to location.id, owner_transaction_path(location) %>
     <% end %>
     <h2>partage passé</h2>
-    <% @share_finished.each do |share| %>
+    <% @my_share_finished.each do |share| %>
       <%= share.clothe.name %>
       <%= link_to share.id, owner_transaction_path(share) %>
     <% end %>
