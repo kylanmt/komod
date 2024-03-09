@@ -1,7 +1,21 @@
 .edit-button-overlay {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 32px;
-  height: 32px;
+  position:relative;
+  top: 5px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
 }
+
+.image-profile {
+  border: 5px solid $green;
+  padding: 5px;
+}
+
+.logout-button {
+  display: inline-block;
+  font-size: 28px;
+  color: #333;
+  padding-top: 16px;
+}
+
+
