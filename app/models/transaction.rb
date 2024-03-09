@@ -3,4 +3,6 @@ class Transaction < ApplicationRecord
   belongs_to :clothe
   belongs_to :event, optional: true
 
+  validates :start_date, presence: true
+
 end

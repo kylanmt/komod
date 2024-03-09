@@ -16,12 +16,10 @@
     <h5 class="tag-clothe"><%= @clothe.available ? 'Disponible' : 'Indisponible' %></h5>
   </div>
 
-  <%# <div data-controller="datepicker"></div> %>
-
   <div data-controller="toggle" class="mt-4">
-    <button data-action="click->toggle#fire" class="booking-btn">Réserver !</button>
+    <button data-action="click->toggle#fire"  class="booking-btn">Réserver !</button>
     <div data-toggle-target="togglableElement" class="d-none">
-      <%= render "/shared/formulaires/location", clothe: @clothe, transaction: @transaction %>
+      <%= render "location", clothe: @clothe, transaction: @transaction, reservations_dates: @reservations_dates %>
     </div>
   </div>
 </div>
