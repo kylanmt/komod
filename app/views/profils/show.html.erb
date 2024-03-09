@@ -2,11 +2,19 @@
         <h1 class="title">🕺🏼 Mon profil</h1>
 </div>
 <div class="container-phone text-center">
-  <p>"photo de profil"</p>
-  <h3><%= @user.user_name %></h3>
-  <p><%= @user.first_name%> <%= @user.last_name %></p>
+  <div class="profil-infos">
+    <div class="profil-photo d-flex position-relative">
+      <%= image_tag "profil/profil_kylan.jpeg", class: "rounded-circle", width: '100px', height: '100px' %>
+      <%= link_to image_tag("buttons/edit_button.svg", alt: "Modifier mon profil", class: "edit-button edit-button-overlay"), edit_profils_path(@user) %>
+    </div>
+    <div class="profil-description">
+      <h3><%= @user.user_name %></h3>
+      <p><%= @user.first_name%> <%= @user.last_name %></p>
+    </div>
+  </div>
+</div>
+
   <div class="d-flex justify-content-center gap-3 mb-4">
-    <p class="button"><%= link_to "Modifier mon profil", edit_profils_path(@user) %></p>
     <p class="button"><%= link_to "Fermer ma session",  destroy_user_session_path, data: {turbo_method: :delete} %></p>
   </div>
   <h2 class="">Tableau de bord</h2>
