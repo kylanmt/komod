@@ -1,13 +1,13 @@
 class TransactionsController < ApplicationController
-
   def create
     clothe = Clothe.find(params[:clothe_id])
-    transaction = Transaction.new(transaction_params)
-    create_transaction(transaction, clothe)
+    transaction = Transaction.new
+    setup_date(transaction, transaction_params[:start_date])
+    setup_transaction(transaction, clothe)
     if transaction.save
       redirect_to owner_transaction_path(transaction)
     else
-      redirect_to clothe_path(clothe)
+      redirect_to clothe_path(clothe), status: :unprocessable_entity
     end
   end
 
@@ -25,7 +25,17 @@ class TransactionsController < ApplicationController
 
   private
 
-  def create_transaction(transaction, clothe)
+  def setup_date(transaction, date_range)
+    dates = date_range.split(" to ")
+    transaction.start_date = dates[0]
+    if dates.size == 1
+      transaction.end_date = transaction.start_date + 1
+    else
+      transaction.end_date = dates[1]
+    end
+  end
+
+  def setup_transaction(transaction, clothe)
     transaction.clothe = clothe
     transaction.client = current_user
     transaction.price = clothe.value
@@ -33,6 +43,6 @@ class TransactionsController < ApplicationController
   end
 
   def transaction_params
-    params.require(:transaction).permit(:start_date, :end_date)
+    params.require(:transaction).permit(:start_date)
   end
 end
