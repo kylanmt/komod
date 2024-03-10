@@ -40,5 +40,20 @@
 }
 
 .delete-btn:hover {
-  background-color: #e63946; /* Couleur de fond légèrement plus claire au survol */
+  background-color: #e63946;
+}
+
+.index-btn {
+  border: 1mm solid $green;
+  background-color: $green;
+  color: white;
+  font-size: 20px;
+  border-radius: 25px;
+  padding: 0.25rem 1rem 0.25rem 1rem;
+  margin: 0.5rem 0.5rem 10px 0.5rem;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
 }

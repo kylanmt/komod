@@ -1,10 +1,12 @@
 <div class="navbar container-phone">
-        <h1 class="title">🫂 Mes échanges</h1>
+  <h1 class="title">🫂 Mes échanges</h1>
 </div>
+
 <div class="container-phone">
-  <div class="border row">
-    <div class=" border col">
-      <h2>Emprunts en cours</h2>
+  <h2><strong>↻ Mes emprunts en cours</strong></h2>
+
+  <div class="border">
+    <div class=" border">
       <% @locations.each do |location| %>
         <%= location.clothe.name %>
         <%= link_to location.id, owner_transaction_path(location) %>
@@ -14,10 +16,10 @@
       <% @my_shares.each do |share| %>
         <%= share.clothe.name %>
         <%= link_to share.id, owner_transaction_path(share) %>
-        <p>status: <%= share.status %></p>
+        <p class="status-transactions"><%= share.status%></p>
       <% end %>
     </div>
-    <div class="border col">
+    <div class="">
       <h2>emprunts passé</h2>
       <% @location_finished.each do |location| %>
         <%= location.clothe.name %>
