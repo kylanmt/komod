@@ -1,0 +1,43 @@
+.card-container {
+  position: relative;
+  margin-top: 12px;
+}
+
+.carousel {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+}
+
+.top-info,
+.bot-info {
+  justify-content: space-between;
+  display: flex;
+  margin: 1rem;
+  p {
+    margin: 0;
+  }
+}
+
+.photo-owner {
+}
+
+.map {
+}
+
+.description {
+}
+
+.like {
+  z-index: 2;
+}

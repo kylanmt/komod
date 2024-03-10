@@ -1,6 +1,7 @@
 .navbar {
   display: flex;
   justify-content: space-between;
+  z-index: 10;
   background: white;
   height: 6rem;
   width: 100%;
@@ -36,5 +37,5 @@
 .logo {
   border-radius: 10px;
   margin-left: 16px;
-  margin-block: 20px
+  margin-block: 20px;
 }

@@ -2,12 +2,12 @@
   <h1 class="title"><%= @clothe.name %></h1>
 </div>
 
-<div class="container-phone">
   <div class="image-container">
     <% if @clothe && @clothe.photos.any? %>
-      <%= cl_image_tag(@clothe.photos.first.key, width: 400, height: 400, crop: :fill, class: 'centered-image') %>
+      <%= render "shared/carousel", clothe: @clothe, size: 430 %>
     <% end %>
   </div>
+<div class="container-phone">
   <h5><%= @clothe.description %></h5>
   <div class="mt-4 d-flex gap-2">
     <h5 class="tag-clothe"><%= @clothe.category.capitalize %></h5>
