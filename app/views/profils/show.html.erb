@@ -26,7 +26,11 @@
   </div>
 </div>
 <div class="container-phone">
-  <h2 class="m-0"><strong>Tableau de bord</strong></h2>
+  <div class="header">
+    <h2 class="m-0"><strong>Tableau de bord</strong></h2>
+    <%= link_to "", profils_likes_path, class: 'booking-btn fa-solid fa-heart' %>
+    <%= link_to "", owner_transactions_path, class: 'booking-btn fa-solid fa-list' %>
+  </div>
 </div>
 
 <div class="container-phone">
@@ -44,18 +48,18 @@
 
 <div class="container-phone">
   <div class="komod">
-
+    <div class="" data-controller="toggle">
+      <%= render "ma_komod", transactions: @transactions, clothes: @clothes %>
+    </div>
   </div>
-</div>
-
-<div class="container-phone">
   <div class="emprunts">
-
+    <div class="" data-controller="toggle">
+      <%= render "transactions", transactions: @transactions, clothes: @clothes %>
+    </div>
   </div>
 </div>
-
 <div class="container-phone">
-  <div class="prets">
-
+  <div class="events">
+    <h1><%= link_to "Event", events_path %></h1>
   </div>
 </div>
