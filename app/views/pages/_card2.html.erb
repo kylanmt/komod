@@ -1,21 +1,48 @@
-<div class="card-container" data-action="click->overlay#display">
-  <div class="card-images">
-    <%= render "shared/carousel", clothe: clothe, size: 400 %>
-  </div>
-  <%= link_to "" do %>
+
+  <div class="card-container" data-action="click->overlay#display">
+    <div class="owner-info">
+      <p class="photo-owner">avatar owner</p>
+      <p class="name-owner"><%= clothe.owner.user_name %></p>
+    </div>
+    <div class="card-images">
+      <%= render "shared/carousel", clothe: clothe, size: 400 %>
+    </div>
+<%= link_to "" do %>
+
     <div class="information">
       <div class="top-info">
-        <p class="photo-owner">avatar owner</p>
+        <%# <p class="photo-owner">avatar owner</p> %>
+        <p class="category"><%=clothe.category %></p>
         <p class="map">map</p>
       </div>
       <div class="bot-info">
         <div class="description">
-          <h2><%= "#{clothe.name.split(" ")[0..1].join(" ")}..." %></h2>
-          <%= "#{clothe.description[0..35]}..." %>
+
+          <h2>
+            <%= "#{clothe.name.split(" ")[0..1].join(" ")}..." %>
+          </h2>
+            <%# <%= "#{clothe.description[0..35]}..." %>
         </div>
-        <div class="like">
-          <%= button_to "", clothe_likes_path(clothe), class:"fa-solid fa-heart fa-3x"%>
+
+
+        <div class="like-button" data-controller="like-button" data-like-button-clothe-id-value= "<%= clothe.id %>">
+          <% like = Like.find_by(user: current_user, clothe_id: clothe.id) %>
+          <%= button_to "", clothe_likes_path(clothe),
+          data:{
+            action: "click->like-button#like",
+            like_button_target: "button"
+          },
+          class:"fa-regular fa-heart fa-3x #{like ? 'd-none' : ''}", style: "color: #ED4956;"%>
+          <%= button_to "",  unlike_likes_path,
+          data:{
+            action: "click->like-button#destroy",
+            like_button_target: "buttonDestroy",
+            # ajouter un data-value pour récupérer l'id du clothe
+          },
+          class:"fa-solid fa-heart fa-3x  #{like ? '' : 'd-none'}", style: "color: #ED4956;"%>
+
         </div>
+
       </div>
     </div>
   <% end %>
