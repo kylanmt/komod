@@ -43,10 +43,20 @@
   }
 }
 
+.transaction-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .reservation-col {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  p {
+    margin: 0;
+  }
 }
 
 .img-col {
@@ -63,4 +73,19 @@
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.3s ease;
+}
+
+.dates-container {
+  border: 1mm solid $green;
+  background-color: $green;
+  color: white;
+  font-size: 10px;
+  border-radius: 25px;
+  padding: 0.25rem 1rem 0.25rem 1rem;
+  margin: 0 10px;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
 }

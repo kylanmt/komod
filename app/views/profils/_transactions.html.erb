@@ -7,9 +7,7 @@
   </button>
   <div data-toggle-target="togglableElement" class="d-none">
     <% transactions.each do |transaction| %>
-      <%= link_to transaction.clothe.name, clothe_path(transaction.clothe) %>
-      <%= transaction.status %>
-      <br>
+      <%= render "ticket_location", transaction: transaction, clothe: transaction.clothe %>
     <% end %>
   </div>
 </div>
