@@ -52,11 +52,19 @@ ismael = User.new({ user_name: "Ismakan", first_name: "Ismael", last_name: "Taby
 ismael.address ="16 Rue Georges Clemenceau, 44000 Nantes"
 ismael.save
 
-users = User.all
-users_ids = []
-users.each do |user|
-  users_ids << user.id
-end
+hommes = []
+hommes << antoine
+hommes << kylan
+hommes << oscar
+hommes << quentin
+hommes << ismael
+
+femmes = []
+femmes << juliette
+femmes << anna
+femmes << pauline
+femmes << justine
+femmes << emma
 
 # CREATION DES VETEMENTS (SANS OWNER, CONDITION ET TAILLE ALEATOIRES )
 
@@ -104,7 +112,7 @@ end
 # CATEGORIE SKI
 puts "création des seeds ski"
 
-fusalp1 = Clothe.new({  name: "Veste Ski Fusalp Vintage Rouge",
+fusalp1 = Clothe.new({  name: "Veste de Ski Vintage Rouge",
                         description: "Idéale à porter avec un jean en mi saison. quelques défauts, Attention taille un peu petit (36-38)!",
                         size: "M",
                         brand: "fusalp",
@@ -115,18 +123,18 @@ fusalp1 = Clothe.new({  name: "Veste Ski Fusalp Vintage Rouge",
 fusalp1.owner = User.all.sample
 fusalp1.save!
 
-fusalp2 = Clothe.new({  name: "Manteau Ski Fusalp Homme Noir",
-                        description: "A servi qu’une semaine de ski, tiens très chaud en haute montagne et poche pour le forfait intégré.",
+fusalp2 = Clothe.new({  name: "Manteau de Ski Homme Noir",
+                        description: "N'a servi qu’une semaine de ski, tiens très chaud en haute montagne et poche pour le forfait intégré.",
                         size: "M",
                         brand: "fulsalp",
                         category: "ski",
                         value: "200",
                         available: true,
                         condition: "comme neuf" })
-fusalp2.owner = User.all.sample
+fusalp2.owner = hommes.sample
 fusalp2.save!
 
-northface1 = Clothe.new({ name: "Manteau Ski The North Face Vert",
+northface1 = Clothe.new({ name: "Manteau de Ski Vert",
                           description: "Porté que 2 saisons dans les Alpes Françaises. Taille un peu grand et tiens très chaud en altitude !",
                           size: "M",
                           brand: "the north face",
@@ -134,29 +142,29 @@ northface1 = Clothe.new({ name: "Manteau Ski The North Face Vert",
                           value: "140",
                           available: true,
                           condition: "comme neuf" })
-northface1.owner = User.all.sample
+northface1.owner = hommes.sample
 northface1.save!
 
-northface2 = Clothe.new({ name: "Pantalon Ski The North Face orange",
-                          description: "serrage ceinture, ouvertures aération sur les cuisses. traces d'usures sur les chevilles. Taille grand",
+northface2 = Clothe.new({ name: "Pantalon Ski orange",
+                          description: "serrage ceinture, ouvertures aérations sur les cuisses. traces d'usures sur les chevilles. Taille grand",
                           size: "S",
                           brand: "the north face",
                           category: "ski",
                           value: "50",
                           available: true,
                           condition: "usé" })
-northface2.owner = User.all.sample
+northface2.owner = hommes.sample
 northface2.save!
 
 salomon1 = Clothe.new({ name: "Casque Ski Salomon Noir",
-                        description: "couleur noir mat, a des rayures mais il n’y a jamais eu de chutes avec ! Accroche masque (cf photo).",
+                        description: "couleure noire mat, a des rayures mais il n’y a jamais eu de chutes avec ! Accroche masque (cf photo).",
                         size: "XL",
                         brand: "salomon",
                         category: "ski",
                         value: "25",
                         available: true,
                         condition: "usé" })
-salomon1.owner = User.all.sample
+salomon1.owner = hommes.sample
 salomon1.save!
 
 salomon2 = Clothe.new({ name: "Pantalon Ski Salomon jaune ",
@@ -166,8 +174,8 @@ salomon2 = Clothe.new({ name: "Pantalon Ski Salomon jaune ",
                         category: "ski",
                         value: "110",
                         available: true,
-                        condition: "comme neuf"})
-salomon2.owner = User.all.sample
+                        condition: "comme neuf" })
+salomon2.owner = hommes.sample
 salomon2.save!
 
 # CATEGORIE DEGUISEMENT
@@ -182,7 +190,7 @@ deguisement1 = Clothe.new({ name: "Costume Mr Indestructible ",
                             value: "15",
                             available: true,
                             condition: condition.sample })
-deguisement1.owner = User.all.sample
+deguisement1.owner = hommes.sample
 deguisement1.save!
 
 deguisement2 = Clothe.new({ name: "Costume de tortue",
@@ -218,7 +226,7 @@ deguisement4 = Clothe.new({ name: "Déguisement Chat au Chapeau Adulte",
 deguisement4.owner = User.all.sample
 deguisement4.save!
 
-deguisement5 = Clothe.new({ name: "Perruque et barbe à cheveux longs Merlin Wizard",
+deguisement5 = Clothe.new({ name: "Perruque et barbe à cheveux longs Merlin",
                             description: "Transformez-vous comme par magie en grand sorcier avec la perruque et la barbe du costume d'Halloween de Merlin.",
                             size: sizes.sample,
                             brand: "",
@@ -226,10 +234,10 @@ deguisement5 = Clothe.new({ name: "Perruque et barbe à cheveux longs Merlin Wiz
                             value: "10",
                             available: true,
                             condition: condition.sample })
-deguisement5.owner = User.all.sample
+deguisement5.owner = hommes.sample
 deguisement5.save!
 
-deguisement6 = Clothe.new({ name: "Chemise à manches longues",
+deguisement6 = Clothe.new({ name: "Faux muscles",
                             description: "Pourquoi s'entraîner quand ce Muscle Shirt vous donne des abdominaux et des bras déchirés comme un secondeur de la NFL ? Beaucoup moins cher qu'un abonnement à une salle de sport, notre chemise Muscle ton chair fait de vous le roi du fitness instantané, au moins à partir de la taille.",
                             size: sizes.sample,
                             brand: "",
@@ -237,7 +245,7 @@ deguisement6 = Clothe.new({ name: "Chemise à manches longues",
                             value: "10",
                             available: true,
                             condition: condition.sample })
-deguisement6.owner = User.all.sample
+deguisement6.owner = hommes.sample
 deguisement6.save!
 
 deguisement7 = Clothe.new({ name: "Masque halloween",
@@ -251,7 +259,7 @@ deguisement7 = Clothe.new({ name: "Masque halloween",
 deguisement7.owner = User.all.sample
 deguisement7.save!
 
-deguisement8 = Clothe.new({ name: "Déguisement Halloween fille squelette gifi",
+deguisement8 = Clothe.new({ name: "Déguisement Halloween fille squelette",
                             description: "Porté une fois très bon état. Serre tête assorti",
                             size: sizes.sample,
                             brand: "",
@@ -259,10 +267,10 @@ deguisement8 = Clothe.new({ name: "Déguisement Halloween fille squelette gifi",
                             value: "2",
                             available: true,
                             condition: condition.sample })
-    deguisement8.owner = User.all.sample
+    deguisement8.owner = femmes.sample
 deguisement8.save!
 
-deguisement9 = Clothe.new({ name: "Déguisement Woody Toy Story Disney Pixar",
+deguisement9 = Clothe.new({ name: "Déguisement Woody Toy Story",
                             description: "Découvrez notre incroyable Déguisement Woody inspiré de Toy Story Disney Pixar, spécialement conçu pour les petits aventuriers en herbe âgés de 3 à 4 ans. Plongez votre enfant dans l'univers magique de Toy Story avec ce costume qui éveillera son imagination et le transportera dans le Far West palpitant.",
                             size: sizes.sample,
                             brand: "",
@@ -270,7 +278,7 @@ deguisement9 = Clothe.new({ name: "Déguisement Woody Toy Story Disney Pixar",
                             value: "7",
                             available: true,
                             condition: condition.sample })
-deguisement9.owner = User.all.sample
+deguisement9.owner = hommes.sample
 deguisement9.save!
 
 deguisement10 = Clothe.new({ name: "Robe reine des neiges",
@@ -281,7 +289,7 @@ deguisement10 = Clothe.new({ name: "Robe reine des neiges",
                             value: "5",
                             available: true,
                             condition: condition.sample })
-deguisement10.owner = User.all.sample
+deguisement10.owner = femmes.sample
 deguisement10.save!
 
 
@@ -319,7 +327,7 @@ manteau3 = Clothe.new({ name: "Max Mara chic",
                         value: "150",
                         available: true,
                         condition: condition.sample })
-manteau3.owner = User.all.sample
+manteau3.owner = femmes.sample
 manteau3.save!
 
 manteau4 = Clothe.new({ name: "Veste de printemps Max Mara",
@@ -330,7 +338,7 @@ manteau4 = Clothe.new({ name: "Veste de printemps Max Mara",
                         value: "180",
                         available: true,
                         condition: condition.sample })
-manteau4.owner = User.all.sample
+manteau4.owner = femmes.sample
 manteau4.save!
 
 manteau5 = Clothe.new({ name: "Trench avec ceinture beige Stella McCartney",
@@ -341,7 +349,7 @@ manteau5 = Clothe.new({ name: "Trench avec ceinture beige Stella McCartney",
                         value: "150",
                         available: true,
                         condition: condition.sample })
-manteau5.owner = User.all.sample
+manteau5.owner = femmes.sample
 manteau5.save!
 
 manteau6 = Clothe.new({ name: "Manteau Stella Mccartney",
@@ -352,7 +360,7 @@ manteau6 = Clothe.new({ name: "Manteau Stella Mccartney",
                         value: "80",
                         available: true,
                         condition: condition.sample })
-manteau6.owner = User.all.sample
+manteau6.owner = femmes.sample
 manteau6.save!
 
 manteau7 = Clothe.new({ name: "Doudoune mi longue beige taille XXS Michael Kors",
@@ -374,7 +382,7 @@ manteau8 = Clothe.new({ name: "Trench Vintage femme",
                         value: "15",
                         available: true,
                         condition: condition.sample })
-manteau8.owner = User.all.sample
+manteau8.owner = femmes.sample
 manteau8.save!
 
 manteau9 = Clothe.new({ name: "Trench coat Coach",
@@ -385,7 +393,7 @@ manteau9 = Clothe.new({ name: "Trench coat Coach",
                         value: "65",
                         available: true,
                         condition: condition.sample })
-manteau9.owner = User.all.sample
+manteau9.owner = femmes.sample
 manteau9.save!
 
 manteau10 = Clothe.new({  name: "Trench Coach en cuir",
@@ -396,7 +404,7 @@ manteau10 = Clothe.new({  name: "Trench Coach en cuir",
                           value: "50",
                           available: true,
                           condition: condition.sample })
-manteau10.owner = User.all.sample
+manteau10.owner = femmes.sample
 manteau10.save!
 
 # CATEGORIE ACCESSOIRS FEMME
@@ -411,7 +419,7 @@ accessoire1 = Clothe.new({  name: "sac à main  Michael Kors",
                             value: "5",
                             available: true,
                             condition: condition.sample })
-accessoire1.owner = User.all.sample
+accessoire1.owner = femmes.sample
 accessoire1.save!
 
 accessoire2 = Clothe.new({  name: "Lunettes rondes",
@@ -422,7 +430,7 @@ accessoire2 = Clothe.new({  name: "Lunettes rondes",
                             value: "25",
                             available: true,
                             condition: condition.sample })
-accessoire2.owner = User.all.sample
+accessoire2.owner = femmes.sample
 accessoire2.save!
 
 accessoire3 = Clothe.new({  name: "Sac Tory Burch",
@@ -433,7 +441,7 @@ accessoire3 = Clothe.new({  name: "Sac Tory Burch",
                             value: "50",
                             available: true,
                             condition: condition.sample })
-accessoire3.owner = User.all.sample
+accessoire3.owner = femmes.sample
 accessoire3.save!
 
 accessoire4 = Clothe.new({  name: "Bottine Tory Burch",
@@ -444,7 +452,7 @@ accessoire4 = Clothe.new({  name: "Bottine Tory Burch",
                             value: "26",
                             available: true,
                             condition: condition.sample })
-accessoire4.owner = User.all.sample
+accessoire4.owner = femmes.sample
 accessoire4.save!
 
 accessoire5 = Clothe.new({  name: "Sac à mains noir Longchamp",
@@ -455,7 +463,7 @@ accessoire5 = Clothe.new({  name: "Sac à mains noir Longchamp",
                             value: "30",
                             available: true,
                             condition: condition.sample })
-accessoire5.owner = User.all.sample
+accessoire5.owner = femmes.sample
 accessoire5.save!
 
 accesoire6 = Clothe.new({ name: "Sac longchamp en toile rare beige croco",
@@ -466,7 +474,7 @@ accesoire6 = Clothe.new({ name: "Sac longchamp en toile rare beige croco",
                           value: "28",
                           available: true,
                           condition: condition.sample })
-accesoire6.owner = User.all.sample
+accesoire6.owner = femmes.sample
 accesoire6.save!
 
 accesoire7 = Clothe.new({ name: "Bague avec pierre naturelle Agate",
@@ -477,7 +485,7 @@ accesoire7 = Clothe.new({ name: "Bague avec pierre naturelle Agate",
                           value: "15",
                           available: true,
                           condition: condition.sample })
-accesoire7.owner = User.all.sample
+accesoire7.owner = femmes.sample
 accesoire7.save!
 
 accessoire8 = Clothe.new({  name: "Portefeuille swarovski en cuir rose",
@@ -488,7 +496,7 @@ accessoire8 = Clothe.new({  name: "Portefeuille swarovski en cuir rose",
                             value: "15",
                             available: true,
                             condition: condition.sample })
-accessoire8.owner = User.all.sample
+accessoire8.owner = femmes.sample
 accessoire8.save!
 
 accessoire9 = Clothe.new({  name: "Charm caméléon qui change de couleur neuf",
@@ -499,7 +507,7 @@ accessoire9 = Clothe.new({  name: "Charm caméléon qui change de couleur neuf",
                             value: "7",
                             available: true,
                             condition: condition.sample })
-accessoire9.owner = User.all.sample
+accessoire9.owner = femmes.sample
 accessoire9.save!
 
 accessoire10 = Clothe.new({ name: "Bague Pandora",
@@ -510,7 +518,7 @@ accessoire10 = Clothe.new({ name: "Bague Pandora",
                             value: "17",
                             available: true,
                             condition: condition.sample })
-accessoire10.owner = User.all.sample
+accessoire10.owner = femmes.sample
 accessoire10.save!
 
 # CATEGORIE ROBE
@@ -522,7 +530,7 @@ maje1 = Clothe.new({  name: "Robe asymétrique Maje",
                       value: "40",
                       available: true,
                       condition: condition.sample })
-maje1.owner = User.all.sample
+maje1.owner = femmes.sample
 maje1.save!
 
 maje2 = Clothe.new({  name: "Robe noire",
@@ -533,7 +541,7 @@ maje2 = Clothe.new({  name: "Robe noire",
                       value: "80",
                       available: true,
                       condition: condition.sample })
-maje2.owner = User.all.sample
+maje2.owner = femmes.sample
 maje2.save!
 
 bash1 = Clothe.new({  name: "Robe Bash noire et dorée",
@@ -544,7 +552,7 @@ bash1 = Clothe.new({  name: "Robe Bash noire et dorée",
                       value: "60",
                       available: true,
                       condition: condition.sample })
-bash1.owner = User.all.sample
+bash1.owner = femmes.sample
 bash1.save!
 
 bash2 = Clothe.new({  name: "Magnifique robe bash",
@@ -555,7 +563,7 @@ bash2 = Clothe.new({  name: "Magnifique robe bash",
                       value: "50",
                       available: true,
                       condition: condition.sample })
-bash2.owner = User.all.sample
+bash2.owner = femmes.sample
 bash2.save!
 
 valentino1 = Clothe.new({ name: "Robe de soirée rare Valentino",
@@ -566,7 +574,7 @@ valentino1 = Clothe.new({ name: "Robe de soirée rare Valentino",
                           value: "1000",
                           available: true,
                           condition: condition.sample })
-valentino1.owner = User.all.sample
+valentino1.owner = femmes.sample
 valentino1.save!
 
 valentino2 = Clothe.new({ name: "Robe de soirée Valentino",
@@ -577,7 +585,7 @@ valentino2 = Clothe.new({ name: "Robe de soirée Valentino",
                           value: "850",
                           available: true,
                           condition: condition.sample })
-valentino2.owner = User.all.sample
+valentino2.owner = femmes.sample
 valentino2.save!
 
 louis_vuitton1 = Clothe.new({ name: "Robe drapée Louis Vuitton",
@@ -588,7 +596,7 @@ louis_vuitton1 = Clothe.new({ name: "Robe drapée Louis Vuitton",
                               value: "450",
                               available: true,
                               condition: condition.sample })
-louis_vuitton1.owner = User.all.sample
+louis_vuitton1.owner = femmes.sample
 louis_vuitton1.save!
 
 louis_vuitton2 = Clothe.new({ name: "Robe Louis Vuitton coupe ample",
@@ -599,7 +607,7 @@ louis_vuitton2 = Clothe.new({ name: "Robe Louis Vuitton coupe ample",
                               value: "700",
                               available: true,
                               condition: condition.sample })
-louis_vuitton2.owner = User.all.sample
+louis_vuitton2.owner = femmes.sample
 louis_vuitton2.save!
 
 prada1 = Clothe.new({ name: "Robe élégante",
@@ -610,7 +618,7 @@ prada1 = Clothe.new({ name: "Robe élégante",
                       value: "250",
                       available: true,
                       condition: condition.sample })
-prada1.owner = User.all.sample
+prada1.owner = femmes.sample
 prada1.save!
 
 prada2 = Clothe.new({ name: "Robe Prada",
@@ -621,7 +629,7 @@ prada2 = Clothe.new({ name: "Robe Prada",
                       value: "550",
                       available: true,
                       condition: condition.sample })
-prada2.owner = User.all.sample
+prada2.owner = femmes.sample
 prada2.save!
 
 # CATEGORIE PANTALON
@@ -634,7 +642,7 @@ wrangler1 = Clothe.new({  name: "Jean Wrangler bleu",
                           value: "10",
                           available: true,
                           condition: condition.sample })
-wrangler1.owner = User.all.sample
+wrangler1.owner = femmes.sample
 wrangler1.save!
 
 wrangler2 = Clothe.new({  name: "Jean Wrangler bleu clair",
@@ -645,7 +653,7 @@ wrangler2 = Clothe.new({  name: "Jean Wrangler bleu clair",
                           value: "8",
                           available: true,
                           condition: condition.sample })
-wrangler2.owner = User.all.sample
+wrangler2.owner = hommes.sample
 wrangler2.save!
 
 carhartt1 = Clothe.new({  name: "Pantalon Carhartt",
@@ -656,7 +664,7 @@ carhartt1 = Clothe.new({  name: "Pantalon Carhartt",
                           value: "15",
                           available: true,
                           condition: condition.sample })
-carhartt1.owner = User.all.sample
+carhartt1.owner = hommes.sample
 carhartt1.save!
 
 carhartt2 = Clothe.new({  name: "pantalon beige",
@@ -667,7 +675,7 @@ carhartt2 = Clothe.new({  name: "pantalon beige",
                           value: "20",
                           available: true,
                           condition: condition.sample })
-carhartt2.owner = User.all.sample
+carhartt2.owner = femmes.sample
 carhartt2.save!
 
 levis1 = Clothe.new({   name: "Jean Levis femme 524 too superlow",
@@ -678,10 +686,10 @@ levis1 = Clothe.new({   name: "Jean Levis femme 524 too superlow",
                         value: "27",
                         available: true,
                         condition: condition.sample })
-levis1.owner = User.all.sample
+levis1.owner = femmes.sample
 levis1.save!
 
-levis2 = Clothe.new({   name: "Jean Levis",
+levis2 = Clothe.new({   name: "Jean Levis usé",
                         description: "Jean légèrement usé vers le bas. Taille 34. Jean taille basse légèrement évasé.",
                         size: sizes.sample,
                         brand: "levis",
@@ -689,7 +697,7 @@ levis2 = Clothe.new({   name: "Jean Levis",
                         value: "10",
                         available: true,
                         condition: condition.sample })
-levis2.owner = User.all.sample
+levis2.owner = femmes.sample
 levis2.save!
 
 sandro1 = Clothe.new({  name: "Pantalon Sandro Paris",
@@ -700,7 +708,7 @@ sandro1 = Clothe.new({  name: "Pantalon Sandro Paris",
                         value: "15",
                         available: true,
                         condition: condition.sample })
-sandro1.owner = User.all.sample
+sandro1.owner = femmes.sample
 sandro1.save!
 
 sandro2 = Clothe.new({  name: "Pantalon Sandro",
@@ -711,7 +719,7 @@ sandro2 = Clothe.new({  name: "Pantalon Sandro",
                         value: "8",
                         available: true,
                         condition: condition.sample })
-sandro2.owner = User.all.sample
+sandro2.owner = femmes.sample
 sandro2.save!
 
 axel_arigato1 = Clothe.new({  name: "Pantalon Axel Arigato",
@@ -722,7 +730,7 @@ axel_arigato1 = Clothe.new({  name: "Pantalon Axel Arigato",
                               value: "45",
                               available: true,
                               condition: condition.sample })
-axel_arigato1.owner = User.all.sample
+axel_arigato1.owner = femmes.sample
 axel_arigato1.save!
 
 axel_arigato2 = Clothe.new({  name: "Pantalon cargo Axel Arigato",
@@ -733,7 +741,7 @@ axel_arigato2 = Clothe.new({  name: "Pantalon cargo Axel Arigato",
                               value: "100",
                               available: true,
                               condition: condition.sample })
-axel_arigato2.owner = User.all.sample
+axel_arigato2.owner = hommes.sample
 axel_arigato2.save!
 
 # CATEGORIE COSTUME
@@ -746,7 +754,7 @@ de_fursac1 = Clothe.new({ name: "Veste Croisée 6 sur 1",
                           value: "75",
                           available: true,
                           condition: condition.sample })
-de_fursac1.owner = User.all.sample
+de_fursac1.owner = hommes.sample
 de_fursac1.save!
 
 de_fursac2 = Clothe.new({ name: "Blazer noir Canali",
@@ -757,7 +765,7 @@ de_fursac2 = Clothe.new({ name: "Blazer noir Canali",
                           value: "70",
                           available: true,
                           condition: condition.sample })
-de_fursac2.owner = User.all.sample
+de_fursac2.owner = hommes.sample
 de_fursac2.save!
 
 boss1 = Clothe.new({  name: "costume rayé hugo boss",
@@ -771,7 +779,7 @@ boss1 = Clothe.new({  name: "costume rayé hugo boss",
                       value: "190",
                       available: true,
                       condition: condition.sample })
-boss1.owner = User.all.sample
+boss1.owner = hommes.sample
 boss1.save!
 
 boss2 = Clothe.new({  name: "Veste Hugo boss",
@@ -782,7 +790,7 @@ boss2 = Clothe.new({  name: "Veste Hugo boss",
                       value: "10",
                       available: true,
                       condition: condition.sample })
-boss2.owner = User.all.sample
+boss2.owner = hommes.sample
 boss2.save!
 
 calvin_klein1 = Clothe.new({  name: "Veste de costume Noire Calvin",
@@ -795,7 +803,7 @@ calvin_klein1 = Clothe.new({  name: "Veste de costume Noire Calvin",
                               value: "30",
                               available: true,
                               condition: condition.sample })
-calvin_klein1.owner = User.all.sample
+calvin_klein1.owner = hommes.sample
 calvin_klein1.save!
 
 calvin_klein2 = Clothe.new({  name: "Veste de costume Calvin Klein",
@@ -809,7 +817,7 @@ calvin_klein2 = Clothe.new({  name: "Veste de costume Calvin Klein",
                               value: "20",
                               available: true,
                               condition: condition.sample })
-calvin_klein2.owner = User.all.sample
+calvin_klein2.owner = hommes.sample
 calvin_klein2.save!
 
 burberry1 = Clothe.new({  name: "Veste de costume classique Burberry",
@@ -821,10 +829,10 @@ burberry1 = Clothe.new({  name: "Veste de costume classique Burberry",
                           value: "25",
                           available: true,
                           condition: condition.sample })
-burberry1.owner = User.all.sample
+burberry1.owner = hommes.sample
 burberry1.save!
 
-burberry2 = Clothe.new({  name: "Veste de costume classique à deux boutons.",
+burberry2 = Clothe.new({  name: "Veste de costume classique à deux boutons",
                           description: "🔥État: 9.5/10
                           🔥Taille: L/52
 
@@ -835,7 +843,7 @@ burberry2 = Clothe.new({  name: "Veste de costume classique à deux boutons.",
                           value: "150",
                           available: true,
                           condition: condition.sample })
-burberry2.owner = User.all.sample
+burberry2.owner = hommes.sample
 burberry2.save!
 
 ralph_lauren1 = Clothe.new({  name: "Blazer",
@@ -846,7 +854,7 @@ ralph_lauren1 = Clothe.new({  name: "Blazer",
                               value: "22",
                               available: true,
                               condition: condition.sample })
-ralph_lauren1.owner = User.all.sample
+ralph_lauren1.owner = hommes.sample
 ralph_lauren1.save!
 
 ralph_lauren1 = Clothe.new({  name: "Le blazer iconique en laine chamoisée",
@@ -857,7 +865,7 @@ ralph_lauren1 = Clothe.new({  name: "Le blazer iconique en laine chamoisée",
                               value: "300",
                               available: true,
                               condition: condition.sample })
-ralph_lauren1.owner = User.all.sample
+ralph_lauren1.owner = hommes.sample
 ralph_lauren1.save!
 
 patagonia1 = Clothe.new({ name: "Veste Polaire Patagonia Beige",
@@ -868,7 +876,7 @@ patagonia1 = Clothe.new({ name: "Veste Polaire Patagonia Beige",
                           value: "90",
                           available: true,
                           condition: "comme neuf" })
-patagonia1.owner = User.all.sample
+patagonia1.owner = hommes.sample
 patagonia1.save!
 
 patagonia2 = Clothe.new({ name: "Veste Patagonia Bleu",
@@ -879,7 +887,7 @@ patagonia2 = Clothe.new({ name: "Veste Patagonia Bleu",
                           value: "65",
                           available: true,
                           condition: "usé" })
-patagonia2.owner = User.all.sample
+patagonia2.owner = hommes.sample
 patagonia2.save!
 
 rossignol1 = Clothe.new({ name: "Pantalon Ski Rossignol noir",
@@ -890,7 +898,7 @@ rossignol1 = Clothe.new({ name: "Pantalon Ski Rossignol noir",
                           value: "70",
                           available: true,
                           condition: "comme neuf" })
-rossignol1.owner = User.all.sample
+rossignol1.owner = hommes.sample
 rossignol1.save!
 
 rossignol2 = Clothe.new({ name: "Manteau Ski Rossignol Bleu ",
@@ -901,7 +909,7 @@ rossignol2 = Clothe.new({ name: "Manteau Ski Rossignol Bleu ",
                           value: "90",
                           available: true,
                           condition: "comme neuf" })
-rossignol2.owner = User.all.sample
+rossignol2.owner = hommes.sample
 rossignol2.save!
 
 # CATEGORIE SWEET
@@ -915,7 +923,7 @@ sweetralphlauren1 = Clothe.new({  name: "Sweet à capuche Ralph Lauren beige",
                                   value: "60",
                                   available: true,
                                   condition: "comme neuf" })
-sweetralphlauren1.owner = User.all.sample
+sweetralphlauren1.owner = hommes.sample
 sweetralphlauren1.save!
 
 sweetralphlauren2 = Clothe.new({  name: "Pull Ralph lauren bleu XL",
@@ -926,7 +934,7 @@ sweetralphlauren2 = Clothe.new({  name: "Pull Ralph lauren bleu XL",
                                   value: "45",
                                   available: true,
                                   condition: "comme neuf"})
-sweetralphlauren2.owner = User.all.sample
+sweetralphlauren2.owner = hommes.sample
 sweetralphlauren2.save!
 
 sweetabercrombie1 = Clothe.new({  name: "Sweet XXL Abercrombie et fitch",
@@ -937,7 +945,7 @@ sweetabercrombie1 = Clothe.new({  name: "Sweet XXL Abercrombie et fitch",
                                   value: "20",
                                   available: true,
                                   condition: "comme neuf" })
-sweetabercrombie1.owner = User.all.sample
+sweetabercrombie1.owner = hommes.sample
 sweetabercrombie1.save!
 
 sweetabercrombie2 = Clothe.new({  name: "Sweet à capuche Abercrombie et fitch",
@@ -948,7 +956,7 @@ sweetabercrombie2 = Clothe.new({  name: "Sweet à capuche Abercrombie et fitch",
                                   value: "7",
                                   available: true,
                                   condition: "usé" })
-sweetabercrombie2.owner = User.all.sample
+sweetabercrombie2.owner = hommes.sample
 sweetabercrombie2.save!
 
 sweetlacoste1 = Clothe.new({  name: "Veste lacoste rouge S",
@@ -959,7 +967,7 @@ sweetlacoste1 = Clothe.new({  name: "Veste lacoste rouge S",
                               value: "45",
                               available: true,
                               condition: "usé" })
-sweetlacoste1.owner = User.all.sample
+sweetlacoste1.owner = hommes.sample
 sweetlacoste1.save!
 
 sweetlacoste2 = Clothe.new({  name: "Veste lacoste verte",
@@ -970,7 +978,7 @@ sweetlacoste2 = Clothe.new({  name: "Veste lacoste verte",
                               value: "75",
                               available: true,
                               condition: "comme neuf" })
-sweetlacoste2.owner = User.all.sample
+sweetlacoste2.owner = hommes.sample
 sweetlacoste2.save!
 
 sweetgucci1 = Clothe.new({  name: "Veste Gucci bleue M",
@@ -981,7 +989,7 @@ sweetgucci1 = Clothe.new({  name: "Veste Gucci bleue M",
                             value: "280",
                             available: true,
                             condition: "comme neuf" })
-sweetgucci1.owner = User.all.sample
+sweetgucci1.owner = hommes.sample
 sweetgucci1.save!
 
 sweetgucci2 = Clothe.new({  name: "Sweet Gucci noir Tigre",
@@ -992,7 +1000,7 @@ sweetgucci2 = Clothe.new({  name: "Sweet Gucci noir Tigre",
                             value: "225",
                             available: true,
                             condition: "comme neuf" })
-sweetgucci2.owner = User.all.sample
+sweetgucci2.owner = hommes.sample
 sweetgucci2.save!
 
 sweetsaintjames1 = Clothe.new({ name: "Pull rayé Saint James T3XL",
@@ -1003,7 +1011,7 @@ sweetsaintjames1 = Clothe.new({ name: "Pull rayé Saint James T3XL",
                                 value: "42",
                                 available: true,
                                 condition: "comme neuf" })
-sweetsaintjames1.owner = User.all.sample
+sweetsaintjames1.owner = hommes.sample
 sweetsaintjames1.save!
 
 sweetsaintjames2 = Clothe.new({ name: "Pull vintage saint james",
@@ -1014,7 +1022,7 @@ sweetsaintjames2 = Clothe.new({ name: "Pull vintage saint james",
                                 value: "15",
                                 available: true,
                                 condition: "usé" })
-sweetsaintjames2.owner = User.all.sample
+sweetsaintjames2.owner = hommes.sample
 sweetsaintjames2.save!
 
 # CATEGORIE ROBE MARIEE
@@ -1033,7 +1041,7 @@ robemariee1 = Clothe.new({  name: "Robe de mariée portée 1 fois",
                             value: "50",
                             available: true,
                             condition: "comme neuf" })
-robemariee1.owner = User.all.sample
+robemariee1.owner = femmes.sample
 robemariee1.save!
 
 robemariee2 = Clothe.new({  name: "Belle robe de mariée",
@@ -1044,7 +1052,7 @@ robemariee2 = Clothe.new({  name: "Belle robe de mariée",
                             value: "40",
                             available: true,
                             condition: "bon état" })
-robemariee2.owner = User.all.sample
+robemariee2.owner = femmes.sample
 robemariee2.save!
 
 robemariee3 = Clothe.new({  name: "Robe longue mariée bohème dentelle",
@@ -1056,7 +1064,7 @@ robemariee3 = Clothe.new({  name: "Robe longue mariée bohème dentelle",
                             value: "25",
                             available: true,
                             condition: "comme neuf" })
-robemariee3.owner = User.all.sample
+robemariee3.owner = femmes.sample
 robemariee3.save!
 
 robemariee4 = Clothe.new({  name: "Robe Eva e lola",
@@ -1067,7 +1075,7 @@ robemariee4 = Clothe.new({  name: "Robe Eva e lola",
                             value: "20",
                             available: true,
                             condition: "comme neuf" })
-robemariee4.owner = User.all.sample
+robemariee4.owner = femmes.sample
 robemariee4.save!
 
 robemariee5 = Clothe.new({  name: "Magnifique Robe de Mariée Blanche",
@@ -1078,7 +1086,7 @@ robemariee5 = Clothe.new({  name: "Magnifique Robe de Mariée Blanche",
                             value: "65",
                             available: true,
                             condition: "comme neuf"})
-robemariee5.owner = User.all.sample
+robemariee5.owner = femmes.sample
 robemariee5.save!
 
 robemariee6 = Clothe.new({  name: "Robe Sibylle – Sincerity",
@@ -1089,7 +1097,7 @@ robemariee6 = Clothe.new({  name: "Robe Sibylle – Sincerity",
                             value: "90",
                             available: true,
                             condition: "bon état" })
-robemariee6.owner = User.all.sample
+robemariee6.owner = femmes.sample
 robemariee6.save!
 
 robemariee7 = Clothe.new({  name: "Elégante robe de mariée",
@@ -1100,7 +1108,7 @@ robemariee7 = Clothe.new({  name: "Elégante robe de mariée",
                             value: "80",
                             available: true,
                             condition: "bon état" })
-robemariee7.owner = User.all.sample
+robemariee7.owner = femmes.sample
 robemariee7.save!
 
 robemariee8 = Clothe.new({  name: "Robe Pépita – Eglantine",
@@ -1111,7 +1119,7 @@ robemariee8 = Clothe.new({  name: "Robe Pépita – Eglantine",
                             value: "70",
                             available: true,
                             condition: "comme neuf" })
-robemariee8.owner = User.all.sample
+robemariee8.owner = femmes.sample
 robemariee8.save!
 
 robemariee9 = Clothe.new({  name: "Robe Vietnam – Eglantine Créations",
@@ -1122,7 +1130,7 @@ robemariee9 = Clothe.new({  name: "Robe Vietnam – Eglantine Créations",
                             value: "60",
                             available: true,
                             condition: "bon état" })
-robemariee9.owner = User.all.sample
+robemariee9.owner = femmes.sample
 robemariee9.save!
 
 robemariee10 = Clothe.new({ name: "Robe Vaucluse – Eglantine",
@@ -1133,24 +1141,24 @@ robemariee10 = Clothe.new({ name: "Robe Vaucluse – Eglantine",
                             value: "75",
                             available: true,
                             condition: "bon état" })
-robemariee10.owner = User.all.sample
+robemariee10.owner = femmes.sample
 robemariee10.save!
 
 # CATEGORIE ACCESSOIRES HOMME
 
 puts "créations des seeds accessoires hommes"
 
-montrefossil = Clothe.new({ name: "Montre Fossil",
+montrefossil = Clothe.new({ name: "Montre Fossil neuve",
                             description: "Montre fossil
                             Fonction très bien
                             Pile neuve très bon état",
                             size: "M",
                             brand: "Fossil",
-                            category: "accessoires_hommes",
+                            category: "accessoires_homme",
                             value: "52",
                             available: true,
                             condition: "bon état" })
-montrefossil.owner = User.all.sample
+montrefossil.owner = hommes.sample
 montrefossil.save!
 
 chaussures1 = Clothe.new({  name: "Chaussures Cole haan taille 45",
@@ -1161,10 +1169,10 @@ chaussures1 = Clothe.new({  name: "Chaussures Cole haan taille 45",
                             value: "100",
                             available: true,
                             condition: "correct" })
-chaussures1.owner = User.all.sample
+chaussures1.owner = hommes.sample
 chaussures1.save!
 
-chaussures2 = Clothe.new({  name: "Chaussure Cole haan original",
+chaussures2 = Clothe.new({  name: "Chaussures Cole haan original",
                             description: "Chaussures cole haan originale en excellent état porté quelques fois taille 43",
                             size: "43",
                             brand: "colehaan",
@@ -1172,18 +1180,18 @@ chaussures2 = Clothe.new({  name: "Chaussure Cole haan original",
                             value: "29",
                             available: true,
                             condition: "comme neuf" })
-chaussures2.owner = User.all.sample
+chaussures2.owner = hommes.sample
 chaussures2.save!
 
 montrefossil2 = Clothe.new({  name: "Montre Fossil bracelet cuire",
                               description: "Montre Fossil la pile est a changer sinon elle tourne normalement. Le bracelet en cuire a un peu travaillé",
                               size: "M",
                               brand: "fossil",
-                              category: "accessoire_homme",
+                              category: "accessoires_homme",
                               value: "15",
                               available: true,
                               condition: condition.sample })
-montrefossil2.owner = User.all.sample
+montrefossil2.owner = hommes.sample
 montrefossil2.save!
 
 portefeuille = Clothe.new({ name: "Portefeuille Tommy Hilfiger",
@@ -1194,7 +1202,7 @@ portefeuille = Clothe.new({ name: "Portefeuille Tommy Hilfiger",
                             value: "35",
                             available: true,
                             condition: "bon état" })
-portefeuille.owner = User.all.sample
+portefeuille.owner = hommes.sample
 portefeuille.save!
 
 ceinture1 = Clothe.new({  name: "Ceinture Tommy Hilfiger",
@@ -1205,7 +1213,7 @@ ceinture1 = Clothe.new({  name: "Ceinture Tommy Hilfiger",
                           value: "23",
                           available: true,
                           condition: "bon état" })
-ceinture1.owner = User.all.sample
+ceinture1.owner = hommes.sample
 ceinture1.save!
 
 montrehugoboss = Clothe.new({ name: "Hugo Boss montre homme",
@@ -1216,7 +1224,7 @@ montrehugoboss = Clothe.new({ name: "Hugo Boss montre homme",
                               value: "80",
                               available: true,
                               condition: condition.sample })
-montrehugoboss.owner = User.all.sample
+montrehugoboss.owner = hommes.sample
 montrehugoboss.save!
 
 cravate = Clothe.new({  name: "Cravate Hugo Boss",
@@ -1227,25 +1235,30 @@ cravate = Clothe.new({  name: "Cravate Hugo Boss",
                         value: "40",
                         available: true,
                         condition: condition.sample })
-cravate.owner = User.all.sample
+cravate.owner = hommes.sample
 cravate.save!
 
 # ATTACHEMENT DES PHOTOS AUX SEEDS
 
 clothes = Clothe.all
 
-clothes.each do |clothe|
-  puts "charging image for #{clothe.name}"
-  attach_images_to_clothe(clothe)
-  clothe.save!
-end
-
 status = ["new", "pending", "finished"]
 
+puts "création des transactions"
+
 40.times do
-  transaction = Transaction.new(start_date: Date.today, end_date: Date.tomorrow)
+  start_date_random = Date.today + rand(0..15)
+  end_date_random = start_date_random + rand(1..3)
+  transaction = Transaction.new(start_date: start_date_random, end_date: end_date_random)
   transaction.client = User.all.sample
   transaction.clothe = Clothe.where.not(owner_id: transaction.client_id).sample
   transaction.status = status.sample
   transaction.save!
+  puts "transactions de #{transaction.client.user_name} sur #{transaction.clothe.name}"
+end
+
+clothes.each do |clothe|
+  puts "charging image for #{clothe.name}"
+  attach_images_to_clothe(clothe)
+  clothe.save!
 end
