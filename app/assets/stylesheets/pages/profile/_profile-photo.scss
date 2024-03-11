@@ -18,6 +18,16 @@
   padding-top: 16px;
 }
 
+.profil-infos {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+
+  p {
+    margin: 0;
+  }
+}
+
 .dashboard {
   text-align: center;
 
@@ -27,3 +37,69 @@
   }
 }
 
+.undertitle {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 45px;
+}
+.co2 {
+  font-size: 10px;
+  padding-left: 10px;
+  margin: 0;
+}
+
+.account-level {
+  background-color: #223e3b;
+  color: #ecc37a;
+  border-radius: 10px;
+  padding: 15px 10px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .level-icon {
+    position: relative;
+    i {
+      padding: 6px;
+      font-size: 30px;
+      color: #ecc37a;
+    }
+    .level {
+      position: absolute;
+      top: 10px;
+      left: 13px;
+      color: white;
+    }
+  }
+  .level-bar {
+    text-align: center;
+    color: #223e3b;
+    flex-grow: 1;
+    margin: 0 10px;
+    background-color: wheat;
+    border-radius: 15px;
+    p {
+      border-radius: 15px;
+      margin: 0;
+      background-color: #ecc37a;
+      border-color: #333;
+      width: 78%;
+    }
+  }
+}
+
+.komod,
+.emprunts,
+.prets {
+  display: flex;
+  border: 2px solid #223e3b;
+  color: #ecc37a;
+  border-radius: 10px;
+  padding: 15px 10px;
+  height: 80px;
+}
+
+.komod {
+  height: 150px;
+}
