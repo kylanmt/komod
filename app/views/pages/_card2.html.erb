@@ -1,8 +1,8 @@
-  <div class="card-container">
-    <div class="card-images">
-      <%= render "shared/carousel", clothe: clothe, size: 400 %>
-    </div>
-<%= link_to clothe_path(clothe) do %>
+<div class="card-container" data-action="click->overlay#display">
+  <div class="card-images">
+    <%= render "shared/carousel", clothe: clothe, size: 400 %>
+  </div>
+  <%= link_to "" do %>
     <div class="information">
       <div class="top-info">
         <p class="photo-owner">avatar owner</p>
@@ -10,15 +10,14 @@
       </div>
       <div class="bot-info">
         <div class="description">
-          <h2>
-            <%= "#{clothe.name.split(" ")[0..1].join(" ")}..." %>
-          </h2>
-            <%= "#{clothe.description[0..35]}..." %>
-          </div>
+          <h2><%= "#{clothe.name.split(" ")[0..1].join(" ")}..." %></h2>
+          <%= "#{clothe.description[0..35]}..." %>
+        </div>
         <div class="like">
           <%= button_to "", clothe_likes_path(clothe), class:"fa-solid fa-heart fa-3x"%>
         </div>
       </div>
     </div>
-<% end %>
-  </div>
+  <% end %>
+</div>
+</div>
