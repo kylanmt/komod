@@ -1,6 +1,5 @@
-<div class="" data-controller="toggle">
-  <h2><strong>👕 Ma Komod'</strong></h2>
-  <button data-action="click->toggle#fire" class="index-btn">Voir tous mes articles
+<div data-controller="toggle">
+  <button data-action="click->toggle#fire" class="index-btn"> Ma Komod'
     <svg width="20" height="19" viewBox="0 0 176 164" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M92 164L0 0H175.5L92 164Z" fill="white"/>
     </svg>
@@ -8,16 +7,14 @@
 
   <div data-toggle-target="togglableElement" class="d-none">
     <% clothes.each do |clothe| %>
-      <div class="card-index-clothes">
-        <%= link_to clothe.name, clothe_path(clothe) %>
-      <p>commande en cours:</p>
-      <% clothe.transactions.each do |transaction| %>
-        <%= link_to  transaction.client.user_name, owner_transaction_path(transaction) %>
-        <p>du <%= transaction.start_date %> au <%= transaction.end_date%></p>
-        <%= link_to "refuser", transaction_path(transaction), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      <% if clothe.transactions.size > 0 %>
+        <%= render "ticket", clothe: clothe %>
       <% end %>
-      </div>
-      <br>
+    <% end %>
+    <% clothes.each do |clothe| %>
+      <% if clothe.transactions.size == 0 %>
+        <%= render "ticket_empty", clothe: clothe %>
+      <% end %>
     <% end %>
   </div>
 </div>

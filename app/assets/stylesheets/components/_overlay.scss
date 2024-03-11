@@ -1,0 +1,30 @@
+.overlay {
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  justify-content: center;
+  align-items: center;
+  transition: height 2s ease-in-out;
+}
+
+.overlay-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:100%;
+  height:100%;
+}
+
+.overlay.active {
+  height: 200vh;
+}
+
+// .overlay-slide-up {
+//   position: relative;
+//   transform: translateY(100%);
+//   transition: transform 2s ease-out;
+//   background-color: white;
+// }
