@@ -1,8 +1,8 @@
-<%= link_to clothe_path(clothe), :action => 'go' do %>
   <div class="card-container">
     <div class="card-images">
       <%= render "shared/carousel", clothe: clothe, size: 400 %>
     </div>
+<%= link_to clothe_path(clothe) do %>
     <div class="information">
       <div class="top-info">
         <p class="photo-owner">avatar owner</p>
@@ -20,5 +20,5 @@
         </div>
       </div>
     </div>
-  </div>
 <% end %>
+  </div>
