@@ -1,0 +1,20 @@
+<div class="navbar container-phone">
+        <h1 class="title">👕 Nouvelle annonce</h1>
+</div>
+
+<div class="font-creation">
+    <h5 class="text-center m-4">Ajoute une nouvelle pièce à ta Komod'</h5>
+  <div class="container w-75">
+    <%= simple_form_for([:owner, @clothe], html: { class: "form-overlay" }) do |f| %>
+      <%= f.input :name, label: "Nom" %>
+      <%= f.input :description, label: "Description" %>
+      <%= f.input :category, label: "category" %>
+      <%= f.input :brand, label: "marque" %>
+      <%= f.input :size, label: "Taille" %>
+      <%= f.input :value, label: "Prix" %>
+      <%= f.input :condition, label: "état" %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <%= f.submit "Nouvelle annonce", class: "mt-2 booking-btn" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<script>window.disable_dates = [
+  <% reservations_dates.each do |dates|%>
+    <% dates.each do |date| %>
+      "<%= date %>",
+    <% end %>
+  <% end %>
+  ]</script>
+
+<%= simple_form_for [clothe, transaction] do |f| %>
+  <%= f.input :start_date, input_html: {data: {controller: "datepicker",}}, as: :string%>
+  <%= f.submit  %>
+<% end %>
