@@ -1164,7 +1164,7 @@ chaussures1 = Clothe.new({  name: "Chaussures Cole haan taille 45",
 chaussures1.owner = User.all.sample
 chaussures1.save!
 
-chaussures2 = Clothe.new({  name: "Chaussure Cole haan",
+chaussures2 = Clothe.new({  name: "Chaussure Cole haan original",
                             description: "Chaussures cole haan originale en excellent état porté quelques fois taille 43",
                             size: "43",
                             brand: "colehaan",

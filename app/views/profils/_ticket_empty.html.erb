@@ -1,0 +1,18 @@
+<div class="card-index-clothes">
+  <div data-controller="toggle">
+    <div class="row">
+      <div class="col img-col">
+        <%= link_to cl_image_tag(clothe.photos.first.key), clothe_path(clothe), class: "ticket-photo"%>
+      </div>
+      <div class="col-8 reservation-col">
+        <p class="transaction-btn" >Pas de reservation</p>
+      </div>
+        <div data-toggle-target="togglableElement" class="d-none">
+          <% clothe.transactions.each do |transaction| %>
+          <div class="transaction-container">
+          </div>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>
