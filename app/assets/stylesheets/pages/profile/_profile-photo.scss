@@ -53,12 +53,14 @@
   margin-top: -20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 
   a {
     margin: 0;
     padding: 6px 6px 5px 6px;
     text-align: center;
+    text-shadow: 0px 0px 3px #000000;
+    box-shadow: 0px 0px 5px #223e3b;
   }
 
   i {
@@ -82,6 +84,7 @@
       padding: 6px;
       font-size: 30px;
       color: #ecc37a;
+      text-shadow: 0px 0px 5px #000000;
     }
     .level {
       position: absolute;
@@ -97,6 +100,7 @@
     margin: 0 10px;
     background-color: wheat;
     border-radius: 15px;
+    box-shadow: 0px 0px 5px #000000;
     p {
       border-radius: 15px;
       margin: 0;
@@ -108,8 +112,7 @@
 }
 
 .komod,
-.emprunts,
-.events {
+.emprunts {
   display: flex;
   flex-direction: column;
   border: 2px solid #223e3b;
@@ -124,7 +127,87 @@
   }
 }
 
-.events {
-  margin-top: -20px;
-  min-height: 160px;
+.komod {
+  color: #223e3b;
+  .preview {
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    text-align: center;
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    .my-clothes,
+    .my-locations {
+      color: #223e3b;
+      min-height: 80px;
+      width: 48%;
+      position: relative;
+
+      i {
+        font-size: 45px;
+        text-shadow: 0px 0px 4px #223e3b;
+      }
+    }
+
+    .my-clothes {
+      i {
+        color: #ecc37a;
+      }
+    }
+
+    .my-locations {
+      i {
+        color: #223e3b;
+      }
+
+      .arrow {
+        position: absolute;
+        left: 87px;
+        top: 37px;
+        font-size: 23px;
+        color: #ecc37a;
+      }
+    }
+  }
+}
+
+.emprunts {
+  text-align: center;
+  position: relative;
+
+  p {
+    color: #223e3b;
+    margin: 0;
+    padding: 0;
+  }
+  .my-gives {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    .icon {
+      width: 48%;
+    }
+
+    .all-my-transactions {
+      width: 48%;
+      a {
+        font-size: 16px;
+      }
+    }
+    i {
+      color: #223e3b;
+      font-size: 45px;
+      text-shadow: 0px 0px 4px #223e3b;
+    }
+    .arrow {
+      position: absolute;
+      left: 92px;
+      top: 39px;
+      font-size: 22px;
+      color: #ecc37a;
+    }
+  }
 }

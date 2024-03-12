@@ -1,10 +1,14 @@
-<div data-action="click->toggle#fire">
-  <H1>MES PRETS</H1>
-  <%= "#{transactions.size} prets en cours" %>
-</div>
-  <div data-toggle-target="togglableElement" class="d-none">
-    <% transactions.each do |transaction| %>
-      <%= render "ticket_location", transaction: transaction, clothe: transaction.clothe %>
-    <% end %>
+<div class="my-gives">
+  <div class="icon">
+    <p><%= "#{transactions.size} Prets en cours"  %></p>
+    <i class="fa-solid fa-shirt"></i>
+    <i class="fa-solid fa-down-long arrow"></i>
+  </div>
+  <div class="all-my-transactions">
+        <%= link_to "Mes transactions", owner_transactions_path, class: 'booking-btn' %>
   </div>
 </div>
+
+<% transactions.each do |transaction| %>
+  <%= render "ticket_location", transaction: transaction, clothe: transaction.clothe %>
+<% end %>
