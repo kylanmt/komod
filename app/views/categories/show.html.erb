@@ -1,0 +1,14 @@
+<div class="navbar container-phone">
+  <div class="d-flex ms-4">
+    <%= link_to (image_tag "icons/undo_icon.svg"), categories_path, class: "d-flex"%>
+    <h1 class="title"><%= @category.name %></h1>
+  </div>
+</div>
+<div class="container-phone">
+  <% @clothes.each do |clothe| %>
+    <div data-controller="overlay">
+      <%= render "pages/card2", clothe: clothe %>
+      <%= render "pages/overlay-clothes", clothe: clothe %>
+    </div>
+  <% end %>
+</div>

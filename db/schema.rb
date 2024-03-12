@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_05_161650) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_12_101931) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_05_161650) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "chatrooms", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -52,7 +58,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_05_161650) do
     t.string "name"
     t.text "description"
     t.string "size"
-    t.string "category"
     t.integer "value"
     t.boolean "available"
     t.string "condition"
@@ -60,6 +65,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_05_161650) do
     t.datetime "updated_at", null: false
     t.bigint "owner_id"
     t.string "brand"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_clothes_on_category_id"
     t.index ["owner_id"], name: "index_clothes_on_owner_id"
   end
 
@@ -131,6 +138,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_05_161650) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "clothes", "categories"
   add_foreign_key "clothes", "users", column: "owner_id"
   add_foreign_key "likes", "clothes"
   add_foreign_key "likes", "users"
