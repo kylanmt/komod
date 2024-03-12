@@ -3,17 +3,12 @@
   margin-top: 12px;
 }
 
-// .carousel {
-//   border-radius: 1rem;
-//   overflow: hidden;
-// }
-
 .carousel {
   img {
     border-radius: 29px;
     object-fit: cover;
-    -webkit-filter : blur(0px) contrast(20%);
-    filter : blur(0px) contrast(50%);
+    -webkit-filter: blur(0px) contrast(20%);
+    filter: blur(0px) contrast(50%);
   }
 }
 
@@ -72,13 +67,15 @@
   color: white;
 }
 
-.like-button{
-  z-index: 2;
-
-    button{
+.like-button {
+  z-index: 5;
+  position: absolute;
+  top: 405px;
+  right: 12px;
+  button {
     background-color: transparent;
     border: none;
-    }
+  }
 }
 
 .owner-photo {
