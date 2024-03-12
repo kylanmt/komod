@@ -7,10 +7,10 @@
   <% end %>
 </div>
 
-<div class="container-phone clothe-cards">
-  <% @clothes.first(10).each do |clothe| %>
+<div class="container-phone">
+  <% @clothes.sample(10).each do |clothe| %>
     <div data-controller="overlay">
-      <%= render "card2", clothe: clothe %>
+      <%= render "card", clothe: clothe %>
       <%= render "overlay-clothes", clothe: clothe %>
     </div>
   <% end %>

@@ -1,15 +1,42 @@
 
-<div class="clothe-card">
-  <div class="clothe-card-illustration" style>
-    <%# <% clothe.photos.each do |photo| %>
-      <%= link_to cl_image_tag(clothe.photos.first.key, width: 400, height: 400), clothe_path(clothe) %>
-    <%# <% end %>
+<div class="card-container">
+  <div class="owner-info">
+    <%= cl_image_tag(clothe.owner.photo.key, class: "owner-photo")%>
+    <p class="name-owner"><%= clothe.owner.user_name%></p>
   </div>
-  <div class="clothe-details">
-  <div class="clothe-name">
-      <h4><%= link_to " #{clothe.name}", clothe_path(clothe) %></h4>
+  <div class="card-images">
+    <%= render "shared/carousel", clothe: clothe, size: 400 %>
   </div>
+  <%= link_to "" do  %>
+    <div class="information" data-action="click->overlay#display">
+      <div class="top-info">
+        <%# <p class="photo-owner">avatar owner</p> %>
+        <p class="category"><%=clothe.category.name %></p>
+        <p class="map">map</p>
+      </div>
+      <div class="bot-info">
+        <div class="description">
+          <h2>
+            <%= "#{clothe.name[0..20]}..." %>
+          </h2>
+        </div>
 
-    <%= button_to "", clothe_likes_path(clothe), class:"fa-solid fa-heart fa-3x like"%>
-  </div>
+      </div>
+    </div>
+    <div class="like-button" data-controller="like-button" data-like-button-clothe-id-value= "<%= clothe.id %>">
+      <% like = Like.find_by(user: current_user, clothe_id: clothe.id) %>
+      <%= button_to "", clothe_likes_path(clothe),
+      data:{
+        action: "click->like-button#like",
+        like_button_target: "button"
+      },
+      class:"fa-regular fa-heart fa-3x #{like ? 'd-none' : ''}", style: "color: #ED4956;"%>
+      <%= button_to "",  unlike_likes_path,
+      data:{
+        action: "click->like-button#destroy",
+        like_button_target: "buttonDestroy",
+      },
+      class:"fa-solid fa-heart fa-3x  #{like ? '' : 'd-none'}", style: "color: #ED4956;"%>
+    </div>
+  <% end %>
 </div>
