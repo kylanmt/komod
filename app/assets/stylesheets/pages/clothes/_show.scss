@@ -21,3 +21,12 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+.show-carousel {
+  .carousel {
+    img {
+      border-radius: 0;
+      filter: none;
+    }
+  }
+}

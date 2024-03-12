@@ -1,6 +1,6 @@
 <div class="image-container">
   <div class="close-button"><%= link_to image_tag("buttons/croix_fermer.svg", alt: "Fermer"), root_path %></div>
-  <div>
+  <div class="show-carousel">
     <% if @clothe && @clothe.photos.any? %>
       <%= render "shared/carousel", clothe: @clothe, size: 430 %>
     <% end %>
