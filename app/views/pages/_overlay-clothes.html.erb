@@ -2,8 +2,7 @@
   <div class="container-phone">
     <h2 class="text-center"><strong><%= clothe.name %></strong></h2>
     <h6 class="text-center"><%= clothe.description %></h6>
-    <div class="mt-4 d-flex gap-2 justify-content-center">
-      <p class="tag-clothe"> <%= clothe.category.name %></p>
+    <div class="tag-container mt-4">
       <p class="tag-clothe"><i class="fa-solid fa-coins"></i> <%= clothe.value %></p>
       <p class="tag-clothe"><i class="fa-solid fa-shirt"></i> <%= clothe.size %></p>
       <p class="tag-clothe"><%= clothe.available ? 'Disponible' : 'Indisponible' %></p>

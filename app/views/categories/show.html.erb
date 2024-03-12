@@ -7,7 +7,7 @@
 <div class="container-phone">
   <% @clothes.each do |clothe| %>
     <div data-controller="overlay">
-      <%= render "pages/card2", clothe: clothe %>
+      <%= render "pages/card", clothe: clothe %>
       <%= render "pages/overlay-clothes", clothe: clothe %>
     </div>
   <% end %>
