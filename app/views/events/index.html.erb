@@ -17,4 +17,15 @@
     </div>
   </div>
   <h2>📰 Blog</h2>
+  <% @articles.each do |article| %>
+    <div class=" d-flex card-newsletter mb-4 mt-3">
+      <div class="newsletter-image">
+        <%= image_tag("newsletter/ecologie_textile.jpg", height: "150px", width: "150px") %>
+      </div>
+      <div class="card-infos ms-3">
+        <p class="newsletter-name">Actus textile 👕</p>
+        <h3 class="newsletter-title"><%= article.title %></h3>
+      </div>
+    </div>
+  <% end %>
 </div>

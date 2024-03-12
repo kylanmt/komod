@@ -1,3 +1,4 @@
+// Events
 .card-event {
   background-color: white;
   border-radius: 15px;
@@ -23,14 +24,12 @@
 .event-title {
   font-size: 24px;
   font-weight: bold;
-  text-align: center;
-  margin: 20px 0;
+  text-align: left;
 }
 
 .event-location {
   font-size: 16px;
   color: #6c757d;
-  margin-bottom: 20px;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -39,10 +38,41 @@
 .event-image {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
 }
 
 .event-image img {
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+// Newsletters
+.card-newsletter {
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.newsletter-name {
+  font-size: 16px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.newsletter-title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.newsletter-image {
+  display: flex;
+  justify-content: center;
+}
+
+.newsletter-image img {
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
