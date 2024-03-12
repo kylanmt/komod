@@ -1,4 +1,4 @@
-<div class="card-index-clothes">
+<div class="transactions-index-clothes">
   <div class="row">
     <div class="col-3 img-col">
       <% if clothe.photos.size !=0 %>
@@ -8,11 +8,15 @@
     <div class="col-5 d-flex justify-content-evenly flex-column">
       <%= link_to owner_transaction_path(transaction) do %>
       <div class="dates-container">
-        <%= "Du #{transaction.start_date}" %>
-        <%= "au #{ transaction.end_date}" %>
+        <p><%= "Du #{transaction.start_date}" %></p>
+        <p><%= "au #{ transaction.end_date}" %></p>
+        <% if transaction.status == 'new' %>
+          <p>à venir</p>
+        <% else %>
+          <p>en cours</p>
+        <% end %>
       </div>
       <% end %>
-      <%= "status: #{transaction.status}" %>
     </div>
     <div class="col-4 transaction-col">
       <%= link_to "annuler", transaction_path(transaction), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-btn" %>
