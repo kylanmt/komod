@@ -1,8 +1,5 @@
 <div data-action="click->toggle#fire">
-  <% number_of_location = 0  %>
-  <% clothes.each do |clothe| %>
-    <% number_of_location += clothe.transactions.size %>
-  <% end %>
+  <% number_of_location = @clothes_in_progress.size + @clothes_new.size  %>
   <div class="preview">
     <div class="my-clothes">
       <p><%= "#{clothes.size} Vêtements" %></p>
@@ -16,13 +13,14 @@
   </div>
 </div>
 <div data-toggle-target="togglableElement" class="d-none">
-  <% clothes.each do |clothe| %>
-    <% if clothe.transactions.size > 0 %>
-      <%= render "ticket", clothe: clothe %>
-    <% end %>
+  <% @clothes_new.each do |clothe| %>
+    <%= render "ticket", clothe: clothe %>
+  <% end %>
+    <% @clothes_in_progress.each do |clothe| %>
+    <%= render "ticket", clothe: clothe %>
   <% end %>
   <% clothes.each do |clothe| %>
-    <% if clothe.transactions.size == 0 %>
+    <% unless @clothes_new.include?(clothe) ||  @clothes_in_progress.include?(clothe) %>
       <%= render "ticket_empty", clothe: clothe %>
     <% end %>
   <% end %>
