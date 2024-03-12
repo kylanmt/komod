@@ -1,0 +1,18 @@
+<div class="transactions-index-clothes">
+  <% clothe = location.clothe %>
+  <div class="row">
+    <div class="col-3 img-col">
+      <% if clothe.photos.size !=0 %>
+        <%= link_to cl_image_tag(clothe.photos.first.key), clothe_path(clothe), class: "ticket-photo"%>
+      <% end %>
+    </div>
+    <div class="dates col-5 d-flex justify-content-evenly flex-column">
+      <%= link_to owner_transaction_path(location) do %>
+      <div class="dates-container">
+        <%= "Du #{location.start_date}" %>
+        <%= "au #{ location.end_date}" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

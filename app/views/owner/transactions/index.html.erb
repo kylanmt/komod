@@ -1,35 +1,48 @@
 <div class="navbar container-phone">
-  <h1 class="title">🫂 Mes échanges</h1>
+  <h1 class="title">Mes échanges</h1>
 </div>
 
 <div class="container-phone">
-  <h2><strong>↻ Mes emprunts en cours</strong></h2>
-
-  <div class="border">
-    <div class=" border">
-      <% @locations.each do |location| %>
-        <%= location.clothe.name %>
-        <%= link_to location.id, owner_transaction_path(location) %>
-        <p>status: <%= location.status %></p>
-      <% end %>
-      <h2>partage en cours</h2>
-      <% @my_shares.each do |share| %>
-        <%= share.clothe.name %>
-        <%= link_to share.id, owner_transaction_path(share) %>
-        <p class="status-transactions"><%= share.status%></p>
-      <% end %>
+  <div class="transactions-container">
+    <div class="transaction-index-container row" data-controller="toggle" data-action="click->toggle#fire">
+      <div>
+        <h2>Mes commandes en cours  (<%= @locations.size %>)</h2>
+      </div>
+      <div data-toggle-target="togglableElement" class="d-none">
+        <% @locations.each do |location| %>
+          <%= render "ticket", location: location %>
+        <% end %>
+      </div>
     </div>
-    <div class="">
-      <h2>emprunts passé</h2>
-      <% @location_finished.each do |location| %>
-        <%= location.clothe.name %>
-        <%= link_to location.id, owner_transaction_path(location) %>
-      <% end %>
-      <h2>partage passé</h2>
-      <% @my_share_finished.each do |share| %>
-        <%= share.clothe.name %>
-        <%= link_to share.id, owner_transaction_path(share) %>
-      <% end %>
+      <div class="transaction-index-container row" data-controller="toggle" data-action="click->toggle#fire">
+        <div>
+          <h2>Mes vêtements en location (<%= @my_shares.size %>)</h2>
+        </div>
+        <div data-toggle-target="togglableElement" class="d-none">
+          <% @my_shares.each do |share| %>
+            <%= render "ticket", location: share %>
+          <% end %>
+        </div>
+      </div>
+      <div class="transaction-index-container row" data-controller="toggle" data-action="click->toggle#fire">
+        <div>
+          <h2>Mes Emprunts passé (<%= @location_finished.size %>)</h2>
+        </div>
+        <div data-toggle-target="togglableElement" class="d-none">
+          <% @location_finished.each do |location| %>
+            <%= render "ticket", location: location %>
+          <% end %>
+        </div>
+      </div>
+      <div class="transaction-index-container row" data-controller="toggle" data-action="click->toggle#fire">
+        <div>
+          <h2>Mes partages passé (<%= @my_share_finished.size %>)</h2>
+        </div>
+        <div data-toggle-target="togglableElement" class="d-none">
+          <% @my_share_finished.each do |location| %>
+            <%= render "ticket", location: location %>
+          <% end %>
+        </div>
     </div>
   </div>
 </div>
