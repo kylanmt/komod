@@ -22,10 +22,10 @@
   flex-direction: column;
   justify-content: space-between;
   position: absolute;
-  top: 47px;
+  top: 79px;
   left: 0;
   width: 400px;
-  height: 395px;
+  height: 397px;
 }
 
 .category {
@@ -79,4 +79,19 @@
     background-color: transparent;
     border: none;
     }
+}
+
+.owner-photo {
+  border-radius: 50%;
+  height: 55px;
+  width: 55px;
+  object-fit: cover;
+}
+
+.owner-info {
+  display: flex;
+  gap: 13px;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-bottom: 18px;
 }
