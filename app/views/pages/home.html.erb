@@ -8,7 +8,7 @@
 </div>
 
 <div class="container-phone">
-  <% @clothes.sample(10).each do |clothe| %>
+  <% @other_clothes.sample(10).each do |clothe| %>
     <div data-controller="overlay">
       <%= render "card", clothe: clothe %>
       <%= render "overlay-clothes", clothe: clothe %>

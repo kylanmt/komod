@@ -30,3 +30,20 @@
     }
   }
 }
+
+.calendar-container {
+  position: relative;
+
+  #new_transaction {
+    position: absolute;
+    top: -320px;
+    left: -154px;
+  }
+  .form-button {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .flatpickr-input {
+    display: none;
+  }
+}
