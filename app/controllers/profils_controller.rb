@@ -4,6 +4,8 @@ class ProfilsController < ApplicationController
     transactions = Transaction.where(status: ["new", "pending"], client_id: @user.id)
     @transactions = transactions.sort_by { |transaction| [transaction.start_date] }
     @clothes = @user.clothes
+    @clothes_new = @clothes.joins(:transactions).where(transactions: { status: "new" })
+    @clothes_in_progress = @clothes.joins(:transactions).where(transactions: { status: "pending" })
   end
 
   def edit
