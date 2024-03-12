@@ -1,5 +1,7 @@
 class Clothe < ApplicationRecord
   belongs_to :owner, class_name: "User"
+  belongs_to :category
+
   has_many :transactions
   has_many :likes, dependent: :destroy
   has_many_attached :photos
@@ -9,6 +11,5 @@ class Clothe < ApplicationRecord
   validates :description, presence: true, length: { maximum: 1000 }
   # validates :size, presence: true (future toggle list)
   validates :value, presence: true # (future toggle list)
-  validates :category, presence: true # (future toggle list)
   validates :condition, presence: true # (future toggle list)
 end
