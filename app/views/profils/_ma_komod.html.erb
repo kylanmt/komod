@@ -1,20 +1,22 @@
-<div data-controller="toggle">
-  <button data-action="click->toggle#fire" class="index-btn"> Ma Komod'
-    <svg width="20" height="19" viewBox="0 0 176 164" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M92 164L0 0H175.5L92 164Z" fill="white"/>
-    </svg>
-  </button>
-
-  <div data-toggle-target="togglableElement" class="d-none">
-    <% clothes.each do |clothe| %>
-      <% if clothe.transactions.size > 0 %>
-        <%= render "ticket", clothe: clothe %>
-      <% end %>
+<div data-action="click->toggle#fire">
+  <H1>MA KOMOD</H1>
+  <% number_of_location = 0  %>
+  <% clothes.each do |clothe| %>
+    <% number_of_location += clothe.transactions.size %>
+  <% end %>
+  <%= "#{clothes.size} vetenemt dans ma komod" %>
+  <br>
+  <%= "#{number_of_location} emprunts en cours" %>
+</div>
+<div data-toggle-target="togglableElement" class="d-none">
+  <% clothes.each do |clothe| %>
+    <% if clothe.transactions.size > 0 %>
+      <%= render "ticket", clothe: clothe %>
     <% end %>
-    <% clothes.each do |clothe| %>
-      <% if clothe.transactions.size == 0 %>
-        <%= render "ticket_empty", clothe: clothe %>
-      <% end %>
+  <% end %>
+  <% clothes.each do |clothe| %>
+    <% if clothe.transactions.size == 0 %>
+      <%= render "ticket_empty", clothe: clothe %>
     <% end %>
-  </div>
+  <% end %>
 </div>
