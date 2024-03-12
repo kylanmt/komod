@@ -1281,6 +1281,7 @@ cravate = Clothe.new({  name: "Cravate Hugo Boss",
 cravate.owner = hommes.sample
 cravate.save!
 
+
 # ATTACHEMENT DES PHOTOS AUX SEEDS
 
 clothes = Clothe.all
@@ -1311,3 +1312,15 @@ clothes.each do |clothe|
   attach_images_to_clothe(clothe)
   clothe.save!
 end
+
+
+chatroom1 = Chatroom.create(name: "vêtement de ski")
+chatroom2 = Chatroom.create(name: "vêtement de soirée")
+chatroom3 = Chatroom.create(name: "vêtement de sport")
+chatroom4 = Chatroom.create(name: "costume")
+chatroom5 = Chatroom.create(name: "sac à main")
+chatroom6 = Chatroom.create(name: "cravate")
+chatroom7 = Chatroom.create(name: "jean")
+chatroom8 = Chatroom.create(name: "chemise beige")
+chatroom9 = Chatroom.create(name: "chaussures de costume")
+chatroom10 = Chatroom.create(name: "déguisement de clown")
