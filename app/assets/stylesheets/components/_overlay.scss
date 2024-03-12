@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   transition: height 2s ease-in-out;
+  margin-top: -35px;
 }
 
 .overlay-head {
@@ -21,6 +22,8 @@
 .overlay.active {
   height: 200vh;
 }
+
+
 
 // .overlay-slide-up {
 //   position: relative;
