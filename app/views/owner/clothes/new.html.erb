@@ -1,20 +1,35 @@
-<div class="navbar container-phone">
-        <h1 class="title">👕 Nouvelle annonce</h1>
-</div>
 
-<div class="font-creation">
-    <h5 class="text-center m-4">Ajoute une nouvelle pièce à ta Komod'</h5>
-  <div class="container w-75">
-    <%= simple_form_for([:owner, @clothe], html: { class: "form-overlay" }) do |f| %>
-      <%= f.input :name, label: "Nom" %>
-      <%= f.input :description, label: "Description" %>
-      <%= f.input :category, label: "category" %>
-      <%= f.input :brand, label: "marque" %>
-      <%= f.input :size, label: "Taille" %>
-      <%= f.input :value, label: "Prix" %>
-      <%= f.input :condition, label: "état" %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <%= f.submit "Nouvelle annonce", class: "mt-2 booking-btn" %>
-    <% end %>
+<div class="form-new-clothe">
+  <div class="navbar container-phone">
+          <h1 class="title">👕 Nouvelle annonce</h1>
+  </div>
+
+
+  <div class="font-creation">
+      <h5 class="text-center m-4">Ajoute une nouvelle pièce à ta Komod'</h5>
+    <div class="container w-75 form">
+    <div class="form-champs">
+      <%= simple_form_for([:owner, @clothe], html: { class: "form-overlay" }) do |f| %>
+        <label for="name"><i class="fa-solid fa-user icone"></i> Nom..*</label>
+        <%= f.input :name, label: false %>
+        <label for="Description"><i class="fa-solid fa-pen icone"></i>Description..*</label>
+        <%= f.input :description, label: false %>
+        <label for="Categorie"><i class="fa-solid fa-shirt icone"></i>Categorie..*</label>
+        <%= f.input :category, label: false %>
+        <label for="Marque"><i class="fa-solid fa-fire icone"></i>Marque..*</label>
+        <%= f.input :brand, label: false %>
+        <label for="Taille"><i class="fa-solid fa-m icone"></i>Taille..*</label>
+        <%= f.input :size, label: false %>
+        <label for="Prix"><i class="fa-solid fa-euro-sign icone"></i>Prix..*</label>
+        <%= f.input :value, label: false %>
+        <label for="État"><i class="fa-solid fa-check icone"></i>État..*</label>
+        <%= f.input :condition, label: false%>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    </div>
+    <div class="button-form" >
+        <%= f.submit "Nouvelle annonce", class: "mt-2 booking-btn" %>
+    </div>
+      <% end %>
+    </div>
   </div>
 </div>
