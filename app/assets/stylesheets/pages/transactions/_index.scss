@@ -1,0 +1,27 @@
+.transaction-index-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 80px;
+  margin-block: 5px;
+  border: 2px solid $green;
+  border-radius: 10px;
+  text-align: center;
+
+  h2 {
+    margin-top: 25px;
+  }
+
+  .transactions-index-clothes {
+    margin-top: 20px;
+    .dates {
+      flex-grow: 1;
+      padding: 0;
+
+      .dates-container {
+        font-size: 16px;
+        padding-inline: 0;
+        margin-right: 30px;
+      }
+    }
+  }
+}

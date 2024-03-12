@@ -1242,17 +1242,23 @@ cravate.save!
 
 clothes = Clothe.all
 
-status = ["new", "pending", "finished"]
+# status = ["new", "pending", "finished"]
 
 puts "création des transactions"
 
 40.times do
-  start_date_random = Date.today + rand(0..15)
+  start_date_random = Date.today + rand(-15..15)
   end_date_random = start_date_random + rand(1..3)
   transaction = Transaction.new(start_date: start_date_random, end_date: end_date_random)
   transaction.client = User.all.sample
   transaction.clothe = Clothe.where.not(owner_id: transaction.client_id).sample
-  transaction.status = status.sample
+  if Date.today > transaction.end_date
+    transaction.status = "finished"
+  elsif Date.today < transaction.start_date
+    transaction.status = "new"
+  else
+    transaction.status = "pending"
+  end
   transaction.save!
   puts "transactions de #{transaction.client.user_name} sur #{transaction.clothe.name}"
 end
