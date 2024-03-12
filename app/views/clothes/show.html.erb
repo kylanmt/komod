@@ -16,10 +16,12 @@
     <h5 class="tag-clothe"><i class="fa-solid fa-shirt"></i> <%= @clothe.size %></h5>
     <h5 class="tag-clothe"><%= @clothe.available ? 'Disponible' : 'Indisponible' %></h5>
   </div>
-  <div data-controller="toggle" class="m-4 d-flex justify-content-center">
-    <button data-action="click->toggle#fire"  class="booking-btn">Voir les disponibilités</button>
-    <div data-toggle-target="togglableElement" class="d-none">
-      <%= render "location", clothe: @clothe, transaction: @transaction, reservations_dates: @reservations_dates %>
+  <% unless current_user == @clothe.owner %>
+    <div data-controller="toggle" class="m-4 d-flex justify-content-center">
+      <button data-action="click->toggle#fire" data-toggle-target="togglableButton" class="booking-btn">Voir les disponibilités</button>
+      <div data-toggle-target="togglableElement" class="d-none">
+        <%= render "location", clothe: @clothe, transaction: @transaction, reservations_dates: @reservations_dates %>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>

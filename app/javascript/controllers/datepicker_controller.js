@@ -8,7 +8,7 @@ export default class extends Controller {
     flatpickr(this.element, {
       mode: "range",
       minDate: "today",
-      disable: window.disable_dates
+      disable: window.disable_dates,
     })
   }
 }
