@@ -1,12 +1,12 @@
 <div class="d-none justify-content-center overlay" data-overlay-target="overlay">
   <div class="container-phone">
     <h2 class="text-center"><strong><%= clothe.name %></strong></h2>
-    <h5><%= clothe.description %></h5>
+    <h6 class="text-center"><%= clothe.description %></h6>
     <div class="mt-4 d-flex gap-2 justify-content-center">
-      <h5 class="tag-clothe"> <%= clothe.category.name %></h5>
-      <h5 class="tag-clothe"><i class="fa-solid fa-coins"></i> <%= clothe.value %></h5>
-      <h5 class="tag-clothe"><i class="fa-solid fa-shirt"></i> <%= clothe.size %></h5>
-      <h5 class="tag-clothe"><%= clothe.available ? 'Disponible' : 'Indisponible' %></h5>
+      <p class="tag-clothe"> <%= clothe.category.name %></p>
+      <p class="tag-clothe"><i class="fa-solid fa-coins"></i> <%= clothe.value %></p>
+      <p class="tag-clothe"><i class="fa-solid fa-shirt"></i> <%= clothe.size %></p>
+      <p class="tag-clothe"><%= clothe.available ? 'Disponible' : 'Indisponible' %></p>
     </div>
     <p class="booking-btn text-center"><%= link_to "Voir & Réserver", clothe_path(clothe)%></p>
   </div>
