@@ -3,9 +3,18 @@
   margin-top: 12px;
 }
 
+// .carousel {
+//   border-radius: 1rem;
+//   overflow: hidden;
+// }
+
 .carousel {
-  border-radius: 1rem;
-  overflow: hidden;
+  img {
+    border-radius: 29px;
+    object-fit: cover;
+    -webkit-filter : blur(0px) contrast(20%);
+    filter : blur(0px) contrast(50%);
+  }
 }
 
 .information {
@@ -13,10 +22,33 @@
   flex-direction: column;
   justify-content: space-between;
   position: absolute;
-  top: 0;
+  top: 47px;
   left: 0;
   width: 400px;
-  height: 400px;
+  height: 395px;
+}
+
+.category {
+  color: white;
+  background-color: $button-green;
+  padding: 5px;
+  border-radius: 32px;
+  font-size: 13px;
+}
+
+.bot-info {
+  display: flex;
+}
+
+.owner-info {
+  display: flex;
+}
+
+.card-images {
+  margin-bottom: 40px;
+}
+.map {
+  color: white;
 }
 
 .top-info,
@@ -24,6 +56,7 @@
   justify-content: space-between;
   display: flex;
   margin: 1rem;
+  align-items: flex-end;
   p {
     margin: 0;
   }
@@ -36,8 +69,14 @@
 }
 
 .description {
+  color: white;
 }
 
-.like {
+.like-button{
   z-index: 2;
+
+    button{
+    background-color: transparent;
+    border: none;
+    }
 }
