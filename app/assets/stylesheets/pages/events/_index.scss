@@ -1,0 +1,49 @@
+.card-event {
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.date {
+  border-radius: 50px;
+  display: flex;
+  border: 1px solid grey;
+  color: grey;
+  justify-content: center;
+}
+
+.event-name {
+  font-size: 16px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.event-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.event-location {
+  font-size: 16px;
+  color: #6c757d;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.event-image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.event-image img {
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
