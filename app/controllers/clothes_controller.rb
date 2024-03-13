@@ -25,13 +25,13 @@ class ClothesController < ApplicationController
 
   def markers_maker(clothe)
     my_marker = {
-                    lat: current_user.latitude,
-                    lng: current_user.longitude
-                  }
+                  lat: current_user.latitude,
+                  lng: current_user.longitude
+                }
     clothe_marker = {
-                        lat: clothe.owner.latitude,
-                        lng: clothe.owner.longitude
-                      }
+                      lat: clothe.owner.latitude,
+                      lng: clothe.owner.longitude
+                    }
     @markers = [my_marker, clothe_marker]
   end
 end

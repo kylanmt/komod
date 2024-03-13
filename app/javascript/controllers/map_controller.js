@@ -18,11 +18,16 @@ export default class extends Controller {
     this.#fitMapToMarkers()
   }
   #addMarkersToMap() {
-    this.markersValue.forEach((marker) => {
-      new mapboxgl.Marker()
-        .setLngLat([marker.lng, marker.lat])
-        .addTo(this.map)
-    })
+    const firstMarker = this.markersValue[0];
+    const lastMarker = this.markersValue[1];
+
+    new mapboxgl.Marker({ color: '#E67E22', className: 'my-marker' })
+      .setLngLat([firstMarker.lng, firstMarker.lat])
+      .addTo(this.map);
+
+    new mapboxgl.Marker({ color: 'red', className: 'his-marker' })
+      .setLngLat([lastMarker.lng, lastMarker.lat])
+      .addTo(this.map);
   }
   #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
