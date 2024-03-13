@@ -1314,6 +1314,7 @@ puts "création des transactions"
   else
     transaction.status = "pending"
   end
+  transaction.chatroom = Chatroom.new(name: "transaction de #{transaction.client.user_name} avec #{transaction.clothe.owner.user_name }")
   transaction.save!
   puts "transactions de #{transaction.client.user_name} sur #{transaction.clothe.name}"
 end
