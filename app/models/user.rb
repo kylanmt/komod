@@ -2,7 +2,7 @@ class User < ApplicationRecord
   has_many :chatrooms, through: :messages
   has_many :likes, dependent: :destroy
   has_many :clothes, foreign_key: :owner_id, dependent: :destroy
-  has_many :transactions, foreign_key: :client_id, dependent: :destroy
+  has_many :clothe_transactions, foreign_key: :client_id, dependent: :destroy
   has_one_attached :photo
 
   validates :user_name, presence: true, uniqueness: true, length: { minimum: 3, maximum: 20 }

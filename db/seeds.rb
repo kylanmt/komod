@@ -1,4 +1,4 @@
-Transaction.destroy_all
+ClotheTransaction.destroy_all
 User.destroy_all
 Clothe.destroy_all
 Category.destroy_all
@@ -1304,7 +1304,7 @@ puts "création des transactions"
 40.times do
   start_date_random = Date.today + rand(-15..15)
   end_date_random = start_date_random + rand(1..3)
-  transaction = Transaction.new(start_date: start_date_random, end_date: end_date_random)
+  transaction = ClotheTransaction.new(start_date: start_date_random, end_date: end_date_random)
   transaction.client = User.all.sample
   transaction.clothe = Clothe.where.not(owner_id: transaction.client_id).sample
   if Date.today > transaction.end_date

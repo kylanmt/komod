@@ -1,11 +1,16 @@
-class TransactionsController < ApplicationController
+class ClotheTransactionsController < ApplicationController
   def create
     clothe = Clothe.find(params[:clothe_id])
-    transaction = Transaction.new
+    transaction = ClotheTransaction.new
     setup_date(transaction, transaction_params[:start_date])
     setup_transaction(transaction, clothe)
+
+
+    chatroom = Chatroom.create(name: "#{clothe.name} - #{clothe.owner.user_name}")
+    transaction.chatroom = chatroom
+
     if transaction.save
-      redirect_to owner_transaction_path(transaction)
+      redirect_to owner_clothe_transaction_path(transaction)
     else
       redirect_to clothe_path(clothe), status: :unprocessable_entity
     end
@@ -18,7 +23,7 @@ class TransactionsController < ApplicationController
   end
 
   def destroy
-    transaction = Transaction.find(params[:id])
+    transaction = ClotheTransaction.find(params[:id])
     transaction.destroy
     redirect_to profils_path(current_user)
   end
@@ -43,6 +48,6 @@ class TransactionsController < ApplicationController
   end
 
   def transaction_params
-    params.require(:transaction).permit(:start_date)
+    params.require(:clothe_transaction).permit(:start_date)
   end
 end

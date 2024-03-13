@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # Routes pour les vetements: index et show, ajout d'une transaction et ajout d'un like sur un vetement
 
   resources :clothes, only: %i[index show] do
-    resources :transactions, only: %i[create]
+    resources :clothe_transactions, only: %i[create]
     resources :likes, only: %i[create]
   end
 
@@ -39,13 +39,13 @@ Rails.application.routes.draw do
 
   # Routes pour la chatroom: voir le chat avec un autre utilisateur
 
-  resources :chatrooms, only: %i[show] do
+  resources :chatrooms, only: %i[show create destroy] do
     resources :messages, only: :create
   end
 
   # Routes pour les transactions?
 
-  resources :transactions, only: %i[edit update destroy]
+  resources :clothe_transactions, only: %i[edit update destroy]
 
   resources :events, only: %i[index]
 
@@ -56,7 +56,7 @@ Rails.application.routes.draw do
 
   namespace :owner do
     resources :clothes, only: %i[new create edit update destroy]
-    resources :transactions, only: %i[index show] do
+    resources :clothe_transactions, only: %i[index show] do
       patch 'manage'
     end
   end

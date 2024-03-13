@@ -1,15 +1,13 @@
-<h1>Une conversation</h1>
-
 <div class="container chatroom"
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
-  <h1>#<%= @chatroom.name %></h1>
+  <h1><%= @chatroom.name %></h1>
 
  <div class="messages" data-chatroom-subscription-target="messages">
-  <% @chatroom.messages.each do |message| %>
-    <%= render "messages/message", message: message %>
-  <% end %>
-</div>
+    <% @chatroom.messages.each do |message| %>
+      <%= render "messages/message", message: message %>
+    <% end %>
+  </div>
 </div>
 
 <%= simple_form_for [@chatroom, @message],   html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" },
@@ -22,3 +20,11 @@ class: "d-flex" } do |f|
   %>
   <%= f.submit "Send", class: "btn btn-primary mb-3" %>
 <% end %>
+
+<%= link_to "revenir à tous mes messages", profils_chatrooms_path %>
+
+<%# <%= link_to "voir ma commande", profils_path %>
+
+<%# <%= link_to "Delete",
+  chatroom_path(@chatroom),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
