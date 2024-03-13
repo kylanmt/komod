@@ -12,7 +12,10 @@
       <div class="top-info">
         <%# <p class="photo-owner">avatar owner</p> %>
         <p class="category"><%=clothe.category.name %></p>
-        <p class="map">map</p>
+        <% distance = Geocoder::Calculations.distance_between(clothe.owner, current_user) %>
+        <% if current_user %>
+          <p class="map"><i class="fa-solid fa-location-dot"></i> <%= distance.ceil(1) %> km</p>
+        <% end %>
       </div>
       <div class="bot-info">
         <div class="description">
