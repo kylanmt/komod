@@ -1,12 +1,22 @@
-<h1>Mon dressing en ligne</h1>
+<div class="navbar container-phone">
+  <h1 class="title">🔎 Recherche</h1>
+</div>
 
-<ul>
-  <% @clothes.each do |clothe| %>
-    <% clothe.photos.each do |photo| %>
-      <%= cl_image_tag(photo.key, width: 400, height: 300, crop: :fill) %>
-    <% end %>
-    <li><%= link_to clothe.name, clothe_path(clothe) %></li>
-    <li><%= clothe.available %></li>
-    <li><%= clothe.category %></li>
-  <% end %>
-</ul>
+<div class="container-phone">
+  <div class="d-flex justify-content-center">
+    <div class="search-bar" data-controller="refresh-list">
+      <%= form_with url: clothes_path, method: :get, html: { class: 'mb-5', data: { refresh_list_target: 'form', action: 'keyup->refresh_clothes_list#update' } } do |f| %>
+        <%= f.text_field :query,
+                    class: "form-control",
+                    placeholder: "Recherche un vêtement...",
+                    value: params[:query],
+                    data: { refresh_list_target: 'searchInput' } %>
+      <% end %>
+
+
+      <div data-refresh-list-target="list">
+        <%= render "list" %>
+      </div>
+    </div>
+  </div>
+</div>
