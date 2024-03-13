@@ -13,14 +13,14 @@
           <% if transaction.status == "new" %>
             <div class="transaction-container">
               <%= link_to owner_clothe_transaction_path(transaction) do %>
-                <p class="transaction-btn">du <%= transaction.start_date %> au <%= transaction.end_date%></p>
+                <p class="transaction-btn">du <%= transaction.start_date.strftime("%d/%m/%Y") %> au <%= transaction.end_date%></p>
               <% end %>
               <%= link_to "refuser", clothe_transaction_path(transaction), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-btn" %>
             </div>
           <% else %>
             <div class="transaction-container">
               <%= link_to owner_clothe_transaction_path(transaction) do %>
-                <p class="transaction-btn">du <%= transaction.start_date %> au <%= transaction.end_date%></p>
+                <p class="transaction-btn">du <%= transaction.start_date.strftime("%d/%m/%Y") %> au <%= transaction.end_date%></p>
               <% end %>
               <div class="transaction-status">
                 <h2>En location</h2>

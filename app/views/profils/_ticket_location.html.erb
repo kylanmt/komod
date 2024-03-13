@@ -8,8 +8,8 @@
     <div class="col-5 d-flex justify-content-evenly flex-column">
       <%= link_to owner_clothe_transaction_path(transaction) do %>
       <div class="dates-container">
-        <p><%= "Du #{transaction.start_date}" %></p>
-        <p><%= "au #{ transaction.end_date}" %></p>
+        <p><%= "Du #{transaction.start_date.strftime("%d/%m/%Y")}" %></p>
+        <p><%= "au #{ transaction.end_date.strftime("%d/%m/%Y")}" %></p>
         <% if transaction.status == 'new' %>
           <p>à venir</p>
         <% else %>

@@ -8,7 +8,7 @@ Category.destroy_all
 puts  "création de Antoine"
 
 antoine = User.new({ user_name: "Antoinette", first_name: "Antoine", last_name: "Dupont", email: "antoine.dupont@email.com", phone_number: "0723456789", address: "11 rue du Chateau, 44000, Nantes", password: "123456", ranking: 4 })
-antoine.address = "18 Rue des Namnètes, 44840 Les Sorinières"
+antoine.address = "9 Rue Descartes, 44000 Nantes"
 antoine.save!
 file = File.open(Rails.root.join("db/seed_images/profils/profil_antoinette.avif"))
 antoine.photo.attach(io: file, filename: "profil_antoinette", content_type: "image/avif")
@@ -22,49 +22,49 @@ puts  "création de Kylan"
 
 puts "création de Oscar"
 oscar = User.new({ user_name: "Oscarabé", first_name: "Oscar", last_name: "Pessans", email: "oscar.pessans@email.com", phone_number: "0734567890", address: "9 rue de Lamoricière, 44000, Nantes", password: "123456", ranking: 3 })
-oscar.address = "1 Rue des Charmilles, 44400 Rezé"
+oscar.address = "26 Rue Jean Jaurès, 44000 Nantes"
 oscar.save
 file = File.open(Rails.root.join("db/seed_images/profils/profil_oscarabé.jpg"))
 oscar.photo.attach(io: file, filename: "profil_oscarabé", content_type: "image/jpg")
 
 puts "création de Quentin"
 quentin = User.new({ user_name: "Quentintin", first_name: "Quentin", last_name: "Moussef", email: "quantin.moussef@email.com", phone_number: "0912345678", address: " 6 rue de la fosse aux lionn, 44000, Nantes", password: "123456", ranking: 3 })
-quentin.address = "5 Imp. de la Volière, 44400 Rezé"
+quentin.address = "Rue Léon Blum, 44000 Nantes"
 quentin.save
 file = File.open(Rails.root.join("db/seed_images/profils/profil_quentintin.jpeg"))
 quentin.photo.attach(io: file, filename: "profil_quentintin", content_type: "image/jpeg")
 
 puts "création de Juliette"
 juliette = User.new({ user_name: "Juju", first_name: "Juliette", last_name: "Simon", email: "juliette.sion@email.com", phone_number: "0923456789", address: "36 boulevard Jean Leduc, 44300, Nantes", password: "123456", ranking: 5 })
-juliette.address = "107 Rue du Château de Rezé, 44400 Rezé"
+juliette.address = "Rue Paul Bellamy, 44036 Nantes"
 juliette.save
 file = File.open(Rails.root.join("db/seed_images/profils/profil_juliette.avif"))
 juliette.photo.attach(io: file, filename: "profil_juliette", content_type: "image/avif")
 
 puts "création de Anna"
 anna = User.new({ user_name: "Annana", first_name: "Anna", last_name: "Chelby", email: "anna.chelby@email.com", phone_number: "0634567890", address: "17 rue de la rivière, 44200, Nantes", password: "123456", ranking: 5 })
-anna.address = "11 Rue Saint-Hermeland, 44200 Nantes"
+anna.address = "Rue Gambetta, 44000 Nantes"
 anna.save
 file = File.open(Rails.root.join("db/seed_images/profils/profil_anna.webp"))
 anna.photo.attach(io: file, filename: "profil_anna", content_type: "image/webp")
 
 puts "création de Pauline"
 pauline = User.new({ user_name: "Paulinette", first_name: "Pauline", last_name: "Assoun", email: "pauline.assoune@email.com", phone_number: "0912345678", address: "5 rue du temple,44100 , Nantes", password: "123456", ranking: 5 })
-pauline.address = "18 Rue Dobree, 44100 Nantes"
+pauline.address = "22 All. Commandant Charcot, 44000 Nantes"
 pauline.save
 file = File.open(Rails.root.join("db/seed_images/profils/profil_pauline.webp"))
 pauline.photo.attach(io: file, filename: "profil_pauline", content_type: "image/webp")
 
 puts "création de Justine"
 justine = User.new({ user_name: "Justiti", first_name: "Justine", last_name: "Assoun", email: "justine.assoun@email.com", phone_number: "0812345678", address: "95 ruelle du vieux chateau, 44300, Nantes", password: "123456", ranking: 4 })
-justine.address = "9 Rue de la Marne, 44000 Nantes"
+justine.address = "11 Rue Bon Secours, 44000 Nantes"
 justine.save
 file = File.open(Rails.root.join("db/seed_images/profils/profil_justine.jpeg"))
 justine.photo.attach(io: file, filename: "profil_justine", content_type: "image/jpeg")
 
 puts "création de Emma"
 emma = User.new({ user_name: "Emmy", first_name: "Emma", last_name: "Lecombe", email: "emma.lecobe@email.com", phone_number: "0712345678", address: "1 boulevard de la bonne espérence, 44000, Nantes", password: "123456", ranking: 3 })
-emma.address = "10 Pass. Louis Lévesque, 44000 Nantes"
+emma.address = "Rue Premion, 44000 Nantes"
 emma.save
 file = File.open(Rails.root.join("db/seed_images/profils/profil_emma.jpeg"))
 emma.photo.attach(io: file, filename: "profil_emma", content_type: "image/jpeg")
@@ -1293,20 +1293,19 @@ cravate.owner = hommes.sample
 cravate.save!
 
 
-# ATTACHEMENT DES PHOTOS AUX SEEDS
-
 clothes = Clothe.all
 
 # status = ["new", "pending", "finished"]
 
 puts "création des transactions"
 
-40.times do
+20.times do
   start_date_random = Date.today + rand(-15..15)
   end_date_random = start_date_random + rand(1..3)
   transaction = ClotheTransaction.new(start_date: start_date_random, end_date: end_date_random)
   transaction.client = User.all.sample
-  transaction.clothe = Clothe.where.not(owner_id: transaction.client_id).sample
+  transaction.clothe = Clothe.where.not(owner_id: transaction.client_id)
+                             .where.not(id: ClotheTransaction.pluck(:clothe_id)).sample
   if Date.today > transaction.end_date
     transaction.status = "finished"
   elsif Date.today < transaction.start_date
@@ -1314,25 +1313,14 @@ puts "création des transactions"
   else
     transaction.status = "pending"
   end
-  transaction.chatroom = Chatroom.new(name: "transaction de #{transaction.client.user_name} avec #{transaction.clothe.owner.user_name }")
-  transaction.save!
-  puts "transactions de #{transaction.client.user_name} sur #{transaction.clothe.name}"
+  transaction.chatroom = Chatroom.new(name: "location de #{transaction.clothe.name} par #{transaction.client.user_name}")
+  puts transaction.chatroom.name if transaction.save!
 end
+
+# ATTACHEMENT DES PHOTOS AUX SEEDS
 
 clothes.each do |clothe|
   puts "charging image for #{clothe.name}"
   attach_images_to_clothe(clothe)
   clothe.save!
 end
-
-
-chatroom1 = Chatroom.create(name: "vêtement de ski")
-chatroom2 = Chatroom.create(name: "vêtement de soirée")
-chatroom3 = Chatroom.create(name: "vêtement de sport")
-chatroom4 = Chatroom.create(name: "costume")
-chatroom5 = Chatroom.create(name: "sac à main")
-chatroom6 = Chatroom.create(name: "cravate")
-chatroom7 = Chatroom.create(name: "jean")
-chatroom8 = Chatroom.create(name: "chemise beige")
-chatroom9 = Chatroom.create(name: "chaussures de costume")
-chatroom10 = Chatroom.create(name: "déguisement de clown")
