@@ -16,6 +16,8 @@
   <body>
     <%= render "shared/flashes" %>
     <%= yield %>
-    <%= render "shared/bars/tapbar" %>
+    <% unless params[:controller] == "chatrooms" && params[:action] == "show" %>
+      <%= render "shared/bars/tapbar" %>
+     <% end %>
   </body>
 </html>
