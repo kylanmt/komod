@@ -6,19 +6,21 @@
 </div>
 
 <div class="container-phone">
-  <div class="d-flex justify-content-center">
+  <div class="">
     <div class="search" data-controller="refresh-clothes-list">
-      <%= form_with url: clothes_path, method: :get, html: { class: 'search-bar mb-3', data: { refresh_clothes_list_target: 'form' } } do |f| %>
-        <div class="input-group">
-          <%= f.text_field :query,
-                      class: "form-control",
-                      placeholder: "Recherche un vêtement...",
-                      value: params[:query],
-                      data: { refresh_clothes_list_target: 'searchInput', action: 'keyup->refresh-clothes-list#update' } %>
-        </div>
-      <% end %>
-      <%= render "list", clothes: @clothes, categories: @categories %>
+      <div class="input-group">
+        <%= form_with url: clothes_path, method: :get, html: { class: 'search-bar mb-3', data: { refresh_clothes_list_target: 'form' } } do |f| %>
+            <%= f.text_field :query,
+                        class: "form-control",
+                        placeholder: "Recherche un vêtement...",
+                        value: params[:query],
+                        data: { refresh_clothes_list_target: 'searchInput', action: 'keyup->refresh-clothes-list#update' } %>
+        <% end %>
+      </div>
+      <div class= "croix">
+       <%= link_to image_tag("buttons/croix_fermer.svg"), clothes_path %>
+      </div>
+         <%= render "list", clothes: @clothes, categories: @categories %>
     </div>
-    <%= link_to image_tag("buttons/croix_fermer.svg"), clothes_path %>
   </div>
 </div>
