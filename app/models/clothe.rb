@@ -12,4 +12,17 @@ class Clothe < ApplicationRecord
   # validates :size, presence: true (future toggle list)
   validates :value, presence: true # (future toggle list)
   validates :condition, presence: true # (future toggle list)
+
+  include PgSearch::Model
+
+  pg_search_scope :global_search,
+    against: [ :name, :description, :brand ],
+
+    associated_against: {
+      category: [:name]
+    },
+
+    using: {
+      tsearch: { prefix: true }
+    }
 end

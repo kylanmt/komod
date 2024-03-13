@@ -29,6 +29,10 @@ gem "jbuilder"
 #cloudinary gem https://kitt.lewagon.com/camps/1533/lectures/05-Rails%2F05-Rails-MC-with-images#source
 gem "cloudinary"
 
+# PG search
+gem "pg_search"
+
+# Geocoding gem
 gem "geocoder"
 
 # Use Redis adapter to run Action Cable in production

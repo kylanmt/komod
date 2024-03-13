@@ -1,22 +1,24 @@
 <div class="navbar container-phone">
-  <h1 class="title">🔎 Recherche</h1>
+  <div class="d-flex ms-4">
+    <%= link_to (image_tag "icons/undo_icon.svg"), root_path, class: "d-flex"%>
+    <h1 class="title">Recherche</h1>
+  </div>
 </div>
 
 <div class="container-phone">
   <div class="d-flex justify-content-center">
-    <div class="search-bar" data-controller="refresh-list">
-      <%= form_with url: clothes_path, method: :get, html: { class: 'mb-5', data: { refresh_list_target: 'form', action: 'keyup->refresh_clothes_list#update' } } do |f| %>
-        <%= f.text_field :query,
-                    class: "form-control",
-                    placeholder: "Recherche un vêtement...",
-                    value: params[:query],
-                    data: { refresh_list_target: 'searchInput' } %>
+    <div class="search" data-controller="refresh-clothes-list">
+      <%= form_with url: clothes_path, method: :get, html: { class: 'search-bar mb-3', data: { refresh_clothes_list_target: 'form' } } do |f| %>
+        <div class="input-group">
+          <%= f.text_field :query,
+                      class: "form-control",
+                      placeholder: "Recherche un vêtement...",
+                      value: params[:query],
+                      data: { refresh_clothes_list_target: 'searchInput', action: 'keyup->refresh-clothes-list#update' } %>
+        </div>
       <% end %>
-
-
-      <div data-refresh-list-target="list">
-        <%= render "list" %>
-      </div>
+      <%= render "list", clothes: @clothes, categories: @categories %>
     </div>
+    <%= link_to image_tag("buttons/croix_fermer.svg"), clothes_path %>
   </div>
 </div>
