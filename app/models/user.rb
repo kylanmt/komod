@@ -11,6 +11,9 @@ class User < ApplicationRecord
   validates :phone_number, format: { with: /\A\d{10}\z/, message: "must be 10 digits" }, allow_blank: true
   validates :address, presence: true, length: { maximum: 255 }
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
