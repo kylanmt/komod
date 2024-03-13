@@ -6,7 +6,7 @@
       <% end %>
     </div>
     <div class="col-5 d-flex justify-content-evenly flex-column">
-      <%= link_to owner_transaction_path(transaction) do %>
+      <%= link_to owner_clothe_transaction_path(transaction) do %>
       <div class="dates-container">
         <p><%= "Du #{transaction.start_date}" %></p>
         <p><%= "au #{ transaction.end_date}" %></p>
@@ -19,7 +19,7 @@
       <% end %>
     </div>
     <div class="col-4 transaction-col">
-      <%= link_to "annuler", transaction_path(transaction), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-btn" %>
+      <%= link_to "annuler", clothe_transaction_path(transaction), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-btn" %>
     </div>
   </div>
 </div>

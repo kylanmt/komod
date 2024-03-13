@@ -2,7 +2,7 @@ class Clothe < ApplicationRecord
   belongs_to :owner, class_name: "User"
   belongs_to :category
 
-  has_many :transactions
+  has_many :clothe_transactions
   has_many :likes, dependent: :destroy
   has_many_attached :photos
   # has_many :likers, through: :likes, source: :user

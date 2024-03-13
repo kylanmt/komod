@@ -11,7 +11,7 @@
     <div class="chatroom-list">
       <% @chatrooms.each do |chatroom| %>
         <div class="chatroom-item">
-          <<%= cl_image_tag(chatroom.transaction.owner.photo.key, class: "owner-chatroom-photo")%> %>
+          <<%= cl_image_tag(chatroom.clothe_transaction.clothe.owner.photo.key, class: "owner-chatroom-photo")%> %>
           <li><%= link_to chatroom.name, chatroom_path(chatroom) %></li>
         </div>
       <% end %>

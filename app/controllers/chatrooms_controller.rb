@@ -3,7 +3,7 @@ class ChatroomsController < ApplicationController
     # raise
     # je veux récuper les chatrooms de toutes mes transaction.
     # j'ai besoin d'avoir mes transaction
-    @chatrooms = current_user.transactions.map(&:chatroom).reject(&:nil?)
+    @chatrooms = current_user.clothe_transactions.map(&:chatroom).reject(&:nil?)
   end
 
   def show

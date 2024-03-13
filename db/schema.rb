@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_13_085450) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_13_114706) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,6 +52,23 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_13_085450) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+  end
+
+  create_table "clothe_transactions", force: :cascade do |t|
+    t.integer "price"
+    t.string "status"
+    t.date "start_date"
+    t.date "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "clothe_id"
+    t.bigint "client_id"
+    t.bigint "event_id"
+    t.bigint "chatroom_id"
+    t.index ["chatroom_id"], name: "index_clothe_transactions_on_chatroom_id"
+    t.index ["client_id"], name: "index_clothe_transactions_on_client_id"
+    t.index ["clothe_id"], name: "index_clothe_transactions_on_clothe_id"
+    t.index ["event_id"], name: "index_clothe_transactions_on_event_id"
   end
 
   create_table "clothes", force: :cascade do |t|
@@ -103,23 +120,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_13_085450) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "transactions", force: :cascade do |t|
-    t.integer "price"
-    t.string "status"
-    t.date "start_date"
-    t.date "end_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "clothe_id"
-    t.bigint "client_id"
-    t.bigint "event_id"
-    t.bigint "chatroom_id"
-    t.index ["chatroom_id"], name: "index_transactions_on_chatroom_id"
-    t.index ["client_id"], name: "index_transactions_on_client_id"
-    t.index ["clothe_id"], name: "index_transactions_on_clothe_id"
-    t.index ["event_id"], name: "index_transactions_on_event_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -140,14 +140,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_13_085450) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "clothe_transactions", "chatrooms"
+  add_foreign_key "clothe_transactions", "clothes"
+  add_foreign_key "clothe_transactions", "events"
+  add_foreign_key "clothe_transactions", "users", column: "client_id"
   add_foreign_key "clothes", "categories"
   add_foreign_key "clothes", "users", column: "owner_id"
   add_foreign_key "likes", "clothes"
   add_foreign_key "likes", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
-  add_foreign_key "transactions", "chatrooms"
-  add_foreign_key "transactions", "clothes"
-  add_foreign_key "transactions", "events"
-  add_foreign_key "transactions", "users", column: "client_id"
 end
