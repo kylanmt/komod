@@ -39,7 +39,7 @@ Rails.application.routes.draw do
 
   # Routes pour la chatroom: voir le chat avec un autre utilisateur
 
-  resources :chatrooms, only: %i[show] do
+  resources :chatrooms, only: %i[show create destroy] do
     resources :messages, only: :create
   end
 

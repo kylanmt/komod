@@ -4,6 +4,11 @@ class TransactionsController < ApplicationController
     transaction = Transaction.new
     setup_date(transaction, transaction_params[:start_date])
     setup_transaction(transaction, clothe)
+
+
+    chatroom = Chatroom.create(name: "#{clothe.name} - #{clothe.owner.user_name}")
+    transaction.chatroom = chatroom
+
     if transaction.save
       redirect_to owner_transaction_path(transaction)
     else

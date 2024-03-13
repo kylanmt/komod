@@ -2,8 +2,19 @@
   <h1 class="title">💌 Mes conversations</h1>
 </div>
 
-<div class="container-phone">
+<% if @chatrooms.empty? %>
+  <div class="container-phone">
   <p class="mt-5 w-75 mx-auto text-center">Quelle tristesse... tu n'as toujours pas de messages 😓</p>
 </div>
-
-<%# <%= link_to "Une conversation (fontionne pas)", profils_chatrooms_path %>
+<% else %>
+  <ul>
+    <div class="chatroom-list">
+      <% @chatrooms.each do |chatroom| %>
+        <div class="chatroom-item">
+          <<%= cl_image_tag(chatroom.transaction.owner.photo.key, class: "owner-chatroom-photo")%> %>
+          <li><%= link_to chatroom.name, chatroom_path(chatroom) %></li>
+        </div>
+      <% end %>
+    </div>
+  </ul>
+<% end %>

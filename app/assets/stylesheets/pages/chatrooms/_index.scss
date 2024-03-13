@@ -1,0 +1,26 @@
+.chatroom-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.chatroom-item {
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  padding: 10px 0;
+  margin: 0 auto;
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+}
+
+.chatroom-item:first-child {
+  border-top: none;
+}
+
+.chatroom-item:last-child {
+  border-bottom: none;
+}
