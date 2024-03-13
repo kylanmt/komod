@@ -7,26 +7,28 @@
       <div class="col-8 reservation-col">
         <button data-action="click->toggle#fire" class="transaction-btn">Voir les reservations <%= "(#{clothe.clothe_transactions.size})" %></button>
       </div>
-        <div data-toggle-target="togglableElement" class="d-none">
-          <% clothe.clothe_transactions.each do |transaction| %>
-            <% if transaction.status == "new" %>
-              <div class="transaction-container">
-                <%= link_to owner_clothe_transaction_path(transaction) do %>
-                  <p class="transaction-btn">du <%= transaction.start_date %> au <%= transaction.end_date%></p>
-                <% end %>
-                <%= link_to "refuser", clothe_transaction_path(transaction), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-btn" %>
-              </div>
-            <% else %>
-              <div class="transaction-container">
+
+      <div data-toggle-target="togglableElement" class="d-none">
+        <% clothe.clothe_transactions.each do |transaction| %>
+          <% if transaction.status == "new" %>
+            <div class="transaction-container">
+              <%= link_to owner_clothe_transaction_path(transaction) do %>
+                <p class="transaction-btn">du <%= transaction.start_date %> au <%= transaction.end_date%></p>
+              <% end %>
+              <%= link_to "refuser", clothe_transaction_path(transaction), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-btn" %>
+            </div>
+          <% else %>
+            <div class="transaction-container">
               <%= link_to owner_clothe_transaction_path(transaction) do %>
                 <p class="transaction-btn">du <%= transaction.start_date %> au <%= transaction.end_date%></p>
               <% end %>
               <div class="transaction-status">
                 <h2>En location</h2>
               </div>
-            <% end %>
+            </div>
           <% end %>
-        </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

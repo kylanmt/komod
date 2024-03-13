@@ -1,11 +1,24 @@
-// Import page-specific CSS files here.
+// Home Page
 @import "home";
+
+// Clothes
 @import "clothes/show";
 @import "clothes/new";
+@import "clothes/index";
+
+// Likes
 @import "likes/index";
+
+// Profile
 @import "profile/profile-photo";
 @import "profile/index-clothes";
+
+// Events
 @import "events/index";
+
+// Categories
 @import "categories/index";
+
+// Transactions
 @import "transactions/index";
 @import "chatrooms/index";
