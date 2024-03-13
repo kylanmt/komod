@@ -5,7 +5,7 @@
 }
 
 .middle-container {
-  min-height: 280px;
+  min-height: 300px;
 
   .booking-btn {
     margin: 24px;
@@ -40,12 +40,16 @@
   }
 }
 
+.button-container {
+  min-height: 100px;
+}
 .calendar-container {
   position: relative;
 
   #new_transaction {
+    width: 309px;
     position: absolute;
-    top: -320px;
+    top: -318px;
     left: -154px;
   }
   .form-button {
@@ -62,4 +66,12 @@
   height: 200px;
   border-radius: 5px;
   border: $green 2px solid;
+}
+
+.my-marker {
+  filter: drop-shadow(0 0 2px $green);
+}
+
+.his-marker {
+  filter: drop-shadow(0 0 2px $orange);
 }

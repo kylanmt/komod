@@ -25,17 +25,19 @@
         <div class="booking-btn">déjà <%= @clothe.transactions.size %> réservations de faites</div>
       <% end %>
   <% else %>
-    <div data-controller="toggle" class="mt-4 mx-4 d-flex justify-content-center">
+    <div data-controller="toggle" class="mt-4 mx-4 d-flex justify-content-center button-container">
       <button data-action="click->toggle#fire" data-toggle-target="togglableButton" class="booking-btn">Voir les disponibilités</button>
       <div data-toggle-target="togglableElement" class="d-none">
         <%= render "location", clothe: @clothe, transaction: @transaction, reservations_dates: @reservations_dates %>
       </div>
     </div>
-    <div class="container-phone">
-  <div class="map-container"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  </div>
+  <% end %>
+  <% unless current_user == @clothe.owner %>
+    <div class="bottom-container ">
+      <div class="map-container"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    </div>
   <% end %>
 </div>
