@@ -19,10 +19,10 @@
     <% end %>
   </div>
   <% if current_user == @clothe.owner %>
-      <% if @clothe.transactions.empty? %>
+      <% if @clothe.clothe_transactions.empty? %>
         <div class="booking-btn">pas encore de reservations faites</div>
       <% else %>
-        <div class="booking-btn">déjà <%= @clothe.transactions.size %> réservations de faites</div>
+        <div class="booking-btn">déjà <%= @clothe.clothe_transactions.size %> réservations de faites</div>
       <% end %>
   <% else %>
     <div data-controller="toggle" class="mt-4 mx-4 d-flex justify-content-center button-container">
