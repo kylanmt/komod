@@ -1,6 +1,12 @@
 class ClothesController < ApplicationController
   def index
-    @clothes = Clothe.where(owner: current_user)
+    @clothes = Clothe.where("name @@ :query OR description @@ :query OR brand @@ :query", query: "%#{params[:query]}%")
+    @categories = Category.all
+
+    respond_to do |format|
+      format.html
+      format.text { render partial: 'list.html', locals: { clothes: @clothes } }
+    end
   end
 
   def show
