@@ -4,7 +4,9 @@
     <h6 class="text-center"><%= clothe.description %></h6>
     <div class="tag-container mt-4">
       <p class="tag-clothe"><i class="fa-solid fa-coins"></i> <%= clothe.value %></p>
-      <p class="tag-clothe"><i class="fa-solid fa-shirt"></i> <%= clothe.size %></p>
+      <% unless clothe.size == "" %>
+        <p class="tag-clothe"><i class="fa-solid fa-shirt"></i> <%= clothe.size %></p>
+      <% end %>
       <p class="tag-clothe"><%= clothe.available ? 'Disponible' : 'Indisponible' %></p>
     </div>
     <p class="booking-btn text-center"><%= link_to "Voir & Réserver", clothe_path(clothe)%></p>
