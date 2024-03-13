@@ -7,7 +7,7 @@
   </div>
 </div>
 
-<div class="container-phone">
+<div class="container-phone middle-container">
   <h1 class="title-clothe"><%= @clothe.name %></h1>
   <h5><%= @clothe.description %></h5>
   <div class="mt-4 d-flex gap-2 justify-content-center">
@@ -20,16 +20,22 @@
   </div>
   <% if current_user == @clothe.owner %>
       <% if @clothe.transactions.empty? %>
-        <div class="booking-btn my-4">pas encore de reservations faites</div>
+        <div class="booking-btn">pas encore de reservations faites</div>
       <% else %>
-        <div class="booking-btn my-4">déjà <%= @clothe.transactions.size %> réservations de faites</div>
+        <div class="booking-btn">déjà <%= @clothe.transactions.size %> réservations de faites</div>
       <% end %>
   <% else %>
-    <div data-controller="toggle" class="m-4 d-flex justify-content-center">
+    <div data-controller="toggle" class="mt-4 mx-4 d-flex justify-content-center">
       <button data-action="click->toggle#fire" data-toggle-target="togglableButton" class="booking-btn">Voir les disponibilités</button>
       <div data-toggle-target="togglableElement" class="d-none">
         <%= render "location", clothe: @clothe, transaction: @transaction, reservations_dates: @reservations_dates %>
       </div>
     </div>
+    <div class="container-phone">
+  <div class="map-container"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  </div>
   <% end %>
 </div>
