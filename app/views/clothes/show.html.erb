@@ -38,8 +38,8 @@
       <% end %>
   <% else %>
     <div data-controller="toggle" class="mt-4 mx-4 d-flex justify-content-center button-container">
-      <button data-action="click->toggle#fire2" data-toggle-target="togglableButton" class="booking-btn">Voir les disponibilités</button>
-      <div data-toggle-target="togglableElement" class="d-none">
+      <button data-action="click->toggle#fire2" data-toggle-target="togglableButton" class="booking-btn toto">Voir les disponibilités</button>
+      <div data-toggle-target="togglableElement" class="d-none toto-deux">
         <%= render "location", clothe: @clothe, transaction: @transaction, reservations_dates: @reservations_dates %>
       </div>
     </div>

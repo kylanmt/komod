@@ -35,8 +35,8 @@
 }
 
 .middle-container .booking-btn {
-  position: fixed;
-  bottom: 70px;
+  // position: fixed;
+  // bottom: 70px;
   z-index: 20;
   translate: 0.3s;
 }
@@ -93,4 +93,15 @@
   .flatpickr-input {
     display: none;
   }
+}
+
+.toto {
+  position: fixed;
+  bottom: 70px;
+}
+
+.toto-deux {
+  position: fixed;
+  bottom: 150px;
+  z-index: 20;
 }
