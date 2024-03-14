@@ -1,3 +1,6 @@
+<% content_for :meta_title, "#{@user.user_name} - #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_image, cl_image_path(@user.photo.key) %>
+
 <div class="navbar container-phone">
   <h1 class="title">Espace Personnel</h1>
   <%= link_to destroy_user_session_path, data: { turbo_method: :delete }, class: 'me-3 logout-button' do %>
