@@ -10,8 +10,10 @@
   <%= simple_form_for [clothe, transaction] do |f| %>
     <%= f.input :start_date, input_html: {data: {controller: "datepicker", inline: true }}, label: false, as: :string%>
     <div class="form-button">
-      <%= f.submit 'Réserver', class: 'booking-btn'%>
-      <button data-action="click->toggle#fire2" data-toggle-target="togglableButton" class="booking-btn">annuler</button>
+      <div class="toto">
+        <%= f.submit 'Réserver', class: 'booking-btn'%>
+        <span><button data-action="click->toggle#fire2" data-toggle-target="togglableButton" class="booking-btn">Annuler</button></span>
+      </div>
     </div>
   <% end %>
 </div>
