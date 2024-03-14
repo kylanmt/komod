@@ -5,20 +5,12 @@ Category.destroy_all
 
 
 # USERS
-puts  "création de Antoine"
-
-antoine = User.new({ user_name: "Antoinette", first_name: "Antoine", last_name: "Dupont", email: "antoine.dupont@email.com", phone_number: "0723456789", address: "11 rue du Chateau, 44000, Nantes", password: "123456", ranking: 4 })
-antoine.address = "9 Rue Descartes, 44000 Nantes"
-antoine.save!
+puts "création de Kylan"
+kylan = User.new({ user_name: "Le Kycks", first_name: "Kylan", last_name: "Metzner", email: "kylan.metzner@email.com", phone_number: "0823456789", address: "15 rue du Bellevue, 44000, Nantes", password: "123456", ranking: 4 })
+kylan.address = "18 All. du Vigneau, 44840 Les Sorinières"
+kylan.save
 file = File.open(Rails.root.join("db/seed_images/profils/profil_antoinette.avif"))
-antoine.photo.attach(io: file, filename: "profil_antoinette", content_type: "image/avif")
-
-# puts "création de Kylan"
-# kylan = User.new({ user_name: "Le Kycks", first_name: "Kylan", last_name: "Metzner", email: "kylan.metzner@email.com", phone_number: "0823456789", address: "15 rue du Bellevue, 44000, Nantes", password: "123456", ranking: 2 })
-# kylan.address = "18 All. du Vigneau, 44840 Les Sorinières"
-# kylan.save
-# file = File.open(Rails.root.join("db/seed_images/profils/profil_le_kicks.jpg"))
-# kylan.photo.attach(io: file, filename: "profil_le_kicks", content_type: "image/jpg")
+kylan.photo.attach(io: file, filename: "profil_antoinette", content_type: "image/avif")
 
 puts "création de Oscar"
 oscar = User.new({ user_name: "Oscarabé", first_name: "Oscar", last_name: "Pessans", email: "oscar.pessans@email.com", phone_number: "0734567890", address: "9 rue de Lamoricière, 44000, Nantes", password: "123456", ranking: 3 })
@@ -77,7 +69,7 @@ file = File.open(Rails.root.join("db/seed_images/profils/profil_ismael.jpeg"))
 ismael.photo.attach(io: file, filename: "profil_ismael", content_type: "image/jpeg")
 
 hommes = []
-hommes << antoine
+hommes << kylan
 # hommes << kylan
 hommes << oscar
 hommes << quentin
@@ -355,7 +347,7 @@ deguisement7 = Clothe.new({ name: "Masque halloween",
                             value: "3",
                             available: true,
                             condition: condition.sample })
-deguisement7.owner = User.all.sample
+deguisement7.owner = kylan
 deguisement7.save!
 
 deguisement8 = Clothe.new({ name: "Déguisement Halloween fille squelette",
@@ -414,7 +406,7 @@ manteau2 = Clothe.new({ name: "Trench Burberry",
                         value: "155",
                         available: true,
                         condition: condition.sample })
-manteau2.owner = User.all.sample
+manteau2.owner = kylan
 manteau2.save!
 
 manteau3 = Clothe.new({ name: "Max Mara chic",
@@ -1043,7 +1035,7 @@ sweetgucci1 = Clothe.new({  name: "Veste Gucci bleue M",
                             value: "280",
                             available: true,
                             condition: "comme neuf" })
-sweetgucci1.owner = hommes.sample
+sweetgucci1.owner = kylan
 sweetgucci1.save!
 
 sweetgucci2 = Clothe.new({  name: "Sweet Gucci noir Tigre",
@@ -1234,7 +1226,7 @@ chaussures2 = Clothe.new({  name: "Chaussures Cole haan original",
                             value: "29",
                             available: true,
                             condition: "comme neuf" })
-chaussures2.owner = hommes.sample
+chaussures2.owner = kylan
 chaussures2.save!
 
 montrefossil2 = Clothe.new({  name: "Montre Fossil bracelet cuire",
@@ -1292,19 +1284,11 @@ cravate = Clothe.new({  name: "Cravate Hugo Boss",
 cravate.owner = hommes.sample
 cravate.save!
 
-clothes = Clothe.all
 
 # status = ["new", "pending", "finished"]
 
 puts "création des transactions"
-
-20.times do
-  start_date_random = Date.today + rand(-15..15)
-  end_date_random = start_date_random + rand(1..3)
-  transaction = ClotheTransaction.new(start_date: start_date_random, end_date: end_date_random)
-  transaction.client = User.all.sample
-  transaction.clothe = Clothe.where.not(owner_id: transaction.client_id)
-                             .where.not(id: ClotheTransaction.pluck(:clothe_id)).sample
+def transaction_status(transaction)
   if Date.today > transaction.end_date
     transaction.status = "finished"
   elsif Date.today < transaction.start_date
@@ -1312,13 +1296,29 @@ puts "création des transactions"
   else
     transaction.status = "pending"
   end
+end
+
+def transaction_creation(user, clothe, start_date, end_date)
+  transaction = ClotheTransaction.new(start_date: Date.today + start_date, end_date: Date.today + end_date)
+  transaction.client = user
+  transaction.clothe = clothe
+  transaction.price = transaction.clothe.value
+  transaction_status(transaction)
   transaction.chatroom = Chatroom.new(name: "location de #{transaction.clothe.name} par #{transaction.client.user_name}")
   puts transaction.chatroom.name if transaction.save!
 end
 
+transaction_creation(kylan, boss1, 2, 3)
+transaction_creation(kylan, fusalp1, 15, 23)
+transaction_creation(ismael, chaussures2, 5, 17)
+transaction_creation(oscar, sweetgucci1, -10, 4)
+transaction_creation(quentin, manteau2, 0, 13)
+transaction_creation(emma, deguisement7, 22, 23)
+
+
 # ATTACHEMENT DES PHOTOS AUX SEEDS
 
-clothes.each do |clothe|
+Clothe.all.each do |clothe|
   puts "charging image for #{clothe.name}"
   attach_images_to_clothe(clothe)
   clothe.save!
