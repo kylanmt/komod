@@ -1,7 +1,3 @@
-<% content_for :meta_title, "#{@clothe.name} - #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_description, @clothe.description %>
-<% content_for :meta_image, cl_image_path(@clothe.photos.first.key) %>
-
 <div class="image-container">
   <div class="close-button"><%= link_to image_tag("buttons/croix_fermer.svg", alt: "Fermer"), root_path %></div>
   <div class="show-carousel">
