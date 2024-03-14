@@ -8,70 +8,60 @@ Category.destroy_all
 # USERS
 puts "création de Kylan"
 kylan = User.new({ user_name: "Le Kycks", first_name: "Kylan", last_name: "Metzner", email: "kylan.metzner@email.com", phone_number: "0823456789", address: "15 rue du Bellevue, 44000, Nantes", password: "123456", ranking: 4 })
-kylan.address = "18 All. du Vigneau, 44840 Les Sorinières"
 kylan.save
 file = File.open(Rails.root.join("db/seed_images/profils/profil_antoinette.avif"))
 kylan.photo.attach(io: file, filename: "profil_antoinette", content_type: "image/avif")
 
 puts "création de Oscar"
 oscar = User.new({ user_name: "Oscarabé", first_name: "Oscar", last_name: "Pessans", email: "oscar.pessans@email.com", phone_number: "0734567890", address: "9 rue de Lamoricière, 44000, Nantes", password: "123456", ranking: 3 })
-oscar.address = "26 Rue Jean Jaurès, 44000 Nantes"
 oscar.save
 file = File.open(Rails.root.join("db/seed_images/profils/profil_oscarabé.jpg"))
 oscar.photo.attach(io: file, filename: "profil_oscarabé", content_type: "image/jpg")
 
 puts "création de Quentin"
 quentin = User.new({ user_name: "Quentintin", first_name: "Quentin", last_name: "Moussef", email: "quantin.moussef@email.com", phone_number: "0912345678", address: " 6 rue de la fosse aux lionn, 44000, Nantes", password: "123456", ranking: 3 })
-quentin.address = "Rue Léon Blum, 44000 Nantes"
 quentin.save
 file = File.open(Rails.root.join("db/seed_images/profils/profil_quentintin.jpeg"))
 quentin.photo.attach(io: file, filename: "profil_quentintin", content_type: "image/jpeg")
 
 puts "création de Juliette"
-juliette = User.new({ user_name: "Juju", first_name: "Juliette", last_name: "Simon", email: "juliette.sion@email.com", phone_number: "0923456789", address: "36 boulevard Jean Leduc, 44300, Nantes", password: "123456", ranking: 5 })
-juliette.address = "Rue Paul Bellamy, 44036 Nantes"
+juliette = User.new({ user_name: "Juju", first_name: "Juliette", last_name: "Simon", email: "juliette.sion@email.com", phone_number: "0923456789", address:  "26 Rue Jean Jaurès, 44000 Nantes", password: "123456", ranking: 5 })
 juliette.save
 file = File.open(Rails.root.join("db/seed_images/profils/profil_juliette.avif"))
 juliette.photo.attach(io: file, filename: "profil_juliette", content_type: "image/avif")
 
 puts "création de Anna"
-anna = User.new({ user_name: "Annana", first_name: "Anna", last_name: "Chelby", email: "anna.chelby@email.com", phone_number: "0634567890", address: "17 rue de la rivière, 44200, Nantes", password: "123456", ranking: 5 })
-anna.address = "Rue Gambetta, 44000 Nantes"
+anna = User.new({ user_name: "Annana", first_name: "Anna", last_name: "Chelby", email: "anna.chelby@email.com", phone_number: "0634567890", address: "Rue Gambetta, 44000 Nantes", password: "123456", ranking: 5 })
 anna.save
 file = File.open(Rails.root.join("db/seed_images/profils/profil_anna.webp"))
 anna.photo.attach(io: file, filename: "profil_anna", content_type: "image/webp")
 
 puts "création de Pauline"
-pauline = User.new({ user_name: "Paulinette", first_name: "Pauline", last_name: "Assoun", email: "pauline.assoune@email.com", phone_number: "0912345678", address: "5 rue du temple,44100 , Nantes", password: "123456", ranking: 5 })
-pauline.address = "22 All. Commandant Charcot, 44000 Nantes"
+pauline = User.new({ user_name: "Paulinette", first_name: "Pauline", last_name: "Assoun", email: "pauline.assoune@email.com", phone_number: "0912345678", address: "22 All. Commandant Charcot, 44000 Nantes", password: "123456", ranking: 5 })
 pauline.save
 file = File.open(Rails.root.join("db/seed_images/profils/profil_pauline.webp"))
 pauline.photo.attach(io: file, filename: "profil_pauline", content_type: "image/webp")
 
 puts "création de Justine"
-justine = User.new({ user_name: "Justiti", first_name: "Justine", last_name: "Assoun", email: "justine.assoun@email.com", phone_number: "0812345678", address: "95 ruelle du vieux chateau, 44300, Nantes", password: "123456", ranking: 4 })
-justine.address = "11 Rue Bon Secours, 44000 Nantes"
+justine = User.new({ user_name: "Justiti", first_name: "Justine", last_name: "Assoun", email: "justine.assoun@email.com", phone_number: "0812345678", address: "11 Rue Bon Secours, 44000 Nantes", password: "123456", ranking: 4 })
 justine.save
 file = File.open(Rails.root.join("db/seed_images/profils/profil_justine.jpeg"))
 justine.photo.attach(io: file, filename: "profil_justine", content_type: "image/jpeg")
 
 puts "création de Emma"
-emma = User.new({ user_name: "Emmy", first_name: "Emma", last_name: "Lecombe", email: "emma.lecobe@email.com", phone_number: "0712345678", address: "1 boulevard de la bonne espérence, 44000, Nantes", password: "123456", ranking: 3 })
-emma.address = "Rue Premion, 44000 Nantes"
+emma = User.new({ user_name: "Emmy", first_name: "Emma", last_name: "Lecombe", email: "emma.lecobe@email.com", phone_number: "0712345678", address: "Rue Premion, 44000 Nantes", password: "123456", ranking: 3 })
 emma.save
 file = File.open(Rails.root.join("db/seed_images/profils/profil_emma.jpeg"))
 emma.photo.attach(io: file, filename: "profil_emma", content_type: "image/jpeg")
 
 puts "création de Ismael"
-ismael = User.new({ user_name: "Ismakan", first_name: "Ismael", last_name: "Tabyaoui", email: "ismael.tabyaoui@email.com", phone_number: "0612345678", address: "1 boulevard de la boulangerie, 44100, Nantes", password: "123456", ranking: 4})
-ismael.address ="16 Rue Georges Clemenceau, 44000 Nantes"
+ismael = User.new({ user_name: "Ismakan", first_name: "Ismael", last_name: "Tabyaoui", email: "ismael.tabyaoui@email.com", phone_number: "0612345678", address: "16 Rue Georges Clemenceau, 44000 Nantes", password: "123456", ranking: 4})
 ismael.save
 file = File.open(Rails.root.join("db/seed_images/profils/profil_ismael.jpeg"))
 ismael.photo.attach(io: file, filename: "profil_ismael", content_type: "image/jpeg")
 
 hommes = []
 hommes << kylan
-# hommes << kylan
 hommes << oscar
 hommes << quentin
 hommes << ismael
@@ -1075,21 +1065,6 @@ sweetsaintjames2.save!
 # CATEGORIE ROBE MARIEE
 puts "Création des seeds robe de mariée..."
 
-robemariee1 = Clothe.new({  name: "Robe de mariée portée 1 fois",
-                            description: "Robe de mariée
-                            Ivoire
-                            Mousseline
-                            Débardeur
-                            Dentelle au dos
-                            Portée 1/2 heure pour photos",
-                            size: "M",
-                            brand: "",
-                            category: robemariee,
-                            value: "50",
-                            available: true,
-                            condition: "comme neuf" })
-robemariee1.owner = femmes.sample
-robemariee1.save!
 
 robemariee2 = Clothe.new({  name: "Belle robe de mariée",
                             description: "Cette robe est un rêve devenu réalité, avec sa silhouette élégante et sa dentelle délicate. La robe présente un corsage ajusté qui met en valeur la silhouette, tandis que la jupe fluide ajoute une touche de grâce et de romantisme.",
