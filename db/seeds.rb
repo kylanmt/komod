@@ -6,7 +6,7 @@ Category.destroy_all
 
 # USERS
 puts "création de Kylan"
-kylan = User.new({ user_name: "Le Kycks", first_name: "Kylan", last_name: "Metzner", email: "kylan.metzner@email.com", phone_number: "0823456789", address: "15 rue du Bellevue, 44000, Nantes", password: "123456", ranking: 2 })
+kylan = User.new({ user_name: "Le Kycks", first_name: "Kylan", last_name: "Metzner", email: "kylan.metzner@email.com", phone_number: "0823456789", address: "15 rue du Bellevue, 44000, Nantes", password: "123456", ranking: 4 })
 kylan.address = "18 All. du Vigneau, 44840 Les Sorinières"
 kylan.save
 file = File.open(Rails.root.join("db/seed_images/profils/profil_antoinette.avif"))
