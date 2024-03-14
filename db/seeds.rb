@@ -1317,8 +1317,8 @@ transaction_creation(emma, deguisement7, 22, 23)
 
 # ATTACHEMENT DES PHOTOS AUX SEEDS
 
-# Clothe.all.each do |clothe|
-#   puts "charging image for #{clothe.name}"
-#   attach_images_to_clothe(clothe)
-#   clothe.save!
-# end
+Clothe.all.each do |clothe|
+  puts "charging image for #{clothe.name}"
+  attach_images_to_clothe(clothe)
+  clothe.save!
+end
