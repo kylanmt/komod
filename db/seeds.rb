@@ -1292,7 +1292,6 @@ cravate = Clothe.new({  name: "Cravate Hugo Boss",
 cravate.owner = hommes.sample
 cravate.save!
 
-
 clothes = Clothe.all
 
 # status = ["new", "pending", "finished"]
