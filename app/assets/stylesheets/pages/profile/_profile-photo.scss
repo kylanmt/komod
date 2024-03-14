@@ -25,7 +25,7 @@
 
   .profil-description {
     p {
-      margin: 10px;
+      margin: 18px 0px 0px -20px;
     }
   }
 }
@@ -40,10 +40,14 @@
 }
 
 .undertitle {
-  margin-top: 10px;
+  margin: 10px 58px 10px 10px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   gap: 45px;
+
+  p {
+    margin: 0;
+  }
 }
 .co2 {
   font-size: 10px;
@@ -167,7 +171,7 @@
 
       .arrow {
         position: absolute;
-        left: 87px;
+        left: 88px;
         top: 37px;
         font-size: 23px;
         color: #ecc37a;
@@ -206,7 +210,7 @@
     }
     .arrow {
       position: absolute;
-      left: 92px;
+      left: 93px;
       top: 39px;
       font-size: 22px;
       color: #ecc37a;

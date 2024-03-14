@@ -19,7 +19,7 @@
       <i class="avatar | small">
         <%= link_to cl_image_tag(@transaction.clothe.photos.first.key), clothe_path(@transaction.clothe), class: "trans-photo"%>
       </i>
-      <span>Il a reservé <a href="#"><%= @transaction.clothe.name %> </a>.</span>
+      <span><a href="#"><%= @transaction.clothe.name %></a> est l'article reservé.</span>
     </div>
   </li>
   <li class="timeline-item">
