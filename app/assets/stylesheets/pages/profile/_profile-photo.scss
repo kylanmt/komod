@@ -23,8 +23,10 @@
   align-items: flex-end;
   justify-content: flex-start;
 
-  p {
-    margin: 0;
+  .profil-description {
+    p {
+      margin: 10px;
+    }
   }
 }
 
@@ -52,7 +54,7 @@
 .header {
   margin-top: -20px;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-evenly;
 
   a {
