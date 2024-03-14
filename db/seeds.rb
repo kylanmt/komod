@@ -5,72 +5,80 @@ Category.destroy_all
 
 
 # USERS
+puts  "création de Antoine"
 
-puts  "création de Kylan"
-kylan = User.new({ user_name: "Le Kycks", first_name: "Kylan", last_name: "Metzner", email: "kylan.metzner@email.com", phone_number: "0723456789", password: "123456", ranking: 4 })
-kylan.address = "9 Rue Descartes, 44000 Nantes"
-kylan.save!
+antoine = User.new({ user_name: "Antoinette", first_name: "Antoine", last_name: "Dupont", email: "antoine.dupont@email.com", phone_number: "0723456789", address: "11 rue du Chateau, 44000, Nantes", password: "123456", ranking: 4 })
+antoine.address = "9 Rue Descartes, 44000 Nantes"
+antoine.save!
 file = File.open(Rails.root.join("db/seed_images/profils/profil_antoinette.avif"))
-kylan.photo.attach(io: file, filename: "profil_antoinette", content_type: "image/avif")
+antoine.photo.attach(io: file, filename: "profil_antoinette", content_type: "image/avif")
+
+# puts "création de Kylan"
+# kylan = User.new({ user_name: "Le Kycks", first_name: "Kylan", last_name: "Metzner", email: "kylan.metzner@email.com", phone_number: "0823456789", address: "15 rue du Bellevue, 44000, Nantes", password: "123456", ranking: 2 })
+# kylan.address = "18 All. du Vigneau, 44840 Les Sorinières"
+# kylan.save
+# file = File.open(Rails.root.join("db/seed_images/profils/profil_le_kicks.jpg"))
+# kylan.photo.attach(io: file, filename: "profil_le_kicks", content_type: "image/jpg")
 
 puts "création de Oscar"
-oscar = User.new({ user_name: "Oscarabé", first_name: "Oscar", last_name: "Pessans", email: "oscar.pessans@email.com", phone_number: "0734567890", password: "123456", ranking: 3 })
+oscar = User.new({ user_name: "Oscarabé", first_name: "Oscar", last_name: "Pessans", email: "oscar.pessans@email.com", phone_number: "0734567890", address: "9 rue de Lamoricière, 44000, Nantes", password: "123456", ranking: 3 })
 oscar.address = "26 Rue Jean Jaurès, 44000 Nantes"
 oscar.save
 file = File.open(Rails.root.join("db/seed_images/profils/profil_oscarabé.jpg"))
 oscar.photo.attach(io: file, filename: "profil_oscarabé", content_type: "image/jpg")
 
 puts "création de Quentin"
-quentin = User.new({ user_name: "Quentintin", first_name: "Quentin", last_name: "Moussef", email: "quentin.moussef@email.com", phone_number: "0912345678", password: "123456", ranking: 3 })
+quentin = User.new({ user_name: "Quentintin", first_name: "Quentin", last_name: "Moussef", email: "quantin.moussef@email.com", phone_number: "0912345678", address: " 6 rue de la fosse aux lionn, 44000, Nantes", password: "123456", ranking: 3 })
 quentin.address = "Rue Léon Blum, 44000 Nantes"
 quentin.save
 file = File.open(Rails.root.join("db/seed_images/profils/profil_quentintin.jpeg"))
 quentin.photo.attach(io: file, filename: "profil_quentintin", content_type: "image/jpeg")
 
 puts "création de Juliette"
-juliette = User.new({ user_name: "Juju", first_name: "Juliette", last_name: "Simon", email: "juliette.sion@email.com", phone_number: "0923456789", password: "123456", ranking: 5 })
+juliette = User.new({ user_name: "Juju", first_name: "Juliette", last_name: "Simon", email: "juliette.sion@email.com", phone_number: "0923456789", address: "36 boulevard Jean Leduc, 44300, Nantes", password: "123456", ranking: 5 })
 juliette.address = "Rue Paul Bellamy, 44036 Nantes"
 juliette.save
 file = File.open(Rails.root.join("db/seed_images/profils/profil_juliette.avif"))
 juliette.photo.attach(io: file, filename: "profil_juliette", content_type: "image/avif")
 
 puts "création de Anna"
-anna = User.new({ user_name: "Annana", first_name: "Anna", last_name: "Chelby", email: "anna.chelby@email.com", phone_number: "0634567890", password: "123456", ranking: 5 })
+anna = User.new({ user_name: "Annana", first_name: "Anna", last_name: "Chelby", email: "anna.chelby@email.com", phone_number: "0634567890", address: "17 rue de la rivière, 44200, Nantes", password: "123456", ranking: 5 })
 anna.address = "Rue Gambetta, 44000 Nantes"
 anna.save
 file = File.open(Rails.root.join("db/seed_images/profils/profil_anna.webp"))
 anna.photo.attach(io: file, filename: "profil_anna", content_type: "image/webp")
 
 puts "création de Pauline"
-pauline = User.new({ user_name: "Paulinette", first_name: "Pauline", last_name: "Assoun", email: "pauline.assoune@email.com", phone_number: "0912345678", password: "123456", ranking: 5 })
+pauline = User.new({ user_name: "Paulinette", first_name: "Pauline", last_name: "Assoun", email: "pauline.assoune@email.com", phone_number: "0912345678", address: "5 rue du temple,44100 , Nantes", password: "123456", ranking: 5 })
 pauline.address = "22 All. Commandant Charcot, 44000 Nantes"
 pauline.save
 file = File.open(Rails.root.join("db/seed_images/profils/profil_pauline.webp"))
 pauline.photo.attach(io: file, filename: "profil_pauline", content_type: "image/webp")
 
 puts "création de Justine"
-justine = User.new({ user_name: "Justiti", first_name: "Justine", last_name: "Assoun", email: "justine.assoun@email.com", phone_number: "0812345678", password: "123456", ranking: 4 })
+justine = User.new({ user_name: "Justiti", first_name: "Justine", last_name: "Assoun", email: "justine.assoun@email.com", phone_number: "0812345678", address: "95 ruelle du vieux chateau, 44300, Nantes", password: "123456", ranking: 4 })
 justine.address = "11 Rue Bon Secours, 44000 Nantes"
 justine.save
 file = File.open(Rails.root.join("db/seed_images/profils/profil_justine.jpeg"))
 justine.photo.attach(io: file, filename: "profil_justine", content_type: "image/jpeg")
 
 puts "création de Emma"
-emma = User.new({ user_name: "Emmy", first_name: "Emma", last_name: "Lecombe", email: "emma.lecobe@email.com", phone_number: "0712345678", password: "123456", ranking: 3 })
+emma = User.new({ user_name: "Emmy", first_name: "Emma", last_name: "Lecombe", email: "emma.lecobe@email.com", phone_number: "0712345678", address: "1 boulevard de la bonne espérence, 44000, Nantes", password: "123456", ranking: 3 })
 emma.address = "Rue Premion, 44000 Nantes"
 emma.save
 file = File.open(Rails.root.join("db/seed_images/profils/profil_emma.jpeg"))
 emma.photo.attach(io: file, filename: "profil_emma", content_type: "image/jpeg")
 
 puts "création de Ismael"
-ismael = User.new({ user_name: "Ismakan", first_name: "Ismael", last_name: "Tabyaoui", email: "ismael.tabyaoui@email.com", phone_number: "0612345678", password: "123456", ranking: 4})
+ismael = User.new({ user_name: "Ismakan", first_name: "Ismael", last_name: "Tabyaoui", email: "ismael.tabyaoui@email.com", phone_number: "0612345678", address: "1 boulevard de la boulangerie, 44100, Nantes", password: "123456", ranking: 4})
 ismael.address ="16 Rue Georges Clemenceau, 44000 Nantes"
 ismael.save
 file = File.open(Rails.root.join("db/seed_images/profils/profil_ismael.jpeg"))
 ismael.photo.attach(io: file, filename: "profil_ismael", content_type: "image/jpeg")
 
 hommes = []
-hommes << kylan
+hommes << antoine
+# hommes << kylan
 hommes << oscar
 hommes << quentin
 hommes << ismael
@@ -126,7 +134,7 @@ condition = ["usé", "bon état", "très bon état", "comme neuf"]
 #                         value: "",
 #                         available: true,
 #                         condition: condition.sample })
-# template.owner = others_users.sample
+# template.owner = User.all.sample
 # template.save!
 
 # POUR UNE IMAGE
@@ -157,9 +165,6 @@ end
 # pour antoine -> find . -name "*Zone.Identifier" -type f -delete
 
 # CATEGORIE SKI
-
-others_users = User.where.not(user_name: "Le Kycks")
-
 puts "Début des seeds ski..."
 
 fusalp1 = Clothe.new({  name: "Veste de Ski Vintage Rouge",
@@ -170,7 +175,7 @@ fusalp1 = Clothe.new({  name: "Veste de Ski Vintage Rouge",
                         value: "80",
                         available: true,
                         condition: "usé" })
-fusalp1.owner = others_users.sample
+fusalp1.owner = User.all.sample
 fusalp1.save!
 
 fusalp2 = Clothe.new({  name: "Manteau de Ski Homme Noir",
@@ -181,7 +186,7 @@ fusalp2 = Clothe.new({  name: "Manteau de Ski Homme Noir",
                         value: "200",
                         available: true,
                         condition: "comme neuf" })
-fusalp2.owner = others_users.sample
+fusalp2.owner = hommes.sample
 fusalp2.save!
 
 northface1 = Clothe.new({ name: "Manteau de Ski Vert",
@@ -192,7 +197,7 @@ northface1 = Clothe.new({ name: "Manteau de Ski Vert",
                           value: "140",
                           available: true,
                           condition: "comme neuf" })
-northface1.owner = others_users.sample
+northface1.owner = hommes.sample
 northface1.save!
 
 northface2 = Clothe.new({ name: "Pantalon Ski orange",
@@ -203,18 +208,18 @@ northface2 = Clothe.new({ name: "Pantalon Ski orange",
                           value: "50",
                           available: true,
                           condition: "usé" })
-northface2.owner = others_users.sample
+northface2.owner = hommes.sample
 northface2.save!
 
 salomon1 = Clothe.new({ name: "Casque Ski Salomon Noir",
                         description: "couleure noire mat, a des rayures mais il n’y a jamais eu de chutes avec ! Accroche masque (cf photo).",
-                        size: "M",
+                        size: "XL",
                         brand: "salomon",
                         category: ski,
                         value: "25",
                         available: true,
                         condition: "usé" })
-salomon1.owner = kylan
+salomon1.owner = hommes.sample
 salomon1.save!
 
 salomon2 = Clothe.new({ name: "Pantalon Ski Salomon jaune ",
@@ -225,54 +230,54 @@ salomon2 = Clothe.new({ name: "Pantalon Ski Salomon jaune ",
                         value: "110",
                         available: true,
                         condition: "comme neuf" })
-salomon2.owner = others_users.sample
+salomon2.owner = hommes.sample
 salomon2.save!
 
 patagonia1 = Clothe.new({ name: "Veste Polaire Patagonia Beige",
-                          description: "Achetée au Japon, Taille M pour homme (correspondrait à un L Femme) Polaire mixte très chaude.",
-                          size: "M",
-                          brand: "patagonia",
-                          category: ski,
-                          value: "90",
-                          available: true,
-                          condition: "comme neuf" })
-patagonia1.owner = others_users.sample
+  description: "Achetée au Japon, Taille M pour homme (correspondrait à un L Femme) Polaire mixte très chaude.",
+  size: "M",
+  brand: "patagonia",
+  category: ski,
+  value: "90",
+  available: true,
+  condition: "comme neuf" })
+patagonia1.owner = hommes.sample
 patagonia1.save!
 
 patagonia2 = Clothe.new({ name: "Veste Patagonia Bleu",
-                          description: "Veste parfait pour le trekking, traces d’usures naturelles et super coupe-vent.",
-                          size: "S",
-                          brand: "patagonia",
-                          category: ski,
-                          value: "65",
-                          available: true,
-                          condition: "usé" })
-patagonia2.owner = others_users.sample
+  description: "Veste parfait pour le trekking, traces d’usures naturelles et super coupe-vent.",
+  size: "S",
+  brand: "patagonia",
+  category: ski,
+  value: "65",
+  available: true,
+  condition: "usé" })
+patagonia2.owner = hommes.sample
 patagonia2.save!
 
 rossignol1 = Clothe.new({ name: "Pantalon Ski Rossignol noir",
-                          description: "Cadeau que je n'ai jamais porté car trop serré à la taille, très chaud et taille juste bien.",
-                          size: "L",
-                          brand: "rossignol",
-                          category: ski,
-                          value: "70",
-                          available: true,
-                          condition: "comme neuf" })
-rossignol1.owner = others_users.sample
+  description: "Cadeau que je n'ai jamais porté car trop serré à la taille, très chaud et taille juste bien.",
+  size: "L",
+  brand: "rossignol",
+  category: ski,
+  value: "70",
+  available: true,
+  condition: "comme neuf" })
+rossignol1.owner = hommes.sample
 rossignol1.save!
 
 rossignol2 = Clothe.new({ name: "Manteau Ski Rossignol Bleu ",
-                          description: "Portée 3 fois, très bon état, couleur bleu canard. Taille bien pour un XL, très bonne épaisseur.",
-                          size: "XL",
-                          brand: "rossignol",
-                          category: ski,
-                          value: "90",
-                          available: true,
-                          condition: "comme neuf" })
-rossignol2.owner = others_users.sample
+  description: "Portée 3 fois, très bon état, couleur bleu canard. Taille bien pour un XL, très bonne épaisseur.",
+  size: "XL",
+  brand: "rossignol",
+  category: ski,
+  value: "90",
+  available: true,
+  condition: "comme neuf" })
+rossignol2.owner = hommes.sample
 rossignol2.save!
 
-# CATEGORIE DEGUISEMENT
+# # CATEGORIE DEGUISEMENT
 
 puts "Début des seeds déguisement..."
 
@@ -284,7 +289,7 @@ deguisement1 = Clothe.new({ name: "Costume Mr Indestructible ",
                             value: "15",
                             available: true,
                             condition: condition.sample })
-deguisement1.owner = kylan
+deguisement1.owner = hommes.sample
 deguisement1.save!
 
 deguisement2 = Clothe.new({ name: "Costume de tortue",
@@ -295,7 +300,7 @@ deguisement2 = Clothe.new({ name: "Costume de tortue",
                             value: "25",
                             available: true,
                             condition: condition.sample })
-deguisement2.owner = others_users.sample
+deguisement2.owner = User.all.sample
 deguisement2.save!
 
 deguisement3 = Clothe.new({ name: "Déguisement de lutin pour adultes",
@@ -306,7 +311,7 @@ deguisement3 = Clothe.new({ name: "Déguisement de lutin pour adultes",
                             value: "20",
                             available: true,
                             condition: condition.sample })
-deguisement3.owner = others_users.sample
+deguisement3.owner = User.all.sample
 deguisement3.save!
 
 deguisement4 = Clothe.new({ name: "Déguisement Chat au Chapeau Adulte",
@@ -317,7 +322,7 @@ deguisement4 = Clothe.new({ name: "Déguisement Chat au Chapeau Adulte",
                             value: "25",
                             available: true,
                             condition: condition.sample })
-deguisement4.owner = others_users.sample
+deguisement4.owner = User.all.sample
 deguisement4.save!
 
 deguisement5 = Clothe.new({ name: "Perruque et barbe à cheveux longs Merlin",
@@ -328,7 +333,7 @@ deguisement5 = Clothe.new({ name: "Perruque et barbe à cheveux longs Merlin",
                             value: "10",
                             available: true,
                             condition: condition.sample })
-deguisement5.owner = others_users.sample
+deguisement5.owner = hommes.sample
 deguisement5.save!
 
 deguisement6 = Clothe.new({ name: "Faux muscles",
@@ -339,7 +344,7 @@ deguisement6 = Clothe.new({ name: "Faux muscles",
                             value: "10",
                             available: true,
                             condition: condition.sample })
-deguisement6.owner = others_users.sample
+deguisement6.owner = hommes.sample
 deguisement6.save!
 
 deguisement7 = Clothe.new({ name: "Masque halloween",
@@ -350,7 +355,7 @@ deguisement7 = Clothe.new({ name: "Masque halloween",
                             value: "3",
                             available: true,
                             condition: condition.sample })
-deguisement7.owner = kylan
+deguisement7.owner = User.all.sample
 deguisement7.save!
 
 deguisement8 = Clothe.new({ name: "Déguisement Halloween fille squelette",
@@ -361,7 +366,7 @@ deguisement8 = Clothe.new({ name: "Déguisement Halloween fille squelette",
                             value: "2",
                             available: true,
                             condition: condition.sample })
-deguisement8.owner = femmes.sample
+    deguisement8.owner = femmes.sample
 deguisement8.save!
 
 deguisement9 = Clothe.new({ name: "Déguisement Woody Toy Story",
@@ -372,7 +377,7 @@ deguisement9 = Clothe.new({ name: "Déguisement Woody Toy Story",
                             value: "7",
                             available: true,
                             condition: condition.sample })
-deguisement9.owner = others_users.sample
+deguisement9.owner = hommes.sample
 deguisement9.save!
 
 deguisement10 = Clothe.new({  name: "Robe reine des neiges",
@@ -386,7 +391,7 @@ deguisement10 = Clothe.new({  name: "Robe reine des neiges",
 deguisement10.owner = femmes.sample
 deguisement10.save!
 
-# CATEGORIE MANTEAU
+# # CATEGORIE MANTEAU
 
 puts "Début des seeds manteau..."
 
@@ -398,7 +403,7 @@ manteau1 = Clothe.new({ name: "Veste coupe vent Burberry",
                         value: "70",
                         available: true,
                         condition: condition.sample })
-manteau1.owner = others_users.sample
+manteau1.owner = User.all.sample
 manteau1.save!
 
 manteau2 = Clothe.new({ name: "Trench Burberry",
@@ -409,7 +414,7 @@ manteau2 = Clothe.new({ name: "Trench Burberry",
                         value: "155",
                         available: true,
                         condition: condition.sample })
-manteau2.owner = kylan
+manteau2.owner = User.all.sample
 manteau2.save!
 
 manteau3 = Clothe.new({ name: "Max Mara chic",
@@ -464,7 +469,7 @@ manteau7 = Clothe.new({ name: "Doudoune mi longue beige taille XXS Michael Kors"
                         value: "40",
                         available: true,
                         condition: condition.sample })
-manteau7.owner = others_users.sample
+manteau7.owner = User.all.sample
 manteau7.save!
 
 manteau8 = Clothe.new({ name: "Trench Vintage femme",
@@ -626,8 +631,6 @@ maje1 = Clothe.new({  name: "Robe asymétrique Maje",
 maje1.owner = femmes.sample
 maje1.save!
 
-puts "début des seeds robe..."
-
 maje2 = Clothe.new({  name: "Robe noire",
                       description: "Robe neuve avec étiquette en taille S. Cette robe provient d’une boutique MAJE et est noire avec des pois en matière style velours et petits strass brillant argentées avec des bretelles reliées par le logo dorée. Il y a une doublure et des ouvertures sur les côtés.  ",
                       size: sizes.sample,
@@ -727,9 +730,7 @@ prada2 = Clothe.new({ name: "Robe Prada",
 prada2.owner = femmes.sample
 prada2.save!
 
-# CATEGORIE PANTALON
-
-puts "début des seeds pantalons"
+# # CATEGORIE PANTALON
 
 wrangler1 = Clothe.new({  name: "Jean Wrangler bleu",
                           description: "pantalon work pants denim jean large charpentier carpenter baggy coupe droite hiver trousser france campagne street sport skate vieux old travail young vintage jolie soins rare grand american us usa etasunis Amérique fripe ville européen long unis motifs basique classe ",
@@ -750,7 +751,7 @@ wrangler2 = Clothe.new({  name: "Jean Wrangler bleu clair",
                           value: "8",
                           available: true,
                           condition: condition.sample })
-wrangler2.owner = others_users.sample
+wrangler2.owner = hommes.sample
 wrangler2.save!
 
 carhartt1 = Clothe.new({  name: "Pantalon Carhartt",
@@ -761,7 +762,7 @@ carhartt1 = Clothe.new({  name: "Pantalon Carhartt",
                           value: "15",
                           available: true,
                           condition: condition.sample })
-carhartt1.owner = others_users.sample
+carhartt1.owner = hommes.sample
 carhartt1.save!
 
 carhartt2 = Clothe.new({  name: "pantalon beige",
@@ -838,12 +839,10 @@ axel_arigato2 = Clothe.new({  name: "Pantalon cargo Axel Arigato",
                               value: "100",
                               available: true,
                               condition: condition.sample })
-axel_arigato2.owner = others_users.sample
+axel_arigato2.owner = hommes.sample
 axel_arigato2.save!
 
-# CATEGORIE COSTUME
-
-puts "début des seeds costumes..."
+# # CATEGORIE COSTUME
 
 de_fursac1 = Clothe.new({ name: "Veste Croisée 6 sur 1",
                           description: "📣 Découvrez le summum du style français avec cette veste croisée, une pièce emblématique pour tout amateur d'art sartorial ! 📣",
@@ -853,7 +852,7 @@ de_fursac1 = Clothe.new({ name: "Veste Croisée 6 sur 1",
                           value: "75",
                           available: true,
                           condition: condition.sample })
-de_fursac1.owner = others_users.sample
+de_fursac1.owner = hommes.sample
 de_fursac1.save!
 
 de_fursac2 = Clothe.new({ name: "Blazer noir Canali",
@@ -864,7 +863,7 @@ de_fursac2 = Clothe.new({ name: "Blazer noir Canali",
                           value: "70",
                           available: true,
                           condition: condition.sample })
-de_fursac2.owner = others_users.sample
+de_fursac2.owner = hommes.sample
 de_fursac2.save!
 
 boss1 = Clothe.new({  name: "costume rayé hugo boss",
@@ -878,7 +877,7 @@ boss1 = Clothe.new({  name: "costume rayé hugo boss",
                       value: "190",
                       available: true,
                       condition: condition.sample })
-boss1.owner = others_users.sample
+boss1.owner = hommes.sample
 boss1.save!
 
 boss2 = Clothe.new({  name: "Veste Hugo boss",
@@ -889,20 +888,20 @@ boss2 = Clothe.new({  name: "Veste Hugo boss",
                       value: "10",
                       available: true,
                       condition: condition.sample })
-boss2.owner = others_users.sample
+boss2.owner = hommes.sample
 boss2.save!
 
 calvin_klein1 = Clothe.new({  name: "Veste de costume Noire Calvin",
                               description: "Costume Calvin Klein 50 rayé
                               Costume en parfait état
                               Taille grand, plutôt 52 en veste et 42 en pantalon",
-                              size: "M",
+                              size: sizes.sample,
                               brand: "Calvin Klein",
                               category: costume,
                               value: "30",
                               available: true,
                               condition: condition.sample })
-calvin_klein1.owner = kylan
+calvin_klein1.owner = hommes.sample
 calvin_klein1.save!
 
 calvin_klein2 = Clothe.new({  name: "Veste de costume Calvin Klein",
@@ -916,7 +915,7 @@ calvin_klein2 = Clothe.new({  name: "Veste de costume Calvin Klein",
                               value: "20",
                               available: true,
                               condition: condition.sample })
-calvin_klein2.owner = others_users.sample
+calvin_klein2.owner = hommes.sample
 calvin_klein2.save!
 
 burberry1 = Clothe.new({  name: "Veste de costume classique Burberry",
@@ -928,7 +927,7 @@ burberry1 = Clothe.new({  name: "Veste de costume classique Burberry",
                           value: "25",
                           available: true,
                           condition: condition.sample })
-burberry1.owner = others_users.sample
+burberry1.owner = hommes.sample
 burberry1.save!
 
 burberry2 = Clothe.new({  name: "Veste de costume classique à deux boutons",
@@ -942,7 +941,7 @@ burberry2 = Clothe.new({  name: "Veste de costume classique à deux boutons",
                           value: "150",
                           available: true,
                           condition: condition.sample })
-burberry2.owner = others_users.sample
+burberry2.owner = hommes.sample
 burberry2.save!
 
 ralph_lauren1 = Clothe.new({  name: "Blazer",
@@ -953,7 +952,7 @@ ralph_lauren1 = Clothe.new({  name: "Blazer",
                               value: "22",
                               available: true,
                               condition: condition.sample })
-ralph_lauren1.owner = others_users.sample
+ralph_lauren1.owner = hommes.sample
 ralph_lauren1.save!
 
 ralph_lauren2 = Clothe.new({  name: "Le blazer iconique en laine chamoisée",
@@ -964,11 +963,11 @@ ralph_lauren2 = Clothe.new({  name: "Le blazer iconique en laine chamoisée",
                               value: "300",
                               available: true,
                               condition: condition.sample })
-ralph_lauren2.owner = others_users.sample
+ralph_lauren2.owner = hommes.sample
 ralph_lauren2.save!
 
 # CATEGORIE SWEET
-puts "création des seeds sweet..."
+puts "création des seeds sweet"
 
 sweetralphlauren1 = Clothe.new({  name: "Sweet à capuche Ralph Lauren beige",
                                   description: "Porter quelques fois, reste en très bon état, aucune tache ni trou.",
@@ -978,7 +977,7 @@ sweetralphlauren1 = Clothe.new({  name: "Sweet à capuche Ralph Lauren beige",
                                   value: "60",
                                   available: true,
                                   condition: "comme neuf" })
-sweetralphlauren1.owner = kylan
+sweetralphlauren1.owner = hommes.sample
 sweetralphlauren1.save!
 
 sweetralphlauren2 = Clothe.new({  name: "Pull Ralph lauren bleu XL",
@@ -989,7 +988,7 @@ sweetralphlauren2 = Clothe.new({  name: "Pull Ralph lauren bleu XL",
                                   value: "45",
                                   available: true,
                                   condition: "comme neuf"})
-sweetralphlauren2.owner = others_users.sample
+sweetralphlauren2.owner = hommes.sample
 sweetralphlauren2.save!
 
 sweetabercrombie1 = Clothe.new({  name: "Sweet XXL Abercrombie et fitch",
@@ -1000,7 +999,7 @@ sweetabercrombie1 = Clothe.new({  name: "Sweet XXL Abercrombie et fitch",
                                   value: "20",
                                   available: true,
                                   condition: "comme neuf" })
-sweetabercrombie1.owner = others_users.sample
+sweetabercrombie1.owner = hommes.sample
 sweetabercrombie1.save!
 
 sweetabercrombie2 = Clothe.new({  name: "Sweet à capuche Abercrombie et fitch",
@@ -1011,7 +1010,7 @@ sweetabercrombie2 = Clothe.new({  name: "Sweet à capuche Abercrombie et fitch",
                                   value: "7",
                                   available: true,
                                   condition: "usé" })
-sweetabercrombie2.owner = others_users.sample
+sweetabercrombie2.owner = hommes.sample
 sweetabercrombie2.save!
 
 sweetlacoste1 = Clothe.new({  name: "Veste lacoste rouge S",
@@ -1022,7 +1021,7 @@ sweetlacoste1 = Clothe.new({  name: "Veste lacoste rouge S",
                               value: "45",
                               available: true,
                               condition: "usé" })
-sweetlacoste1.owner = others_users.sample
+sweetlacoste1.owner = hommes.sample
 sweetlacoste1.save!
 
 sweetlacoste2 = Clothe.new({  name: "Veste lacoste verte",
@@ -1033,7 +1032,7 @@ sweetlacoste2 = Clothe.new({  name: "Veste lacoste verte",
                               value: "75",
                               available: true,
                               condition: "comme neuf" })
-sweetlacoste2.owner = others_users.sample
+sweetlacoste2.owner = hommes.sample
 sweetlacoste2.save!
 
 sweetgucci1 = Clothe.new({  name: "Veste Gucci bleue M",
@@ -1044,7 +1043,7 @@ sweetgucci1 = Clothe.new({  name: "Veste Gucci bleue M",
                             value: "280",
                             available: true,
                             condition: "comme neuf" })
-sweetgucci1.owner = kylan
+sweetgucci1.owner = hommes.sample
 sweetgucci1.save!
 
 sweetgucci2 = Clothe.new({  name: "Sweet Gucci noir Tigre",
@@ -1055,7 +1054,7 @@ sweetgucci2 = Clothe.new({  name: "Sweet Gucci noir Tigre",
                             value: "225",
                             available: true,
                             condition: "comme neuf" })
-sweetgucci2.owner = others_users.sample
+sweetgucci2.owner = hommes.sample
 sweetgucci2.save!
 
 sweetsaintjames1 = Clothe.new({ name: "Pull rayé Saint James T3XL",
@@ -1066,7 +1065,7 @@ sweetsaintjames1 = Clothe.new({ name: "Pull rayé Saint James T3XL",
                                 value: "42",
                                 available: true,
                                 condition: "comme neuf" })
-sweetsaintjames1.owner = others_users.sample
+sweetsaintjames1.owner = hommes.sample
 sweetsaintjames1.save!
 
 sweetsaintjames2 = Clothe.new({ name: "Pull vintage saint james",
@@ -1077,7 +1076,7 @@ sweetsaintjames2 = Clothe.new({ name: "Pull vintage saint james",
                                 value: "15",
                                 available: true,
                                 condition: "usé" })
-sweetsaintjames2.owner = others_users.sample
+sweetsaintjames2.owner = hommes.sample
 sweetsaintjames2.save!
 
 # CATEGORIE ROBE MARIEE
@@ -1201,7 +1200,7 @@ robemariee10.save!
 
 # CATEGORIE ACCESSOIRES HOMME
 
-puts "créations des seeds accessoires homme"
+puts "créations des seeds accessoires hommes"
 
 montrefossil = Clothe.new({ name: "Montre Fossil neuve",
                             description: "Montre fossil
@@ -1213,7 +1212,7 @@ montrefossil = Clothe.new({ name: "Montre Fossil neuve",
                             value: "52",
                             available: true,
                             condition: "bon état" })
-montrefossil.owner = others_users.sample
+montrefossil.owner = hommes.sample
 montrefossil.save!
 
 chaussures1 = Clothe.new({  name: "Chaussures Cole haan taille 45",
@@ -1224,7 +1223,7 @@ chaussures1 = Clothe.new({  name: "Chaussures Cole haan taille 45",
                             value: "100",
                             available: true,
                             condition: "correct" })
-chaussures1.owner = others_users.sample
+chaussures1.owner = hommes.sample
 chaussures1.save!
 
 chaussures2 = Clothe.new({  name: "Chaussures Cole haan original",
@@ -1235,7 +1234,7 @@ chaussures2 = Clothe.new({  name: "Chaussures Cole haan original",
                             value: "29",
                             available: true,
                             condition: "comme neuf" })
-chaussures2.owner = kylan
+chaussures2.owner = hommes.sample
 chaussures2.save!
 
 montrefossil2 = Clothe.new({  name: "Montre Fossil bracelet cuire",
@@ -1246,7 +1245,7 @@ montrefossil2 = Clothe.new({  name: "Montre Fossil bracelet cuire",
                               value: "15",
                               available: true,
                               condition: condition.sample })
-montrefossil2.owner = others_users.sample
+montrefossil2.owner = hommes.sample
 montrefossil2.save!
 
 portefeuille = Clothe.new({ name: "Portefeuille Tommy Hilfiger",
@@ -1257,7 +1256,7 @@ portefeuille = Clothe.new({ name: "Portefeuille Tommy Hilfiger",
                             value: "35",
                             available: true,
                             condition: "bon état" })
-portefeuille.owner = others_users.sample
+portefeuille.owner = hommes.sample
 portefeuille.save!
 
 ceinture1 = Clothe.new({  name: "Ceinture Tommy Hilfiger",
@@ -1268,18 +1267,18 @@ ceinture1 = Clothe.new({  name: "Ceinture Tommy Hilfiger",
                           value: "23",
                           available: true,
                           condition: "bon état" })
-ceinture1.owner = others_users.sample
+ceinture1.owner = hommes.sample
 ceinture1.save!
 
 montrehugoboss = Clothe.new({ name: "Hugo Boss montre homme",
-                              description: "Une montre pour others_users Hugo Boss portée deux fois seulement, dans un état neuf. Elle fonctionne très bien, mais la batterie doit être changée.",
+                              description: "Une montre pour hommes Hugo Boss portée deux fois seulement, dans un état neuf. Elle fonctionne très bien, mais la batterie doit être changée.",
                               size: "",
                               brand: "hugoboss",
                               category: accessoires_homme,
                               value: "80",
                               available: true,
                               condition: condition.sample })
-montrehugoboss.owner = others_users.sample
+montrehugoboss.owner = hommes.sample
 montrehugoboss.save!
 
 cravate = Clothe.new({  name: "Cravate Hugo Boss",
@@ -1290,14 +1289,23 @@ cravate = Clothe.new({  name: "Cravate Hugo Boss",
                         value: "40",
                         available: true,
                         condition: condition.sample })
-cravate.owner = others_users.sample
+cravate.owner = hommes.sample
 cravate.save!
+
+
+clothes = Clothe.all
 
 # status = ["new", "pending", "finished"]
 
 puts "création des transactions"
 
-def transaction_status(transaction)
+20.times do
+  start_date_random = Date.today + rand(-15..15)
+  end_date_random = start_date_random + rand(1..3)
+  transaction = ClotheTransaction.new(start_date: start_date_random, end_date: end_date_random)
+  transaction.client = User.all.sample
+  transaction.clothe = Clothe.where.not(owner_id: transaction.client_id)
+                             .where.not(id: ClotheTransaction.pluck(:clothe_id)).sample
   if Date.today > transaction.end_date
     transaction.status = "finished"
   elsif Date.today < transaction.start_date
@@ -1305,28 +1313,13 @@ def transaction_status(transaction)
   else
     transaction.status = "pending"
   end
-end
-
-def transaction_creation(user, clothe, start_date, end_date)
-  transaction = ClotheTransaction.new(start_date: Date.today + start_date, end_date: Date.today + end_date)
-  transaction.client = user
-  transaction.clothe = clothe
-  transaction.price = transaction.clothe.value
-  transaction_status(transaction)
   transaction.chatroom = Chatroom.new(name: "location de #{transaction.clothe.name} par #{transaction.client.user_name}")
   puts transaction.chatroom.name if transaction.save!
 end
 
-transaction_creation(kylan, boss1, 2, 3)
-transaction_creation(kylan, fusalp1, 15, 23)
-transaction_creation(ismael, chaussures2, 5, 17)
-transaction_creation(oscar, sweetgucci1, -10, 4)
-transaction_creation(quentin, manteau2, 0, 13)
-transaction_creation(emma, deguisement7, 22, 23)
-
 # ATTACHEMENT DES PHOTOS AUX SEEDS
 
-Clothe.all.each do |clothe|
+clothes.each do |clothe|
   puts "charging image for #{clothe.name}"
   attach_images_to_clothe(clothe)
   clothe.save!
