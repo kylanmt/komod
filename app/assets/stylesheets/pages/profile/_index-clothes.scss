@@ -15,15 +15,21 @@
   justify-content: space-between;
   padding: 10px 0;
   margin: 2px 10px;
+  align-items: center;
   p {
     margin: 0;
+  }
+  .transaction-status {
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 0 0 5px #ecc37a;
   }
 }
 
 .transaction-btn {
   border: 1mm solid $green;
   background-color: $green;
-  color:#ecc37a;
+  color: #ecc37a;
   font-size: 16px;
   border-radius: 25px;
   padding: 0.25rem 1rem 0.25rem 1rem;
