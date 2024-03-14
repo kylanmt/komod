@@ -1,31 +1,85 @@
 <div class="navbar container-phone">
-  <div class="d-flex">
+  <div class="ms-3 d-flex gap-3">
     <%= link_to (image_tag "icons/undo_icon.svg"), root_path, class: "d-flex"%>
-    <h2 class="title">Détails de votre réservation</h2>
+    <h2 class="title">Bravo ! 🤩</h2>
   </div>
 </div>
 
 <div class="container-phone">
-  <div class="dates row">
-    <div class="start-date col">
-      <h2> Vous récuperez le vetement le:</h2>
-      <%= @transaction.start_date.strftime("%d/%m/%Y") %>
+<p class="booking-btn d-flex justify-content-center">Récapitulatif</p>
+</div>
+
+<ol class="timeline">
+  <li class="timeline-item">
+    <span class="timeline-item-icon | faded-icon">
+    <%= image_tag "icons/check_icon.svg" %>
+    </span>
+    <div class="timeline-item-description">
+      <i class="avatar | small">
+        <%= link_to cl_image_tag(@transaction.clothe.owner.photo.key), clothe_path(@transaction.clothe), class: "avatar"%>
+      </i>
+      <span><a href="#"><%= @transaction.clothe.owner.user_name %></a> a bien reçu ta demande de réservation, <a href="#">aujourd'hui</a>, le <%= @transaction.start_date.strftime("%d/%m/%Y") %>.</span>
     </div>
-    <div class="end-dates col">
-      <h2>Vous rendez le vetement le:</h2>
-      <%= @transaction.end_date.strftime("%d/%m/%Y") %>
+  </li>
+  <li class="timeline-item">
+    <span class="timeline-item-icon | faded-icon">
+      <%= image_tag "icons/shirt_icon.svg" %>
+    </span>
+    <div class="timeline-item-description">
+      <i class="avatar | small">
+        <%= link_to cl_image_tag(@transaction.clothe.photos.first.key), clothe_path(@transaction.clothe), class: "trans-photo"%>
+      </i>
+      <span><a href="#"><%= @transaction.clothe.name %> </a> est l'article que tu as réservé.</span>
+    </div>
+  </li>
+  <li class="timeline-item">
+    <span class="timeline-item-icon | faded-icon">
+    <%= image_tag "icons/calendar_icon.svg" %>
+    </span>
+    <div class="timeline-item-description">
+      <i class="avatar | small">
+        <%= link_to cl_image_tag(@transaction.clothe.photos.first.key), clothe_path(@transaction.clothe), class: "trans-photo"%>
+      </i>
+      <span>Tu rendras cet article à <a href="#"><%= @transaction.clothe.owner.user_name %></a> le <a href="#"><%= @transaction.end_date.strftime("%d/%m/%Y") %></a>.</span>
+    </div>
+  </li>
+  <li class="timeline-item | extra-space">
+    <span class="timeline-item-icon | faded-icon">
+      <%= image_tag "icons/map_icon.svg" %>
+    </span>
+  <div class="timeline-item-wrapper">
+    <div class="timeline-item-description">
+      <span>L'article se trouve ici, n'hésite pas à t'y rendre à pied ou à vélo 🌍</span>
+    </div>
+    <div class="comment">
+        <div class="map-container"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+          data-map-start-value="<%= {lng: @start_lng, lat: @start_lat}.to_json %>"
+          data-map-end-value="<%= {lng: @end_lng, lat: @end_lat}.to_json %>">
+        </div>
     </div>
   </div>
-  <br>
-</div>
-<div class="phone-container d-flex ">
-  <div class="map-container"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  <%= link_to cl_image_tag(@transaction.clothe.photos.first.key), clothe_path(@transaction.clothe), class: "trans-photo"%>
-</div>
-<div class="container-phone">
-  <%= link_to "Contacter le vendeur #{@transaction.clothe.owner.user_name}", chatroom_path(@transaction.chatroom), class: "booking-btn d-flex justify-content-center"  %>
-  <%= link_to "Retour à l'accueil", root_path, class: "booking-btn d-flex justify-content-center" %>
-</div>
+  </li>
+  <li class="timeline-item | extra-space">
+    <span class="timeline-item-icon | filled-icon">
+      <%= image_tag "icons/mail_icon_white.svg" %>
+    </span>
+    <div class="timeline-item-wrapper">
+      <div class="timeline-item-description">
+        <i class="avatar | small">
+          <%= link_to cl_image_tag(@transaction.clothe.owner.photo.key), clothe_path(@transaction.clothe), class: "avatar"%>
+        </i>
+        <span>Envoie dès maintenant un message à <a href="#"> <%= @transaction.clothe.owner.user_name %> </a></span>
+      </div>
+      <button class="show-replies">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-forward" width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M15 11l4 4l-4 4m4 -4h-11a4 4 0 0 1 0 -8h1" />
+        </svg>
+        <span class="avatar-list"><%= link_to "Contacte #{@transaction.clothe.owner.user_name}", chatroom_path(@transaction.chatroom), class: "btn-contact"  %></span>
+      </button>
+    </div>
+  </li>
+</ol>

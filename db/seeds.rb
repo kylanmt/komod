@@ -1284,6 +1284,7 @@ cravate = Clothe.new({  name: "Cravate Hugo Boss",
 cravate.owner = hommes.sample
 cravate.save!
 
+
 # status = ["new", "pending", "finished"]
 
 puts "création des transactions"
