@@ -13,20 +13,28 @@
 
 <div class="container-phone middle-container">
   <h1 class="title-clothe"><%= @clothe.name %></h1>
-  <h5><%= @clothe.description %></h5>
-  <div class="mt-4 d-flex gap-2 justify-content-center">
+  <h5 class="description-clothe"><%= @clothe.description.capitalize %></h5>
+  <div class="tags d-flex gap-2 justify-content-center">
     <h5 class="tag-clothe"><%= @clothe.category.name.capitalize %></h5>
     <h5 class="tag-clothe"><i class="fa-solid fa-coins"></i><%= @clothe.value %></h5>
+    <% unless @clothe.size == "" %>
       <h5 class="tag-clothe"><i class="fa-solid fa-shirt"></i> <%= @clothe.size %></h5>
-    <% unless current_user == @clothe.owner %>
-      <h5 class="tag-clothe"><%= @clothe.available ? 'Disponible' : 'Indisponible' %></h5>
     <% end %>
+    <h5 class="tag-clothe"><%= @clothe.condition.capitalize %></h5>
   </div>
+  <% unless current_user == @clothe.owner %>
+    <div class="bottom-container ">
+      <div class="map-container"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    </div>
+  <% end %>
   <% if current_user == @clothe.owner %>
       <% if @clothe.clothe_transactions.empty? %>
-        <div class="booking-btn">pas encore de reservations faites</div>
+        <div class="booking-btn">Aucune réservation</div>
       <% else %>
-        <div class="booking-btn">déjà <%= @clothe.clothe_transactions.size %> réservations de faites</div>
+        <div class="booking-btn">Déjà <%= @clothe.clothe_transactions.size %> réservations !</div>
       <% end %>
   <% else %>
     <div data-controller="toggle" class="mt-4 mx-4 d-flex justify-content-center button-container">
@@ -34,14 +42,6 @@
       <div data-toggle-target="togglableElement" class="d-none">
         <%= render "location", clothe: @clothe, transaction: @transaction, reservations_dates: @reservations_dates %>
       </div>
-    </div>
-  <% end %>
-  <% unless current_user == @clothe.owner %>
-    <div class="bottom-container ">
-      <div class="map-container"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     </div>
   <% end %>
 </div>
