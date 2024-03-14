@@ -3,6 +3,8 @@ class Clothe < ApplicationRecord
   belongs_to :category
 
   has_many :clothe_transactions
+  has_many :chatrooms, through: :clothe_transaction
+
   has_many :likes, dependent: :destroy
   has_many_attached :photos
   # has_many :likers, through: :likes, source: :user

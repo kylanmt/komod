@@ -21,10 +21,6 @@
 
 }
 
-.chatroom-item:first-child {
-  border-top: none;
-}
-
 .chatroom-item:last-child {
   border-bottom: none;
 }
@@ -46,4 +42,14 @@
   align-items: center;
   justify-content: space-between;
   width: 73%;
+}
+
+.chatroom-container{
+  h4 {
+    margin-left: -8px;
+  }
+}
+
+.content-message {
+  color: grey;
 }

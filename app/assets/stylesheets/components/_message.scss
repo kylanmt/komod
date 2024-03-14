@@ -1,0 +1,50 @@
+// To style the wrapping div
+.message-row {
+  margin-bottom: 10px;
+  padding: 8px;
+  margin-top: 20px;
+}
+
+// To style the message itself
+.sender-style, .receiver-style {
+  width: 70%;
+  max-width: 400px;
+  border-radius: 12px;
+  padding: 8px;
+  min-height: 80px;
+}
+
+.sender-style {
+  background-color: #E2773A;
+}
+
+.receiver-style {
+  background-color: #223E35;
+}
+
+
+.titre-date-message{
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.date-message {
+  font-size: 11px;
+  text-align: center;
+  padding: 5px;
+}
+
+.titre-message {
+  font-size: 18px;
+}
+
+.message-content {
+  font-size: 15px;
+  p {
+    margin-top: 5px;
+  }
+}
+
+.titre-date-message, .message-content{
+  color: white;
+}

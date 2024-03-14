@@ -1,3 +1,4 @@
+Message.destroy_all
 ClotheTransaction.destroy_all
 User.destroy_all
 Clothe.destroy_all
