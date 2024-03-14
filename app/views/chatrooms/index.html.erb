@@ -5,24 +5,58 @@
   </div>
 
   <div class="chatroom-container">
-    <% if @chatrooms.empty? %>
+    <% if @owner_chatrooms.empty? && @renter_chatrooms.empty? %>
       <div class="container-phone">
       <p class="mt-5 w-75 mx-auto text-center">Quelle tristesse... tu n'as toujours pas de messages 😓</p>
     </div>
     <% else %>
       <ul>
         <div class="chatroom-list">
-          <% @chatrooms.each do |chatroom| %>
+        <br>
+        <h4><strong> Ils veulent te contacter...</strong></h4>
+        <br>
+          <% @owner_chatrooms.each do |chatroom| %>
+            <div class="chatroom-item">
+              <div class="owner-chatroom-photo">
+                <%= cl_image_tag(chatroom.clothe_transaction.client.photo.key, class: "owner-chatroom-photo")%>
+              </div>
+              <div class="chatroom-infos-chevrons">
+                <div class="chatroom-infos">
+                  <li><h5><%= link_to "#{chatroom.clothe_transaction.client.user_name} veux te louer...", chatroom_path(chatroom) %></h5></li>
+                  <% if chatroom.messages.present? %>
+                    <div class="content-message">
+                      <li><%= "#{chatroom.messages.last.content[0..20]}..."%></li>
+                    </div>
+                  <% end %>
+                </div>
+                <div class="chevron-chatroom">
+                  <%= link_to "", chatroom_path(chatroom), class: "fa-solid fa-chevron-right" %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </ul>
+
+
+      <ul>
+      <br>
+       <h4><strong>Fais leurs ta demande de location...</strong></h4>
+       <br>
+        <div class="chatroom-list">
+          <% @renter_chatrooms.each do |chatroom| %>
             <div class="chatroom-item">
               <div class="owner-chatroom-photo">
                 <%= cl_image_tag(chatroom.clothe_transaction.clothe.owner.photo.key, class: "owner-chatroom-photo")%>
               </div>
               <div class="chatroom-infos-chevrons">
                 <div class="chatroom-infos">
-                  <li><h5><%= link_to chatroom.name[0..20], chatroom_path(chatroom) %></h5></li>
-                    <% chatroom.messages.each do |message| %>
-                      <li><%= message.content[0..20] %></li>
-                    <% end %>
+                  <li><h5><%= link_to "#{chatroom.name[0..20]}...", chatroom_path(chatroom) %></h5></li>
+                    <% if chatroom.messages.present? %>
+                      <div class="content-message">
+                        <li><%= "#{chatroom.messages.last.content[0..20]}..." %></li>
+                      </div>
+                     <% end %>
                 </div>
                 <div class="chevron-chatroom">
                   <%= link_to "", chatroom_path(chatroom), class: "fa-solid fa-chevron-right" %>
