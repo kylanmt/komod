@@ -1,0 +1,56 @@
+<ol class="timeline">
+  <li class="timeline-item">
+    <span class="timeline-item-icon | faded-icon">
+    <%= image_tag "icons/check_icon.svg" %>
+    </span>
+    <div class="timeline-item-description">
+      <i class="avatar | small">
+        <%= link_to cl_image_tag(@transaction.client.photo.key), clothe_path(@transaction.clothe), class: "avatar"%>
+      </i>
+      <span><a href="#"><%= @transaction.client.user_name %></a> vous a reservé un vetement pour le
+      <a href="#"><%= @transaction.start_date.strftime("%d/%m/%Y") %></a>.</span>
+    </div>
+  </li>
+  <li class="timeline-item">
+    <span class="timeline-item-icon | faded-icon">
+      <%= image_tag "icons/shirt_icon.svg" %>
+    </span>
+    <div class="timeline-item-description">
+      <i class="avatar | small">
+        <%= link_to cl_image_tag(@transaction.clothe.photos.first.key), clothe_path(@transaction.clothe), class: "trans-photo"%>
+      </i>
+      <span>Il a reservé <a href="#"><%= @transaction.clothe.name %> </a>.</span>
+    </div>
+  </li>
+  <li class="timeline-item">
+    <span class="timeline-item-icon | faded-icon">
+    <%= image_tag "icons/calendar_icon.svg" %>
+    </span>
+    <div class="timeline-item-description">
+      <i class="avatar | small">
+        <%= link_to cl_image_tag(@transaction.clothe.photos.first.key), clothe_path(@transaction.clothe), class: "trans-photo"%>
+      </i>
+      <span>L'article sera ramené le <a href="#"><%= @transaction.end_date.strftime("%d/%m/%Y") %></a>.</span>
+    </div>
+  </li>
+  <li class="timeline-item">
+    <span class="timeline-item-icon | filled-icon">
+      <%= image_tag "icons/mail_icon_white.svg" %>
+    </span>
+    <div class="timeline-item-wrapper">
+      <div class="timeline-item-description">
+        <i class="avatar | small">
+          <%= link_to cl_image_tag( @transaction.client.photo.key), clothe_path(@transaction.clothe), class: "avatar"%>
+        </i>
+        <span>Envoie dès maintenant un message à <a href="#"> <%= @transaction.client.user_name%> </a></span>
+      </div>
+      <button class="show-replies">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-forward" width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M15 11l4 4l-4 4m4 -4h-11a4 4 0 0 1 0 -8h1" />
+        </svg>
+        <span class="avatar-list"><%= link_to "Contacte #{ @transaction.client.user_name}", chatroom_path(@transaction.chatroom), class: "btn-contact"  %></span>
+      </button>
+    </div>
+  </li>
+</ol>
