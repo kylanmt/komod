@@ -1,6 +1,6 @@
 
 <div class="navbar navbar-message">
- <div class="icone-title">
+  <div class="icone-title">
       <%= link_to (image_tag "icons/undo_icon.svg", width: "35", height: "35"), profils_chatrooms_path, class: "icone-return"%>
       <h4><%= @chatroom.name %></h4>
     </div>
@@ -8,8 +8,8 @@
 
 
 <div data-controller="chatroom-subscription"
-     data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
-     data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
+  data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
+  data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
   <div class="container-show-chatroom">
     <div class="container chatroom">
       <div class="messages" data-chatroom-subscription-target="messages">

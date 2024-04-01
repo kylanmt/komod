@@ -22,14 +22,15 @@
     <% end %>
     <h5 class="tag-clothe"><%= @clothe.condition.capitalize %></h5>
   </div>
-  <% unless current_user == @clothe.owner %>
-    <div class="bottom-container ">
-      <div class="map-container"
-        data-controller="map"
-        data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-    </div>
-  <% end %>
+</div>
+<% unless current_user == @clothe.owner %>
+  <div class="map-container"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+<% end %>
+<div class="bottom-container">
   <% if current_user == @clothe.owner %>
       <% if @clothe.clothe_transactions.empty? %>
         <div class="booking-btn">Aucune réservation</div>
